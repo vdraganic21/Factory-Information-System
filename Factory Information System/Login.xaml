@@ -1,0 +1,42 @@
+﻿<Window x:Class="Factory_Information_System.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Factory_Information_System"
+        mc:Ignorable="d"
+        Title="Prijava" Height="430" Width="360" ResizeMode="NoResize">
+    <DockPanel Margin="0 0 0 0" >
+        <DockPanel Height="150" Margin="0 0 0 0" DockPanel.Dock="Top" Background="Orange">
+
+        </DockPanel>
+        <DockPanel Height="24" Margin="0 16 0 2" DockPanel.Dock="Top">
+            <Label Content="Autentifikacija" Width="90" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ></Label>
+            <ComboBox Width="215" HorizontalAlignment="Left" Margin="4 0 0 0" IsReadOnly="True"></ComboBox>
+        </DockPanel>
+        <DockPanel Height="24" Margin="0 0 0 2" DockPanel.Dock="Top">
+            <Label Content="Korisnik" Width="90" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ></Label>
+            <TextBox Width="215" HorizontalAlignment="Left" Margin="4 0 0 0"></TextBox>
+        </DockPanel>
+        <DockPanel Height="24" Margin="0 0 0 2" DockPanel.Dock="Top">
+            <Label Content="Lozinka" Width="90" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ></Label>
+            <TextBox Width="215" HorizontalAlignment="Left" Margin="4 0 0 0"></TextBox>
+        </DockPanel>
+        <DockPanel Height="24" Margin="0 0 0 2" DockPanel.Dock="Top">
+            <Label Content="Poduzeće" Width="90" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ></Label>
+            <ComboBox Width="215" HorizontalAlignment="Left" Margin="4 0 0 0" IsReadOnly="True" ></ComboBox>
+        </DockPanel>
+        <DockPanel Height="24" Margin="0 0 0 2" DockPanel.Dock="Top">
+            <Label Content="Poslužitelj" Width="90" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ></Label>
+            <TextBox Width="215" Text="METALFACTORY\2" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="4 0 0 0" IsEnabled="False" Background="LightGray"/>
+        </DockPanel>
+        <DockPanel Height="24" DockPanel.Dock="Top">
+            <Label Content="Baza" Width="90" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ></Label>
+            <TextBox Width="215" Text="METALFACTORYDB" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="4 0 0 0" IsEnabled="False" Background="LightGray"></TextBox>
+        </DockPanel>
+        <DockPanel Height="24" Width="215" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="94,0,0,0">
+            <Button DockPanel.Dock="Left" Content="Prijavi se" Width="80" HorizontalAlignment="Left" Foreground="White" FontWeight="Bold" Background="#FF36414A"/>
+            <Button x:Name="btnOdustani" Click="btnOdustani_Click" DockPanel.Dock="Right" Content="Odustani" Width="80" HorizontalAlignment="Right" Background="#36414A" Foreground="White" FontWeight="Bold"></Button>
+        </DockPanel>
+    </DockPanel>
+</Window>
