@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Factory_Information_System"
         mc:Ignorable="d"
-        Title="Prijava" Height="430" Width="360" ResizeMode="NoResize">
+        Title="Prijava" Height="430" Width="360" ResizeMode="NoResize" Loaded="Window_Loaded">
     <DockPanel Margin="0 0 0 0" >
         <DockPanel Height="150" Margin="0 0 0 0" DockPanel.Dock="Top" Background="Orange">
 
@@ -16,11 +16,11 @@
         </DockPanel>
         <DockPanel Height="24" Margin="0 0 0 2" DockPanel.Dock="Top">
             <Label Content="Korisnik" Width="90" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ></Label>
-            <TextBox x:Name="txtKorisnik" Width="215" HorizontalAlignment="Left" Margin="4 0 0 0"></TextBox>
+            <TextBox x:Name="txtKorisnik" Width="215" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="4 0 0 0"></TextBox>
         </DockPanel>
         <DockPanel Height="24" Margin="0 0 0 2" DockPanel.Dock="Top">
             <Label Content="Lozinka" Width="90" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ></Label>
-            <TextBox x:Name="txtLozinka" Width="215" HorizontalAlignment="Left" Margin="4 0 0 0"></TextBox>
+            <TextBox x:Name="txtLozinka" Width="215" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="4 0 0 0"></TextBox>
         </DockPanel>
         <DockPanel Height="24" Margin="0 0 0 2" DockPanel.Dock="Top">
             <Label Content="Poduzeće" Width="90" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ></Label>
@@ -54,6 +54,9 @@
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Background" Value="#4F5B64"/>
                             </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#4F5B64"/>
+                            </Trigger>
                         </Style.Triggers>
                     </Style>
                 </Button.Style>
@@ -75,6 +78,9 @@
                         </Setter>
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#4F5B64"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
                                 <Setter Property="Background" Value="#4F5B64"/>
                             </Trigger>
                         </Style.Triggers>

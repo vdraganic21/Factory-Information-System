@@ -24,6 +24,32 @@ namespace Factory_Information_System
             InitializeComponent();
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoadComboboxes();
+        }
+
+        private void LoadComboboxes()
+        {
+            cmbAutentifikacija.IsEnabled = false;
+            cmbPoduzece.IsEnabled = false;
+
+            List<String> authenticationMethods = new List<String>
+            {
+                "SQL Server Authentication"
+            };
+
+            List<String> companies = new List<String>
+            {
+                "99999 (Metal Factory(10.0.42.38))"
+            };
+
+            cmbAutentifikacija.ItemsSource = authenticationMethods;
+            cmbAutentifikacija.SelectedIndex = 0;
+            cmbPoduzece.ItemsSource = companies;
+            cmbPoduzece.SelectedIndex = 0;
+        }
+
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
