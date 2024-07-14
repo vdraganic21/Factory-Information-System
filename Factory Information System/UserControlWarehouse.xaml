@@ -6,12 +6,69 @@
              xmlns:local="clr-namespace:Factory_Information_System"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="LightGray">
-    <DockPanel>
-        <DockPanel DockPanel.Dock="Top" Background="White">
+    <DockPanel Background="White">
+        <DockPanel DockPanel.Dock="Top" Background="LightGray">
             <Label Content="Pregled zaliha" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <Label Content="x" Foreground="Red" HorizontalAlignment="Right" Cursor="Hand" VerticalAlignment="Top" Margin="0" MouseLeftButtonUp="CloseButton_Click"/>
         </DockPanel>
-        <DockPanel Margin="0,4,0,0" Background="LightGray">
+        <DockPanel DockPanel.Dock="Top" Margin="0,4,0,0" Background="LightGray" Height="24">
+            <Button Name="btnTraziZalihu" Margin="64,0,0,0" Height="24" DockPanel.Dock="Left" Click="btnTraziZalihu_Click" Cursor="Hand" Content="Traži zalihu" Width="120" HorizontalAlignment="Left">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#36414A"/>
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="FontWeight" Value="Bold" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#4F5B64"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#4F5B64"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Name="btnObnavljanjeZalihe" Margin="8,0,0,0" Height="24" DockPanel.Dock="Left" Click="btnObnavljanjeZalihe_Click" Cursor="Hand" Content="Obnavljanje zalihe" Width="120" HorizontalAlignment="Left">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background" Value="#36414A"/>
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="FontWeight" Value="Bold" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#4F5B64"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#4F5B64"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Label Content="Traži" Margin="50,0,0,0"></Label>
+            <TextBox x:Name="txtTrazeniProizvodSifra" Width="100" HorizontalAlignment="Left"></TextBox>
+            <TextBox x:Name="txtTrazeniProizvodNaziv" Margin="4,0,0,0" Width="150" HorizontalAlignment="Left"></TextBox>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top">
             
         </DockPanel>
     </DockPanel>

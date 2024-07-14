@@ -39,5 +39,15 @@ namespace Factory_Information_System
                 }
             }
         }
+
+        private void btnTraziZalihu_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnObnavljanjeZalihe_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
