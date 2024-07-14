@@ -42,12 +42,17 @@ namespace Factory_Information_System
 
         private void btnTraziZalihu_Click(object sender, RoutedEventArgs e)
         {
-
+            ShowForbiddenAccessMessage();
         }
 
         private void btnObnavljanjeZalihe_Click(object sender, RoutedEventArgs e)
         {
+            ShowForbiddenAccessMessage();
+        }
 
+        private void ShowForbiddenAccessMessage()
+        {
+            MessageBox.Show("Zabranjen pristup ovoj funkcionalnosti!", "Greška", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }

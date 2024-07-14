@@ -65,7 +65,7 @@ namespace Factory_Information_System
 
             if (!isValid)
             {
-                //MessageBox.Show("Pogrešni podaci za prijavu!", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
+                //MessageBox.Show("Pogrešni podaci za prijavu!", "Greška", MessageBoxButton.OK, MessageBoxImage.Information);
                 //return;
             }
 
