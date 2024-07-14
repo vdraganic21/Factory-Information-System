@@ -7,6 +7,12 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="LightGray">
     <DockPanel>
-        <Label Content="Pregled zaliha"></Label>
+        <DockPanel DockPanel.Dock="Top" Background="White">
+            <Label Content="Pregled zaliha" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Label Content="x" Foreground="Red" HorizontalAlignment="Right" Cursor="Hand" VerticalAlignment="Top" Margin="0" MouseLeftButtonUp="CloseButton_Click"/>
+        </DockPanel>
+        <DockPanel Margin="0,4,0,0" Background="LightGray">
+            
+        </DockPanel>
     </DockPanel>
 </UserControl>

@@ -24,5 +24,20 @@ namespace Factory_Information_System
         {
             InitializeComponent();
         }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            TabItem parentTabItem = this.Parent as TabItem;
+
+            if (parentTabItem != null)
+            {
+                TabControl parentTabControl = parentTabItem.Parent as TabControl;
+
+                if (parentTabControl != null)
+                {
+                    parentTabControl.Items.Remove(parentTabItem);
+                }
+            }
+        }
     }
 }
