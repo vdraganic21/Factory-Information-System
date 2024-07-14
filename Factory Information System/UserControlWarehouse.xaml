@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Factory_Information_System"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="LightGray">
+             d:DesignHeight="800" d:DesignWidth="1200" Background="LightGray">
     <DockPanel Background="White">
         <DockPanel DockPanel.Dock="Top" Background="LightGray">
             <Label Content="Pregled zaliha" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -99,8 +99,53 @@
             </DockPanel>
 
         </DockPanel>
-        <DockPanel>
-            
+        <DockPanel DockPanel.Dock="Top">
+            <DockPanel DockPanel.Dock="Left" Margin="0,4,0,0" Background="LightGray" Height="220" HorizontalAlignment="Left" VerticalAlignment="Top" Width="330">
+                <Label Content="Narudžbe" FontWeight="Bold" DockPanel.Dock="Top"></Label>
+                <DockPanel DockPanel.Dock="Left">
+                    <Label Height="24" Content="" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                    <Label Height="24" Content="Dobavljač" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                    <Label Height="24" Content="Kupci" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                    <Label Height="24" Content="Sast." HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                    <Label Height="24" Content="RN-Obrada" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                    <Label Height="24" Content="RN-Upotreba" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                    <Label Height="24" Content="Ukupno" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                    <DockPanel></DockPanel>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Left">
+                    <Label Height="24" Content="Primarno skl." HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
+                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
+                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
+                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
+                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
+
+                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
+
+
+                    <DockPanel></DockPanel>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Left" Margin="40,0,0,0">
+                    <Label Height="24" Content="Ostala skl." HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
+                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
+                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
+                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
+                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
+
+                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
+
+
+                    <DockPanel></DockPanel>
+                </DockPanel>
+                <DockPanel></DockPanel>
+
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Left" Margin="4,4,0,0" Background="LightGray" Height="220"  VerticalAlignment="Top" >
+                <Label Content="Zaliha po skladištima" FontWeight="Bold" DockPanel.Dock="Top"></Label>
+                <DataGrid DockPanel.Dock="Top" Margin="4"></DataGrid>
+            </DockPanel>
         </DockPanel>
+        <DockPanel Margin="4" Background="LightGray"></DockPanel>
     </DockPanel>
 </UserControl>
