@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business_Layer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,6 +54,21 @@ namespace Factory_Information_System
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void btnPrijaviSe_Click(object sender, RoutedEventArgs e)
+        {
+            string username = txtKorisnik.Text;
+            string password = txtLozinka.Text;
+
+            bool isValid = LoginAuthenticator.IsValid(username, password);
+
+            if (!isValid)
+            {
+                MessageBox.Show("Pogrešni podaci za prijavu!", "Greška", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
         }
     }
 }
