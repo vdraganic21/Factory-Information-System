@@ -20,7 +20,7 @@
         </DockPanel>
         <DockPanel Height="24" Margin="0 0 0 2" DockPanel.Dock="Top">
             <Label Content="Lozinka" Width="90" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ></Label>
-            <TextBox x:Name="txtLozinka" Width="215" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="4 0 0 0"></TextBox>
+            <PasswordBox x:Name="txtLozinka" Width="215" HorizontalAlignment="Left" VerticalContentAlignment="Center" Margin="4 0 0 0"></PasswordBox>
         </DockPanel>
         <DockPanel Height="24" Margin="0 0 0 2" DockPanel.Dock="Top">
             <Label Content="Poduzeće" Width="90" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Right" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" ></Label>

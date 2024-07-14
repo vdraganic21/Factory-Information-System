@@ -59,7 +59,7 @@ namespace Factory_Information_System
         private void btnPrijaviSe_Click(object sender, RoutedEventArgs e)
         {
             string username = txtKorisnik.Text;
-            string password = txtLozinka.Text;
+            string password = txtLozinka.Password;
 
             bool isValid = LoginAuthenticator.IsValid(username, password);
 
@@ -69,6 +69,11 @@ namespace Factory_Information_System
                 return;
             }
 
+            this.Hide();
+
+            new MainWindow().ShowDialog();
+
+            this.Close();
         }
     }
 }
