@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:Factory_Information_System"
              StartupUri="Login.xaml">
     <Application.Resources>
-         
+        <local:IntToVisibilityConverter x:Key="IntToVisibilityConverter"/>
     </Application.Resources>
 </Application>

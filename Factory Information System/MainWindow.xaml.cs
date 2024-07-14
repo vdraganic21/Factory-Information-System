@@ -33,5 +33,14 @@ namespace Factory_Information_System
                 MessageBox.Show($"Selected document: {documentName}", "Document Selection");
             }
         }
+
+        private void PregledZaliha_Click(object sender, RoutedEventArgs e)
+        {
+            TabItem newTab = new TabItem();
+            newTab.Header = "Pregled zaliha";
+            newTab.Content = new UserControlWarehouse();
+            MainTabControl.Items.Add(newTab);
+            MainTabControl.SelectedItem = newTab;
+        }
     }
 }

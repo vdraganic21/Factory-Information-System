@@ -36,8 +36,8 @@
             </MenuItem>
 
             <MenuItem Header="Roba" Foreground="White">
-                <MenuItem Header="Goods Group 1">
-                    <MenuItem Header="Goods Doc 1" Click="DocumentMenuItem_Click"/>
+                <MenuItem Header="Skladište">
+                    <MenuItem Header="Pregled zaliha" Click="PregledZaliha_Click"/>
                     <MenuItem Header="Goods Doc 2" Click="DocumentMenuItem_Click"/>
                 </MenuItem>
                 <MenuItem Header="Goods Group 2">
@@ -68,5 +68,8 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
+
+        <TabControl x:Name="MainTabControl" Margin="4,26,4,4" Visibility="{Binding ElementName=MainTabControl, Path=Items.Count, Converter={StaticResource IntToVisibilityConverter}}">
+        </TabControl>
     </Grid>
 </Window>
