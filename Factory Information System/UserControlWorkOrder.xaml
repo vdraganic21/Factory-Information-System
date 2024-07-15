@@ -34,36 +34,36 @@
                     <DockPanel Margin="0,8,0,0"></DockPanel>
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Left" HorizontalAlignment="Left" Margin="4,0,0,0">
-                    <TextBox x:Name="txtPrimatelj" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="170" VerticalAlignment="Top" VerticalContentAlignment="Center"></TextBox>
-                    <TextBox x:Name="txtProizvod" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="170" VerticalAlignment="Top" VerticalContentAlignment="Center"></TextBox>
-                    <TextBox x:Name="txtKupac" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="170" VerticalAlignment="Top" VerticalContentAlignment="Center"></TextBox>
-                    <TextBox x:Name="txtNarudžbaKupca" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="170" VerticalAlignment="Top" VerticalContentAlignment="Center"></TextBox>
-                    <TextBox x:Name="txtRadniNalog" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="170" VerticalAlignment="Top" VerticalContentAlignment="Center"></TextBox>
+                    <TextBox x:Name="txtPrimatelj" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="170" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    <TextBox x:Name="txtProizvod" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="170" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    <TextBox x:Name="txtKupac" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="170" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    <TextBox x:Name="txtNarudzbaKupca" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="170" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    <TextBox x:Name="txtRadniNalog" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="170" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                     <DockPanel Margin="0,8,0,0"></DockPanel>
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Left" HorizontalAlignment="Left" Margin="4,0,0,0">
                     <Label Height="24" Padding="4" Content="RN datum od" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
                     <Label Height="24" Padding="4" Content="Poč termina od" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
                     <Label Height="24" Padding="4" Content="Kraj termina od" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
-                    <TextBox x:Name="txtNarudžbaKupcaId" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="90" VerticalAlignment="Top" VerticalContentAlignment="Center"></TextBox>
-                    <TextBox x:Name="txtRadniNalogId" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="90" VerticalAlignment="Top" VerticalContentAlignment="Center"></TextBox>
+                    <TextBox x:Name="txtNarudzbaKupcaId" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="90" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    <TextBox x:Name="txtRadniNalogId" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="90" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                     <DockPanel Margin="0,8,0,0"></DockPanel>
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Left" HorizontalAlignment="Left" Margin="4,0,0,0">
                     <DockPanel DockPanel.Dock="Top">
-                        <TextBox x:Name="txtRadniNalogDatumOd" Height="24" VerticalContentAlignment="Center" Margin="0,2,0,0" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top"></TextBox>
+                        <TextBox x:Name="txtRadniNalogDatumOd" Height="24" VerticalContentAlignment="Center" Margin="0,2,0,0" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                         <Label Height="24" Padding="4" Content="do" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Left"></Label>
-                        <TextBox x:Name="txtRadniNalogDatumDo" Height="24" VerticalContentAlignment="Center" Margin="0,2,0,0" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top"></TextBox>
+                        <TextBox x:Name="txtRadniNalogDatumDo" Height="24" VerticalContentAlignment="Center" Margin="0,2,0,0" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                     </DockPanel>
                     <DockPanel DockPanel.Dock="Top">
-                        <TextBox x:Name="txtPocetniTerminOd" Height="24" VerticalContentAlignment="Center" Margin="0,2,0,0" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top"></TextBox>
+                        <TextBox x:Name="txtPocetniTerminOd" Height="24" VerticalContentAlignment="Center" Margin="0,2,0,0" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                         <Label Height="24" Padding="4" Content="do" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Left"></Label>
-                        <TextBox x:Name="txtPcoetniTerminDo" Height="24" VerticalContentAlignment="Center" Margin="0,2,0,0" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top"></TextBox>
+                        <TextBox x:Name="txtPcoetniTerminDo" Height="24" VerticalContentAlignment="Center" Margin="0,2,0,0" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                     </DockPanel>
                     <DockPanel DockPanel.Dock="Top">
-                        <TextBox x:Name="txtKrajnjiTerminOd" Height="24" VerticalContentAlignment="Center" Margin="0,2,0,0" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top"></TextBox>
+                        <TextBox x:Name="txtKrajnjiTerminOd" Height="24" VerticalContentAlignment="Center" Margin="0,2,0,0" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                         <Label Height="24" Padding="4" Content="do" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Left"></Label>
-                        <TextBox x:Name="txtKrajnjiTerminDo" Height="24" VerticalContentAlignment="Center" Margin="0,2,0,0" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top"></TextBox>
+                        <TextBox x:Name="txtKrajnjiTerminDo" Height="24" VerticalContentAlignment="Center" Margin="0,2,0,0" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                     </DockPanel>
                     <DockPanel Margin="0,4,0,0"></DockPanel>
                 </DockPanel>
@@ -75,25 +75,25 @@
             <DataGrid x:Name="dgvRadniNalozi" AutoGenerateColumns="False" Margin="4" AlternatingRowBackground="{x:Null}" AlternationCount="2" HorizontalGridLinesBrush="LightGray"
 VerticalGridLinesBrush="LightGray" SelectionChanged="dgvRadniNalozi_SelectionChanged">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="[%]" Binding="{Binding warehouseName}" Width="*" />
-                    <DataGridTextColumn Header="RN" Binding="{Binding supply}" Width="*" />
-                    <DataGridTextColumn Header="Red." Binding="{Binding value}" Width="*" />
-                    <DataGridTextColumn Header="Nad. RN" Binding="{Binding reserved}" Width="*" />
-                    <DataGridTextColumn Header="Proizvod" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Naziv" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="VD" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Prioriteta" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Datum" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Naručitelj" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Plan" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Nardužba" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="N. Poz." Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Poč. Termin" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Kra. Termin" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Plan. kol." Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Izr. kol" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="VID" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="KO" Binding="{Binding leftover}" Width="*" />
+                    <DataGridTextColumn Header="[%]" Binding="{Binding Percentage}" Width="auto" />
+                    <DataGridTextColumn Header="RN" Binding="{Binding RN}" Width="auto" />
+                    <DataGridTextColumn Header="Red." Binding="{Binding Red}" Width="auto" />
+                    <DataGridTextColumn Header="Nad. RN" Binding="{Binding NadRN}" Width="auto" />
+                    <DataGridTextColumn Header="Proizvod" Binding="{Binding Proizvod}" Width="auto" />
+                    <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv}" Width="auto" />
+                    <DataGridTextColumn Header="VD" Binding="{Binding VD}" Width="auto" />
+                    <DataGridTextColumn Header="Prioriteta" Binding="{Binding Prioriteta}" Width="auto" />
+                    <DataGridTextColumn Header="Datum" Binding="{Binding Datum}" Width="auto" />
+                    <DataGridTextColumn Header="Naručitelj" Binding="{Binding Narucitelj}" Width="auto" />
+                    <DataGridTextColumn Header="Plan" Binding="{Binding Plan}" Width="auto" />
+                    <DataGridTextColumn Header="Narudžba" Binding="{Binding Narudzba}" Width="auto" />
+                    <DataGridTextColumn Header="N. Poz." Binding="{Binding NPoz}" Width="auto" />
+                    <DataGridTextColumn Header="Poč. Termin" Binding="{Binding PocTermin}" Width="auto" />
+                    <DataGridTextColumn Header="Kra. Termin" Binding="{Binding KraTermin}" Width="auto" />
+                    <DataGridTextColumn Header="Plan. kol." Binding="{Binding PlanKol}" Width="auto" />
+                    <DataGridTextColumn Header="Izr. kol" Binding="{Binding IzrKol}" Width="auto" />
+                    <DataGridTextColumn Header="VID" Binding="{Binding VID}" Width="auto" />
+                    <DataGridTextColumn Header="KO" Binding="{Binding KO}" Width="auto" />
                 </DataGrid.Columns>
             </DataGrid>
         </DockPanel>
@@ -101,23 +101,23 @@ VerticalGridLinesBrush="LightGray" SelectionChanged="dgvRadniNalozi_SelectionCha
         <DockPanel DockPanel.Dock="Top" Margin="0,4,0,0" Background="LightGray" Height="220"  VerticalAlignment="Top" >
             <Label Content="Sastavnica" FontWeight="Bold" DockPanel.Dock="Top"></Label>
             <DataGrid x:Name="dgvSastavnica" AutoGenerateColumns="False" Margin="4" AlternatingRowBackground="{x:Null}" AlternationCount="2" HorizontalGridLinesBrush="LightGray"
-VerticalGridLinesBrush="LightGray" SelectionChanged="dgvSastavnica_SelectionChanged">
+VerticalGridLinesBrush="LightGray">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Alt." Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Poz." Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Ident" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Opis" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Količina" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="MJ" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Batch" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Normativna osnova" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Aktivno" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Završeno" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="VID" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Prim.klas." Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Sek. klas." Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Napomena" Binding="{Binding leftover}" Width="*" />
-                    <DataGridTextColumn Header="Izdano" Binding="{Binding leftover}" Width="*" />
+                    <DataGridTextColumn Header="Alt." Binding="{Binding Alt}" Width="auto" />
+                    <DataGridTextColumn Header="Poz." Binding="{Binding Poz}" Width="auto" />
+                    <DataGridTextColumn Header="Ident" Binding="{Binding Ident}" Width="auto" />
+                    <DataGridTextColumn Header="Opis" Binding="{Binding Opis}" Width="auto" />
+                    <DataGridTextColumn Header="Količina" Binding="{Binding Kolicina}" Width="auto" />
+                    <DataGridTextColumn Header="MJ" Binding="{Binding Mj}" Width="auto" />
+                    <DataGridTextColumn Header="Batch" Binding="{Binding Batch}" Width="auto" />
+                    <DataGridTextColumn Header="Normativna osnova" Binding="{Binding NormativnaOsnova}" Width="auto" />
+                    <DataGridTextColumn Header="Aktivno" Binding="{Binding Aktivno}" Width="auto" />
+                    <DataGridTextColumn Header="Završeno" Binding="{Binding Zavrseno}" Width="auto" />
+                    <DataGridTextColumn Header="VID" Binding="{Binding Vid}" Width="auto" />
+                    <DataGridTextColumn Header="Prim.klas." Binding="{Binding PrimKlas}" Width="auto" />
+                    <DataGridTextColumn Header="Sek. klas." Binding="{Binding SekKlas}" Width="auto" />
+                    <DataGridTextColumn Header="Napomena" Binding="{Binding Napomena}" Width="auto" />
+                    <DataGridTextColumn Header="Izdano" Binding="{Binding Izdano}" Width="auto" />
                 </DataGrid.Columns>
             </DataGrid>
         </DockPanel>
