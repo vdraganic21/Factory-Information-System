@@ -13,17 +13,17 @@ namespace Business_Layer.Entities
         public int Id { get; set; }
         public string Ime { get; set; }
         public int NosTr { get; set; } = 245; 
-        public float Količina { get; set; }
+        public float Kolicina { get; set; }
         public float Zaliha { get; set; }
         public string MJ { get; set; }
         public DateTime Dostavio { get; set; }
 
-        public Product(string dokument, int id, string ime, float količina, float zaliha, string mj, DateTime dostavio)
+        public Product(string dokument, int id, string ime, float kolicina, float zaliha, string mj, DateTime dostavio)
         {
             Dokument = dokument;
             Id = id;
             Ime = ime;
-            Količina = količina;
+            Kolicina = kolicina;
             Zaliha = zaliha;
             MJ = mj;
             Dostavio = dostavio;

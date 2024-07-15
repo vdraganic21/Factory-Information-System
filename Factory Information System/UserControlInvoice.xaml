@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Factory_Information_System"
              mc:Ignorable="d" 
              d:DesignHeight="600
-             " d:DesignWidth="1600">
+             " d:DesignWidth="1600" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <Style TargetType="DataGridRow">
             <Style.Triggers>
@@ -154,7 +154,7 @@
             <DockPanel DockPanel.Dock="Left">
                 <DockPanel DockPanel.Dock="Top">
                     <Label Height="24" Padding="4" Content="Stavke" HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Left"></Label>
-                    <Button Name="btnUkloni" Margin="32,0,0,0" Height="24" DockPanel.Dock="Left" Click="btnTraziZalihu_Click" Cursor="Hand" Content="Ukloni" Width="80" HorizontalAlignment="Left">
+                    <Button Name="btnUkloni" Margin="32,0,0,0" Height="24" DockPanel.Dock="Left" Click="btnUkloni_Click" Cursor="Hand" Content="Ukloni" Width="80" HorizontalAlignment="Left">
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
                                 <Setter Property="Background" Value="#36414A"/>
@@ -181,12 +181,24 @@
                         </Button.Style>
                     </Button>
                 </DockPanel>
-                <DataGrid x:Name="dgvStavke" AutoGenerateColumns="False" Width="300" Margin="4" AlternatingRowBackground="{x:Null}" AlternationCount="2" HorizontalGridLinesBrush="LightGray"></DataGrid>
+                <DataGrid x:Name="dgvStavke" AutoGenerateColumns="False" Width="300" Margin="4" AlternatingRowBackground="{x:Null}" AlternationCount="2" HorizontalGridLinesBrush="LightGray">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Dokument" Binding="{Binding Dokument}" Width="auto" />
+                        <DataGridTextColumn Header="Odjel" Binding="{Binding Odjel}" Width="auto" />
+                        <DataGridTextColumn Header="Ident" Binding="{Binding Id}" Width="auto" />
+                        <DataGridTextColumn Header="Ime" Binding="{Binding Ime}" Width="auto" />
+                        <DataGridTextColumn Header="Nos.tr." Binding="{Binding NosTr}" Width="auto" />
+                        <DataGridTextColumn Header="Količina" Binding="{Binding Kolicina}" Width="auto" />
+                        <DataGridTextColumn Header="Zaliha" Binding="{Binding Zaliha}" Width="auto" />
+                        <DataGridTextColumn Header="Mj" Binding="{Binding MJ}" Width="auto" />
+                        <DataGridTextColumn Header="Dostavio" Binding="{Binding Dostavio}" Width="auto" />
+                    </DataGrid.Columns>
+                </DataGrid>
             </DockPanel>
             <DockPanel>
                 <DockPanel DockPanel.Dock="Top">
                     <Label Height="24" Padding="4" Content="Proizvodi" HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Left"></Label>
-                    <Button Name="btnDodaj" Margin="32,0,0,0" Height="24" DockPanel.Dock="Left" Click="btnTraziZalihu_Click" Cursor="Hand" Content="Dodaj" Width="80" HorizontalAlignment="Left">
+                    <Button Name="btnDodaj" Margin="32,0,0,0" Height="24" DockPanel.Dock="Left" Click="btnDodaj_Click" Cursor="Hand" Content="Dodaj" Width="80" HorizontalAlignment="Left">
                         <Button.Style>
                             <Style TargetType="{x:Type Button}">
                                 <Setter Property="Background" Value="#36414A"/>
@@ -212,8 +224,22 @@
                             </Style>
                         </Button.Style>
                     </Button>
+                    <Label Height="24" Padding="4" Content="Ident" HorizontalContentAlignment="Right" Margin="32,2,0,0" DockPanel.Dock="Left"></Label>
+                    <TextBox x:Name="txtIdent" Height="24" Margin="0,2,0,0" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                 </DockPanel>
-                <DataGrid x:Name="dgvProizvodi" AutoGenerateColumns="False" Margin="4" AlternatingRowBackground="{x:Null}" AlternationCount="2" HorizontalGridLinesBrush="LightGray"></DataGrid>
+                <DataGrid x:Name="dgvProizvodi" AutoGenerateColumns="False" Margin="4" AlternatingRowBackground="{x:Null}" AlternationCount="2" HorizontalGridLinesBrush="LightGray">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Dokument" Binding="{Binding Dokument}" Width="auto" />
+                        <DataGridTextColumn Header="Odjel" Binding="{Binding Odjel}" Width="auto" />
+                        <DataGridTextColumn Header="Ident" Binding="{Binding Id}" Width="auto" />
+                        <DataGridTextColumn Header="Ime" Binding="{Binding Ime}" Width="auto" />
+                        <DataGridTextColumn Header="Nos.tr." Binding="{Binding NosTr}" Width="auto" />
+                        <DataGridTextColumn Header="Količina" Binding="{Binding Kolicina}" Width="auto" />
+                        <DataGridTextColumn Header="Zaliha" Binding="{Binding Zaliha}" Width="auto" />
+                        <DataGridTextColumn Header="Mj" Binding="{Binding MJ}" Width="auto" />
+                        <DataGridTextColumn Header="Dostavio" Binding="{Binding Dostavio}" Width="auto" />
+                    </DataGrid.Columns>
+                </DataGrid>
             </DockPanel>
         </DockPanel>
     </DockPanel>
