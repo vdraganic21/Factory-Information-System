@@ -42,5 +42,14 @@ namespace Factory_Information_System
             MainTabControl.Items.Add(newTab);
             MainTabControl.SelectedItem = newTab;
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            TabItem newTab = new TabItem();
+            newTab.Header = "Pregled radnih naloga";
+            newTab.Content = new UserControlWorkOrder();
+            MainTabControl.Items.Add(newTab);
+            MainTabControl.SelectedItem = newTab;
+        }
     }
 }

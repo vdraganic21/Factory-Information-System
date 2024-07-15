@@ -11,7 +11,6 @@ namespace Factory_Information_System
 {
     public partial class UserControlWarehouse : UserControl
     {
-        List<StorageItemStatus> storageItemStatuses;
         StorageItemStatusService service;
 
         public UserControlWarehouse()
@@ -19,8 +18,6 @@ namespace Factory_Information_System
             InitializeComponent();
 
             this.service = new StorageItemStatusService();
-
-            storageItemStatuses = service.GetAll();
 
             cbSifra.ItemsSource = service.GetAllIds();
             cbNaziv.ItemsSource = service.GetAllNames();

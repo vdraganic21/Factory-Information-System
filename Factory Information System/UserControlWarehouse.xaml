@@ -92,26 +92,26 @@
         <DockPanel DockPanel.Dock="Top" Margin="0,4,0,0" Background="LightGray" Height="112">
             <Label Content="Zaliha" FontWeight="Bold" DockPanel.Dock="Top"></Label>
             <DockPanel DockPanel.Dock="Top" Height="24">
-                <Label Content="Slobodna zaliha" Margin="80,0,0,0" Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
-                <TextBox x:Name="txtSlobodnaZaliha" Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
+                <Label Content="Slobodna zaliha"  Padding="4" Margin="80,0,0,0" Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
+                <TextBox x:Name="txtSlobodnaZaliha"  Padding="4" Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
 
-                <Label Content="Izabrano skladište" Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
+                <Label Content="Izabrano skladište"  Padding="4" Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
                 <TextBox x:Name="txtIzabranoSkladiste" Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
                 <DockPanel></DockPanel>
             </DockPanel>
             <DockPanel DockPanel.Dock="Top" Height="24" Margin="0,2,0,0">
-                <Label Content="Minimalna zaliha" Margin="80,0,0,0" Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
+                <Label Content="Minimalna zaliha"  Padding="4" Margin="80,0,0,0" Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
                 <TextBox x:Name="txtMinimalnaZaliha" Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
 
-                <Label Content="Ostala skl." Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
+                <Label Content="Ostala skl." Width="120"  Padding="4" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
                 <TextBox x:Name="txtOstalaSkladista" Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
                 <DockPanel></DockPanel>
             </DockPanel>
             <DockPanel DockPanel.Dock="Top" Height="24" Margin="0,2,0,0">
-                <Label Content="Slobodna zaliha" Margin="80,0,0,0" Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
+                <Label Content="Slobodna zaliha"  Padding="4" Margin="80,0,0,0" Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
                 <TextBox x:Name="txtSlobodnaZalihaIzabranogSkladista" Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
 
-                <Label Content="Ukupno zaliha"  Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
+                <Label Content="Ukupno zaliha"  Padding="4" Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
                 <TextBox x:Name="txtUkupnaZaliha" Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
                 <DockPanel></DockPanel>
             </DockPanel>
@@ -124,13 +124,13 @@
             <DockPanel DockPanel.Dock="Left" Margin="0,4,0,0" Background="LightGray" Height="220" HorizontalAlignment="Left" VerticalAlignment="Top" Width="330">
                 <Label Content="Narudžbe" FontWeight="Bold" DockPanel.Dock="Top"></Label>
                 <DockPanel DockPanel.Dock="Left">
-                    <Label Height="24" Content="" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
-                    <Label Height="24" Content="Dobavljač" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
-                    <Label Height="24" Content="Kupci" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
-                    <Label Height="24" Content="Sast." HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
-                    <Label Height="24" Content="RN-Obrada" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
-                    <Label Height="24" Content="RN-Upotreba" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
-                    <Label Height="24" Content="Ukupno" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                    <Label Height="24" Padding="4" Content="" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                    <Label Height="24" Padding="4" Content="Dobavljač" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                    <Label Height="24" Padding="4" Content="Kupci" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                    <Label Height="24" Padding="4" Content="Sast." HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                    <Label Height="24" Padding="4" Content="RN-Obrada" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                    <Label Height="24" Padding="4" Content="RN-Upotreba" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                    <Label Height="24" Padding="4" Content="Ukupno" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
                     <DockPanel></DockPanel>
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Left">

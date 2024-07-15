@@ -47,8 +47,8 @@
             </MenuItem>
 
             <MenuItem Header="Proizvodnja" Foreground="White">
-                <MenuItem Header="Production Group 1">
-                    <MenuItem Header="Production Doc 1" Click="DocumentMenuItem_Click"/>
+                <MenuItem Header="Planiranje rada">
+                    <MenuItem Header="Pregled radnih naloga" Click="MenuItem_Click"/>
                     <MenuItem Header="Production Doc 2" Click="DocumentMenuItem_Click"/>
                 </MenuItem>
                 <MenuItem Header="Production Group 2">
