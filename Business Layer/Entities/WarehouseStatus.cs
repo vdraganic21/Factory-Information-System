@@ -8,13 +8,13 @@ namespace Business_Layer.Entities
 {
     public class WarehouseStatus
     {
-        public string warehouseName;
-        public float supply;
-        public float value;
-        public float reserved;
-        public float leftover;
+        public string warehouseName { get; set; }
+        public float supply { get; set; }
+        public float value { get; set; }
+        public float reserved { get; set; }
+        public float leftover { get; set; }
 
-        public WarehouseStatus(string warehouseName, float supply, float value, float reserved) 
+        public WarehouseStatus(string warehouseName, float supply, float value, float reserved)
         {
             this.warehouseName = warehouseName;
             this.supply = supply;

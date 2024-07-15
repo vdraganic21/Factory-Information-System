@@ -50,6 +50,11 @@ namespace Business_Layer.Entities
             };
         }
 
+        public List<StorageItemStatus> GetAll()
+        {
+            return storageItemStatuses;
+        }
+
         public List<string> GetAllNames()
         {
             return storageItemStatuses.Select(item => item.name).ToList();

@@ -6,6 +6,18 @@
              xmlns:local="clr-namespace:Factory_Information_System"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1200" Background="LightGray">
+    <UserControl.Resources>
+        <Style TargetType="DataGridRow">
+            <Style.Triggers>
+                <Trigger Property="AlternationIndex" Value="0">
+                    <Setter Property="Background" Value="#eee"/>
+                </Trigger>
+                <Trigger Property="AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="#ddd"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
     <DockPanel Background="White">
         <DockPanel DockPanel.Dock="Top" Background="LightGray">
             <Label Content="Pregled zaliha" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -65,37 +77,46 @@
                 </Button.Style>
             </Button>
             <Label Content="Traži" Margin="50,0,0,0"></Label>
-            <TextBox x:Name="txtTrazeniProizvodSifra" Height="24" Width="100" HorizontalAlignment="Left"></TextBox>
-            <TextBox x:Name="txtTrazeniProizvodNaziv" Height="24" Margin="4,0,0,0" Width="150" HorizontalAlignment="Left"></TextBox>
+            <ComboBox x:Name="cbSifra" Height="24" Width="100" HorizontalAlignment="Left" MaxDropDownHeight="0"
+                IsEditable="True"
+                IsTextSearchEnabled="True"
+                KeyDown="cbSifra_KeyDown"
+                />
+
+            <ComboBox x:Name="cbNaziv" Height="24" Margin="4,0,0,0" Width="150" HorizontalAlignment="Left" MaxDropDownHeight="0"
+                IsEditable="True"
+                IsTextSearchEnabled="True"
+                KeyDown="cbNaziv_KeyDown"
+                />
         </DockPanel>
         <DockPanel DockPanel.Dock="Top" Margin="0,4,0,0" Background="LightGray" Height="112">
             <Label Content="Zaliha" FontWeight="Bold" DockPanel.Dock="Top"></Label>
             <DockPanel DockPanel.Dock="Top" Height="24">
                 <Label Content="Slobodna zaliha" Margin="80,0,0,0" Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
-                <TextBox Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top"></TextBox>
+                <TextBox x:Name="txtSlobodnaZaliha" Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
 
                 <Label Content="Izabrano skladište" Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
-                <TextBox Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top"></TextBox>
+                <TextBox x:Name="txtIzabranoSkladiste" Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
                 <DockPanel></DockPanel>
             </DockPanel>
             <DockPanel DockPanel.Dock="Top" Height="24" Margin="0,2,0,0">
                 <Label Content="Minimalna zaliha" Margin="80,0,0,0" Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
-                <TextBox Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top"></TextBox>
+                <TextBox x:Name="txtMinimalnaZaliha" Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
 
                 <Label Content="Ostala skl." Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
-                <TextBox Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top"></TextBox>
+                <TextBox x:Name="txtOstalaSkladista" Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
                 <DockPanel></DockPanel>
             </DockPanel>
             <DockPanel DockPanel.Dock="Top" Height="24" Margin="0,2,0,0">
                 <Label Content="Slobodna zaliha" Margin="80,0,0,0" Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
-                <TextBox Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top"></TextBox>
+                <TextBox x:Name="txtSlobodnaZalihaIzabranogSkladista" Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
 
                 <Label Content="Ukupno zaliha"  Width="120" HorizontalContentAlignment="Right" DockPanel.Dock="Left"></Label>
-                <TextBox Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top"></TextBox>
+                <TextBox x:Name="txtUkupnaZaliha" Height="24" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
                 <DockPanel></DockPanel>
             </DockPanel>
             <DockPanel>
-                
+
             </DockPanel>
 
         </DockPanel>
@@ -114,28 +135,22 @@
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Left">
                     <Label Height="24" Content="Primarno skl." HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
-                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
-                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
-                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
-                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
-                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
-
-                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
-
-
+                    <TextBox x:Name="txt1" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt2" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt3" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt4" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt5" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt6" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
                     <DockPanel></DockPanel>
                 </DockPanel>
                 <DockPanel DockPanel.Dock="Left" Margin="40,0,0,0">
                     <Label Height="24" Content="Ostala skl." HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
-                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
-                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
-                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
-                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
-                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
-
-                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top"></TextBox>
-
-
+                    <TextBox x:Name="txt7" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt8" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt9" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt10" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt11" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
+                    <TextBox x:Name="txt12" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="80" VerticalAlignment="Top" IsReadOnly="True"></TextBox>
                     <DockPanel></DockPanel>
                 </DockPanel>
                 <DockPanel></DockPanel>
@@ -143,9 +158,18 @@
             </DockPanel>
             <DockPanel DockPanel.Dock="Left" Margin="4,4,0,0" Background="LightGray" Height="220"  VerticalAlignment="Top" >
                 <Label Content="Zaliha po skladištima" FontWeight="Bold" DockPanel.Dock="Top"></Label>
-                <DataGrid DockPanel.Dock="Top" Margin="4"></DataGrid>
+                <DataGrid x:Name="dgvZalihaPoSkladistima" AutoGenerateColumns="False" Margin="4" AlternatingRowBackground="{x:Null}" AlternationCount="2" HorizontalGridLinesBrush="LightGray"
+          VerticalGridLinesBrush="LightGray" SelectionChanged="dgvZalihaPoSkladistima_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Skladište" Binding="{Binding warehouseName}" Width="*" />
+                        <DataGridTextColumn Header="Zaliha" Binding="{Binding supply}" Width="*" />
+                        <DataGridTextColumn Header="Vrijednost" Binding="{Binding value}" Width="*" />
+                        <DataGridTextColumn Header="Rezervirano" Binding="{Binding reserved}" Width="*" />
+                        <DataGridTextColumn Header="Preostalo" Binding="{Binding leftover}" Width="*" />
+                    </DataGrid.Columns>
+                </DataGrid>
             </DockPanel>
         </DockPanel>
-        <DockPanel Margin="4" Background="LightGray"></DockPanel>
+        <DockPanel Margin="0,4,0,0" Background="LightGray"></DockPanel>
     </DockPanel>
 </UserControl>
