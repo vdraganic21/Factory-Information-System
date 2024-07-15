@@ -51,5 +51,14 @@ namespace Factory_Information_System
             MainTabControl.Items.Add(newTab);
             MainTabControl.SelectedItem = newTab;
         }
+
+        private void Dostavnica_Click(object sender, RoutedEventArgs e)
+        {
+            TabItem newTab = new TabItem();
+            newTab.Header = "A57 - Dostavnica";
+            newTab.Content = new UserControlInvoice();
+            MainTabControl.Items.Add(newTab);
+            MainTabControl.SelectedItem = newTab;
+        }
     }
 }

@@ -1,0 +1,220 @@
+﻿<UserControl x:Class="Factory_Information_System.UserControlInvoice"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Factory_Information_System"
+             mc:Ignorable="d" 
+             d:DesignHeight="600
+             " d:DesignWidth="1600">
+    <UserControl.Resources>
+        <Style TargetType="DataGridRow">
+            <Style.Triggers>
+                <Trigger Property="AlternationIndex" Value="0">
+                    <Setter Property="Background" Value="#eee"/>
+                </Trigger>
+                <Trigger Property="AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="#ddd"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <DockPanel Background="White">
+        <DockPanel DockPanel.Dock="Top" Background="LightGray">
+            <Label Content="A57 - Dostavnica" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Label Content="x" Foreground="Red" HorizontalAlignment="Right" Cursor="Hand" VerticalAlignment="Top" Margin="0" MouseLeftButtonUp="CloseButton_Click"/>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Top" Margin="0,4,0,0" Background="LightGray">
+            <DockPanel DockPanel.Dock="Left" Margin="8,0,0,0">
+                <Label Content="Pošiljatelj" FontSize="16" FontWeight="Bold" VerticalAlignment="Top" DockPanel.Dock="Top"/>
+                <TextBox x:Name="cbPosiljateljNaziv" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                <TextBox x:Name="cbPosiljateljSifra" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" IsEnabled="False" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                <DockPanel DockPanel.Dock="Top">
+                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Left" Width="80" IsEnabled="False" HorizontalAlignment="Left" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    <TextBox Height="24" Margin="2,2,0,0" DockPanel.Dock="Left" IsEnabled="False" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <Label Height="24" Padding="4" Content="t." HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Left"></Label>
+                    <TextBox Height="24" Margin="0,2,0,0" Width="100" DockPanel.Dock="Left" IsEnabled="False" HorizontalAlignment="Left" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    <Label Height="24" Padding="4" Content="f." HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Left"></Label>
+                    <TextBox Height="24" Margin="2,2,0,0" DockPanel.Dock="Left" IsEnabled="False" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <TextBox Height="24" Margin="2,2,0,0" Width="150" DockPanel.Dock="Right" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    <Label Height="24" Padding="4" Content="OIB" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Right"></Label>
+                </DockPanel>
+                <DockPanel Margin="10"></DockPanel>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Left" Margin="8,0,0,0">
+                <Label Content="Primatelj" FontSize="16" FontWeight="Bold" VerticalAlignment="Top" DockPanel.Dock="Top"/>
+                <TextBox x:Name="cbPrimateljNaziv" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                <TextBox x:Name="cbPrimateljSifra" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" IsEnabled="False" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                <DockPanel DockPanel.Dock="Top">
+                    <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Left" Width="80" IsEnabled="False" HorizontalAlignment="Left" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    <TextBox Height="24" Margin="2,2,0,0" DockPanel.Dock="Left" IsEnabled="False" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <Label Height="24" Padding="4" Content="t." HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Left"></Label>
+                    <TextBox Height="24" Margin="0,2,0,0" Width="100" DockPanel.Dock="Left" IsEnabled="False" HorizontalAlignment="Left" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    <Label Height="24" Padding="4" Content="f." HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Left"></Label>
+                    <TextBox Height="24" Margin="2,2,0,0" DockPanel.Dock="Left" IsEnabled="False" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                </DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <TextBox Height="24" Margin="2,2,0,0" Width="150" DockPanel.Dock="Right" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    <Label Height="24" Padding="4" Content="OIB" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Right"></Label>
+                </DockPanel>
+                <DockPanel Margin="10"></DockPanel>
+            </DockPanel>
+            <DockPanel DockPanel.Dock="Left" Margin="8,0,0,0">
+                <DockPanel DockPanel.Dock="Top">
+                    <DockPanel>
+                        <Label Height="24" Padding="4" Content="Broj" HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                        <TextBox x:Name="txtDostavnicaSifra" Text="42-390-000132" IsEnabled="False" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="120" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    </DockPanel>
+                    <DockPanel Margin="24,0,0,0">
+                        <Label Height="24" Padding="4" Content="Datum" HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                        <TextBox x:Name="txtDatumKreiranja" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="100" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    </DockPanel>
+                    <DockPanel Margin="85,0,0,0">
+                        <Label Height="24" Padding="4" Content="Valjanost nar." HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                        <TextBox x:Name="txtDatumValjanosti" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="100" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    </DockPanel>
+                    <DockPanel Margin="8,0,0,0">
+                        <Label Height="24" Padding="4" Content="Status" HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                        <TextBox x:Name="cbStatus" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="170" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    </DockPanel>
+                </DockPanel>
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Left" HorizontalAlignment="Left" Margin="8,0,0,0">
+                        <Label Height="24" Padding="4" Content="Odjel" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                        <Label Height="24" Padding="4" Content="Nabava" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                        <Label Height="24" Padding="4" Content="Valuta" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                        <Label Height="24" Padding="4" Content="Zahtjevnica" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                        <Label Height="24" Padding="4" Content="Rok isporuke" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                        <DockPanel Margin="0,8,0,0"></DockPanel>
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Left" HorizontalAlignment="Left" Margin="4,0,0,0">
+                        <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                        <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                        <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="60" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown" HorizontalAlignment="Left"></TextBox>
+                        <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                        <TextBox x:Name="txtRokIsporuke" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="100" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown" HorizontalAlignment="Left"/>
+                        <DockPanel Margin="0,8,0,0"></DockPanel>
+                    </DockPanel>
+                </DockPanel>
+                <DockPanel>
+                    <DockPanel DockPanel.Dock="Top">
+                        <DockPanel DockPanel.Dock="Left" Margin="22,0,0,0">
+                            <DockPanel DockPanel.Dock="Left">
+                                <Label Height="24" Padding="4" Content="Tekst" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                                <Label Height="24" Padding="4" Content="Dostava" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Left" Margin="4,0,0,0">
+                                <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="50" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                                <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="50" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Left" Margin="32,0,0,0">
+                                <Label Height="24" Padding="4" Content="Paritet" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                                <Label Height="24" Padding="4" Content="Mjesto" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Left">
+                                <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                                <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                            </DockPanel>
+                        </DockPanel>
+                    </DockPanel>
+                    <DockPanel DockPanel.Dock="Bottom">
+                        <DockPanel DockPanel.Dock="Left" HorizontalAlignment="Left" Margin="8,0,0,0">
+                            <Label Height="24" Padding="4" Content="Način pl." HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                            <Label Height="24" Padding="4" Content="Odgovorni" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                            <Label Height="24" Padding="4" Content="Referent" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                            <Label Height="24" Padding="4" Content="Poziv" HorizontalContentAlignment="Right" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                            <DockPanel Margin="0,8,0,0"></DockPanel>
+                        </DockPanel>
+                        <DockPanel DockPanel.Dock="Left" HorizontalAlignment="Left" Margin="4,0,0,0">
+                            <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                            <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                            <TextBox Height="24" Margin="0,2,0,0" IsEnabled="False" Text="Ivan Horvat" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                            <TextBox Height="24" Margin="0,2,0,0" IsEnabled="False" Text="5200432400" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                            <DockPanel Margin="0,8,0,0"></DockPanel>
+                        </DockPanel>
+
+                    </DockPanel>
+                </DockPanel>
+                
+                <DockPanel></DockPanel>
+            </DockPanel>
+
+            <DockPanel></DockPanel>
+        </DockPanel>
+
+        <DockPanel Margin="0,4,0,0" Background="LightGray" DockPanel.Dock="Top">
+            <DockPanel DockPanel.Dock="Left">
+                <DockPanel DockPanel.Dock="Top">
+                    <Label Height="24" Padding="4" Content="Stavke" HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Left"></Label>
+                    <Button Name="btnUkloni" Margin="32,0,0,0" Height="24" DockPanel.Dock="Left" Click="btnTraziZalihu_Click" Cursor="Hand" Content="Ukloni" Width="80" HorizontalAlignment="Left">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#36414A"/>
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#4F5B64"/>
+                                    </Trigger>
+                                    <Trigger Property="IsFocused" Value="True">
+                                        <Setter Property="Background" Value="#4F5B64"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </DockPanel>
+                <DataGrid x:Name="dgvStavke" AutoGenerateColumns="False" Width="300" Margin="4" AlternatingRowBackground="{x:Null}" AlternationCount="2" HorizontalGridLinesBrush="LightGray"></DataGrid>
+            </DockPanel>
+            <DockPanel>
+                <DockPanel DockPanel.Dock="Top">
+                    <Label Height="24" Padding="4" Content="Proizvodi" HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Left"></Label>
+                    <Button Name="btnDodaj" Margin="32,0,0,0" Height="24" DockPanel.Dock="Left" Click="btnTraziZalihu_Click" Cursor="Hand" Content="Dodaj" Width="80" HorizontalAlignment="Left">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#36414A"/>
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#4F5B64"/>
+                                    </Trigger>
+                                    <Trigger Property="IsFocused" Value="True">
+                                        <Setter Property="Background" Value="#4F5B64"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </DockPanel>
+                <DataGrid x:Name="dgvProizvodi" AutoGenerateColumns="False" Margin="4" AlternatingRowBackground="{x:Null}" AlternationCount="2" HorizontalGridLinesBrush="LightGray"></DataGrid>
+            </DockPanel>
+        </DockPanel>
+    </DockPanel>
+</UserControl>

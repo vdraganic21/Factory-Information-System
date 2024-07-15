@@ -25,8 +25,8 @@
             </MenuItem>
 
             <MenuItem Header="Narudžbe" Foreground="White">
-                <MenuItem Header="Orders Group 1">
-                    <MenuItem Header="Order Doc 1" Click="DocumentMenuItem_Click"/>
+                <MenuItem Header="Forme">
+                    <MenuItem Header="Dostavnica" Click="Dostavnica_Click"/>
                     <MenuItem Header="Order Doc 2" Click="DocumentMenuItem_Click"/>
                 </MenuItem>
                 <MenuItem Header="Orders Group 2">
