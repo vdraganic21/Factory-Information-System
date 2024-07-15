@@ -1,4 +1,5 @@
-﻿using Business_Layer.Entities;
+﻿using Business_Layer;
+using Business_Layer.Entities;
 using Business_Layer.Services;
 using System;
 using System.Collections.Generic;
@@ -99,12 +100,12 @@ namespace Factory_Information_System
                 if (txtRadniNalogId.Text.Length > 0)
                     filteredWorkOrders = filteredWorkOrders.Where(wo => wo.RN.Contains(txtRadniNalogId.Text, StringComparison.OrdinalIgnoreCase)).ToList();
 
-                DateTime? radniNalogDatumOd = ParseDate(txtRadniNalogDatumOd.Text);
-                DateTime? radniNalogDatumDo = ParseDate(txtRadniNalogDatumDo.Text);
-                DateTime? pocetniTerminOd = ParseDate(txtPocetniTerminOd.Text);
-                DateTime? pocetniTerminDo = ParseDate(txtPcoetniTerminDo.Text);
-                DateTime? krajnjiTerminOd = ParseDate(txtKrajnjiTerminOd.Text);
-                DateTime? krajnjiTerminDo = ParseDate(txtKrajnjiTerminDo.Text);
+                DateTime? radniNalogDatumOd = DateParser.ParseDate(txtRadniNalogDatumOd.Text);
+                DateTime? radniNalogDatumDo = DateParser.ParseDate(txtRadniNalogDatumDo.Text);
+                DateTime? pocetniTerminOd = DateParser.ParseDate(txtPocetniTerminOd.Text);
+                DateTime? pocetniTerminDo = DateParser.ParseDate(txtPcoetniTerminDo.Text);
+                DateTime? krajnjiTerminOd = DateParser.ParseDate(txtKrajnjiTerminOd.Text);
+                DateTime? krajnjiTerminDo = DateParser.ParseDate(txtKrajnjiTerminDo.Text);
 
                 if (radniNalogDatumOd != null && radniNalogDatumDo != null) 
                 {
@@ -148,17 +149,6 @@ namespace Factory_Information_System
             }
 
             
-        }
-
-        private DateTime? ParseDate(string dateString)
-        {
-            DateTime parsedDate;
-            if (dateString == "") return null;
-            if (DateTime.TryParseExact(dateString, "dd.MM.yyyy.", null, System.Globalization.DateTimeStyles.None, out parsedDate))
-            {
-                return parsedDate;
-            }
-            throw new Exception();
         }
 
     }

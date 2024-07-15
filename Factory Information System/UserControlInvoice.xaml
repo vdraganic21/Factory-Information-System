@@ -27,8 +27,8 @@
         <DockPanel DockPanel.Dock="Top" Margin="0,4,0,0" Background="LightGray">
             <DockPanel DockPanel.Dock="Left" Margin="8,0,0,0">
                 <Label Content="Pošiljatelj" FontSize="16" FontWeight="Bold" VerticalAlignment="Top" DockPanel.Dock="Top"/>
-                <TextBox x:Name="cbPosiljateljNaziv" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
-                <TextBox x:Name="cbPosiljateljSifra" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                <TextBox x:Name="txtPosiljateljSifra" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                <TextBox x:Name="txtPosiljateljNaziv" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                 <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" IsEnabled="False" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                 <DockPanel DockPanel.Dock="Top">
                     <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Left" Width="80" IsEnabled="False" HorizontalAlignment="Left" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
@@ -48,8 +48,8 @@
             </DockPanel>
             <DockPanel DockPanel.Dock="Left" Margin="8,0,0,0">
                 <Label Content="Primatelj" FontSize="16" FontWeight="Bold" VerticalAlignment="Top" DockPanel.Dock="Top"/>
-                <TextBox x:Name="cbPrimateljNaziv" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
-                <TextBox x:Name="cbPrimateljSifra" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                <TextBox x:Name="txtPrimateljSifra" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                <TextBox x:Name="txtPrimateljNaziv" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                 <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" IsEnabled="False" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                 <DockPanel DockPanel.Dock="Top">
                     <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Left" Width="80" IsEnabled="False" HorizontalAlignment="Left" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
@@ -77,13 +77,15 @@
                         <Label Height="24" Padding="4" Content="Datum" HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
                         <TextBox x:Name="txtDatumKreiranja" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="100" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                     </DockPanel>
-                    <DockPanel Margin="85,0,0,0">
+                    <DockPanel Margin="8,0,0,0" DockPanel.Dock="Left" HorizontalAlignment="Right">
                         <Label Height="24" Padding="4" Content="Valjanost nar." HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
                         <TextBox x:Name="txtDatumValjanosti" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="100" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                     </DockPanel>
-                    <DockPanel Margin="8,0,0,0">
-                        <Label Height="24" Padding="4" Content="Status" HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
-                        <TextBox x:Name="cbStatus" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="170" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    <DockPanel Margin="8,0,0,0" DockPanel.Dock="Left" HorizontalAlignment="Right">
+                        <Label Height="24" Padding="4" HorizontalAlignment="Left" Content="Status" HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                        <ComboBox x:Name="cbStatus" Height="24" SelectedIndex="0" Margin="0,2,0,0" DockPanel.Dock="Top" Width="170" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown">
+                            <ComboBoxItem Content="T-Trebovano"></ComboBoxItem>
+                        </ComboBox>
                     </DockPanel>
                 </DockPanel>
                 <DockPanel>
@@ -97,8 +99,10 @@
                     </DockPanel>
                     <DockPanel DockPanel.Dock="Left" HorizontalAlignment="Left" Margin="4,0,0,0">
                         <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
-                        <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
-                        <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="60" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown" HorizontalAlignment="Left"></TextBox>
+                        <TextBox Height="24" Text="R1" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                        <ComboBox x:Name="cbValuta" Height="24" SelectedIndex="0" Margin="0,2,0,0" DockPanel.Dock="Top" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown">
+                            <ComboBoxItem Content="EUR"></ComboBoxItem>
+                        </ComboBox>
                         <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                         <TextBox x:Name="txtRokIsporuke" Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="100" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown" HorizontalAlignment="Left"/>
                         <DockPanel Margin="0,8,0,0"></DockPanel>
@@ -134,7 +138,7 @@
                             <DockPanel Margin="0,8,0,0"></DockPanel>
                         </DockPanel>
                         <DockPanel DockPanel.Dock="Left" HorizontalAlignment="Left" Margin="4,0,0,0">
-                            <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                            <ComboBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="50" HorizontalAlignment="Left" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></ComboBox>
                             <TextBox Height="24" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                             <TextBox Height="24" Margin="0,2,0,0" IsEnabled="False" Text="Ivan Horvat" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>
                             <TextBox Height="24" Margin="0,2,0,0" IsEnabled="False" Text="5200432400" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></TextBox>

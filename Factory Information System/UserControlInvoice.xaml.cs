@@ -3,6 +3,7 @@ using Business_Layer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO.Packaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,6 +33,12 @@ namespace Factory_Information_System
             this.service = new ProductService();
         }
 
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            dgvProizvodi.ItemsSource = service.GetAll();
+            txtDatumKreiranja.Text = DateTime.Now.ToString("dd.MM.yyyy.");
+        }
+
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
             TabItem parentTabItem = this.Parent as TabItem;
@@ -49,9 +56,38 @@ namespace Factory_Information_System
 
         private void TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Enter)
+            if (e.Key == Key.Enter || e.Key == Key.Tab)
             {
+                Verify();
             }
+        }
+
+        private void Verify()
+        {
+            try 
+            {
+                if (txtPosiljateljSifra.Text == "255") txtPosiljateljNaziv.Text = "Odjel Zavarene konstrukcije";
+                if (txtPosiljateljNaziv.Text == "Odjel Zavarene konstrukcije") txtPosiljateljSifra.Text = "255";
+
+                if (txtPrimateljSifra.Text == "4201-52") txtPrimateljNaziv.Text = "Metal Transport d.o.o.";
+                if (txtPrimateljNaziv.Text == "Metal Transport d.o.o.") txtPrimateljSifra.Text = "4201-52";
+
+                if (txtPosiljateljSifra.Text != "" && txtPosiljateljSifra.Text != "255") throw new Exception();
+                if (txtPosiljateljNaziv.Text != "" && txtPosiljateljNaziv.Text != "Odjel Zavarene konstrukcije") throw new Exception();
+
+                if (txtPrimateljSifra.Text != "" && txtPrimateljSifra.Text != "4201-52") throw new Exception();
+                if (txtPrimateljNaziv.Text != "" && txtPrimateljNaziv.Text != "Metal Transport d.o.o.") throw new Exception();
+
+                DateTime parsedDate;
+
+                DateParser.ParseDate(txtDatumKreiranja.Text);
+                DateParser.ParseDate(txtDatumValjanosti.Text);
+            }
+            catch 
+            {
+                MessageBox.Show("Pogrešan unos!", "Greška", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            
         }
 
         private void btnUkloni_Click(object sender, RoutedEventArgs e)
@@ -76,15 +112,11 @@ namespace Factory_Information_System
             ReloadStavke();
         }
 
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            dgvProizvodi.ItemsSource = service.GetAll();
-        }
+        
 
         private void ReloadStavke()
         {
             dgvStavke.ItemsSource = stavke;
-            
         }
     }
 }
