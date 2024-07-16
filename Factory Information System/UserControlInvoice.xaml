@@ -229,7 +229,7 @@
                         </Button.Style>
                     </Button>
                     <Label Height="24" Padding="4" Content="Ident" HorizontalContentAlignment="Right" Margin="32,2,0,0" DockPanel.Dock="Left"></Label>
-                    <TextBox x:Name="txtIdent" Height="24" Margin="0,2,0,0" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left" KeyDown="TextBox_PreviewKeyDown"></TextBox>
+                    <TextBox x:Name="txtIdent" Height="24" Margin="0,2,0,0" DockPanel.Dock="Left" Width="100" VerticalAlignment="Top" VerticalContentAlignment="Center" HorizontalAlignment="Left" KeyDown="txtIdent_KeyDown"></TextBox>
                 </DockPanel>
                 <DataGrid x:Name="dgvProizvodi" AutoGenerateColumns="False" Margin="4" AlternatingRowBackground="{x:Null}" AlternationCount="2" HorizontalGridLinesBrush="LightGray">
                     <DataGrid.Columns>

@@ -118,5 +118,14 @@ namespace Factory_Information_System
         {
             dgvStavke.ItemsSource = stavke;
         }
+
+        private void txtIdent_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter || e.Key == Key.Tab)
+            {
+                string ident = txtIdent.Text;
+                dgvProizvodi.ItemsSource = service.GetAll().Where(p => p.Id.Contains(ident));
+            }
+        }
     }
 }

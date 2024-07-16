@@ -10,7 +10,7 @@ namespace Business_Layer.Entities
     {
         public string Dokument { get; set; }
         public string Odjel { get; set; } = "255";
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Ime { get; set; }
         public int NosTr { get; set; } = 245; 
         public float Kolicina { get; set; }
@@ -18,7 +18,7 @@ namespace Business_Layer.Entities
         public string MJ { get; set; }
         public DateTime Dostavio { get; set; }
 
-        public Product(string dokument, int id, string ime, float kolicina, float zaliha, string mj, DateTime dostavio)
+        public Product(string dokument, string id, string ime, float kolicina, float zaliha, string mj, DateTime dostavio)
         {
             Dokument = dokument;
             Id = id;

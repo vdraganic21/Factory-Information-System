@@ -15,9 +15,9 @@ namespace Business_Layer
         {
             products = new List<Product>
             {
-            new Product("58-044-000256", 1, "Product A", 10.5f, 5.0f, "kg", DateTime.Now),
-            new Product("58-044-000257", 2, "Product B", 20.0f, 15.0f, "kg", DateTime.Now),
-            new Product("58-044-000258", 3, "Product C", 5.5f, 3.0f, "kom", DateTime.Now)
+            new Product("58-044-000256", "1", "Product A", 10.5f, 5.0f, "kg", DateTime.Now),
+            new Product("58-044-000257", "2", "Product B", 20.0f, 15.0f, "kg", DateTime.Now),
+            new Product("58-044-000258", "3", "Product C", 5.5f, 3.0f, "kom", DateTime.Now)
             };
         }
 
