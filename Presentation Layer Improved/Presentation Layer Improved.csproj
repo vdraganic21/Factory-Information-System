@@ -19,6 +19,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Business Layer\Business Layer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Resources\logo.png" />
   </ItemGroup>
 
