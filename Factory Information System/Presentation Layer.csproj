@@ -11,11 +11,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="printer.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="app_icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Business Layer\Business Layer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="printer.png" />
   </ItemGroup>
 
 </Project>

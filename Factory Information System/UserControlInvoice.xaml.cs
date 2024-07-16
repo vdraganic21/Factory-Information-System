@@ -127,5 +127,19 @@ namespace Factory_Information_System
                 dgvProizvodi.ItemsSource = service.GetAll().Where(p => p.Id.Contains(ident));
             }
         }
+
+        private void btnDropdown_Click(object sender, RoutedEventArgs e)
+        {
+            btnPrint.ContextMenu.IsOpen = true;
+        }
+
+        private void PrintOption_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Greška");
+        }
+        private void PrintOptionCorrect_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Printam");
+        }
     }
 }

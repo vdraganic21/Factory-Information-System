@@ -147,11 +147,27 @@
 
                     </DockPanel>
                 </DockPanel>
-                
-                <DockPanel></DockPanel>
+
+                <DockPanel>
+                </DockPanel>
             </DockPanel>
 
-            <DockPanel></DockPanel>
+            <DockPanel>
+                <Button x:Name="btnPrint" Click="btnDropdown_Click" Width="30" Height="30" Background="#00D3D3D3" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="8,32,8,8" BorderBrush="#00707070">
+                    <StackPanel>
+                        <Image Stretch="Fill" Height="24" Width="24" HorizontalAlignment="Center" VerticalAlignment="Center" Source="/printer.png"/>
+                    </StackPanel>
+                    <Button.ContextMenu>
+                        <ContextMenu x:Name="contextMenu">
+                            <MenuItem Header="Option 1" Click="PrintOption_Click"/>
+                            <MenuItem Header="Option 2" Click="PrintOption_Click"/>
+                            <MenuItem Header="Option 3" Click="PrintOption_Click"/>
+                            <MenuItem Header="Correct" Click="PrintOptionCorrect_Click"/>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                </Button>
+            </DockPanel>
+
         </DockPanel>
 
         <DockPanel Margin="0,4,0,0" Background="LightGray" DockPanel.Dock="Top">
