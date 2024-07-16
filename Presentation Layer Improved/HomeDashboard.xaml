@@ -18,14 +18,24 @@
                     </DockPanel>
                 </Border>
             </DockPanel>
-            <DockPanel Style="{StaticResource ContainerDockPanel}" Height="220" Width="450" Margin="8,16,8,8" DockPanel.Dock="Left">
+            <DockPanel Style="{StaticResource ContainerDockPanel}" Height="220" Width="600" Margin="8,16,8,8" DockPanel.Dock="Left">
                 <Border Style="{StaticResource ContainerBorder}">
                     <DockPanel Margin="16,8,16,16">
                         <Label Content="Označeno" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
-                        <DockPanel>
-                            <DockPanel Width="130" Height="130">
-                                
+                        <DockPanel Margin="0,8,0,0">
+                            <DockPanel Width="150" Height="130" DockPanel.Dock="Left" Margin="16,0,16,0">
+                                <Image DockPanel.Dock="Top" Source="/Resources/fav_icon_1.png" Width="80"></Image>
+                                <TextBlock DockPanel.Dock="Top" MaxHeight="40" Text="357 - Narudžbenica" Style="{StaticResource FavoriteText}"/>
                             </DockPanel>
+                            <DockPanel Width="150" Height="130" DockPanel.Dock="Left" Margin="16,0,16,0">
+                                <Image DockPanel.Dock="Top" Source="/Resources/fav_icon_1.png" Width="80"></Image>
+                                <TextBlock DockPanel.Dock="Top" MaxHeight="40" Text="D57 - Radni nalog" Style="{StaticResource FavoriteText}"/>
+                            </DockPanel>
+                            <DockPanel Width="150" Height="130" DockPanel.Dock="Left" Margin="16,0,16,0">
+                                <Image DockPanel.Dock="Top" Source="/Resources/fav_icon_1.png" Width="80"></Image>
+                                <TextBlock DockPanel.Dock="Top" MaxHeight="40" Text="LZ 2E 2500 KUĆIŠTE PN1,5 ..." Style="{StaticResource FavoriteText}"/>
+                            </DockPanel>
+                            <DockPanel></DockPanel>
                         </DockPanel>
                     </DockPanel>
                 </Border>
@@ -43,6 +53,55 @@
                 <Border Style="{StaticResource ContainerBorder}">
                     <DockPanel Margin="16,8,16,16">
                         <Label Content="Pregled dokumenta" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
+                        <DockPanel>
+                            <DockPanel DockPanel.Dock="Left">
+                                <Label Content="Filter" Style="{StaticResource TitleText}" DockPanel.Dock="Top"></Label>
+                                <DockPanel Margin="0,16,0,0">
+                                    <DockPanel>
+                                        <Label Content="Vrsta dokumenta" HorizontalAlignment="Right" DockPanel.Dock="Top"></Label>
+                                        <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
+                                        <Label Content="Šifra radnog naloga" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
+                                        <Label Content="Šifra narudžbe" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
+                                        <Label Content="Proizvod" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
+                                        <Label Content="Kupac" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
+                                        <Label Content="Primatelj" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
+                                        <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
+                                        <Label Content="Kreiran između" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
+                                        <Label Content="Početak termina između" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
+                                        <Label Content="Kraj termina između" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
+                                        <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
+                                        <Label Content="Sortiraj prema" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
+
+                                        <DockPanel/>
+                                    </DockPanel>
+                                    <DockPanel>
+                                        <ComboBox Width="300" DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="12,0,0,0"></ComboBox>
+                                        <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
+                                        <TextBox Width="180" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></TextBox>
+                                        <TextBox Width="180" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></TextBox>
+                                        <TextBox Width="180" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></TextBox>
+                                        <TextBox Width="180" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></TextBox>
+                                        <TextBox Width="180" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></TextBox>
+                                        <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
+                                        <TextBox Width="180" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></TextBox>
+                                        <TextBox Width="180" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></TextBox>
+                                        <TextBox Width="180" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></TextBox>
+                                        <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
+                                        <ComboBox Width="300" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></ComboBox>
+                                        <Button Content="Primjeni filter" Height="32" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom" DockPanel.Dock="Bottom"></Button>
+
+                                        <DockPanel/>
+                                    </DockPanel>
+                                </DockPanel>
+                            </DockPanel>
+                            <DockPanel>
+                                <DockPanel Width="2" Background="#E1E1E1" DockPanel.Dock="Left" Margin="32,0,32,0"></DockPanel>
+                            </DockPanel>
+                            <DockPanel>
+                                <Label Content="Rezultati" Style="{StaticResource TitleText}" DockPanel.Dock="Top"></Label>
+
+                            </DockPanel>
+                        </DockPanel>
                     </DockPanel>
                 </Border>
             </DockPanel>

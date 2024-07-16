@@ -27,12 +27,12 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        
+
         <Style TargetType="Label">
             <Setter Property="FontFamily" Value="Arial"/>
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="Foreground" Value="#023047"/>
-            <Setter Property="Margin" Value="0,4,0,0"/>
+            <Setter Property="Height" Value="29"/>
         </Style>
 
         <Style TargetType="TextBox">
@@ -41,7 +41,7 @@
             <Setter Property="Foreground" Value="#023047"/>
             <Setter Property="Padding" Value="8"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Margin" Value="0,4,0,0"/>
+            <Setter Property="Height" Value="29"/>
         </Style>
         
         <Style TargetType="ComboBox">
@@ -50,8 +50,8 @@
             <Setter Property="Foreground" Value="#023047"/>
             <Setter Property="Padding" Value="8"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Margin" Value="0,4,0,0"/>
             <Setter Property="IsEditable" Value="True"/>
+            <Setter Property="Height" Value="29"/>
         </Style>
 
         <Style TargetType="PasswordBox">
@@ -60,7 +60,7 @@
             <Setter Property="Foreground" Value="#023047"/>
             <Setter Property="Padding" Value="8"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Margin" Value="0,4,0,0"/>
+            <Setter Property="Height" Value="29"/>
         </Style>
 
         <Style x:Key="ContainerDockPanel" TargetType="DockPanel">
@@ -79,6 +79,22 @@
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Foreground" Value="#023047"/>
             <Setter Property="Margin" Value="0"/>
+        </Style>
+
+        <Style x:Key="TitleText" TargetType="Label">
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontWeight" Value="Regular"/>
+            <Setter Property="Foreground" Value="#023047"/>
+            <Setter Property="Margin" Value="0"/>
+        </Style>
+
+        <Style x:Key="FavoriteText" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Regular"/>
+            <Setter Property="Foreground" Value="#023047"/>
+            <Setter Property="Margin" Value="0"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="TextAlignment" Value="Center"/>
         </Style>
     </Application.Resources>
 </Application>
