@@ -1,4 +1,5 @@
 ﻿using Business_Layer;
+using Presentation_Layer_Improved.Managers;
 using System;
 using System.Collections.Generic;
 using System.IO.Packaging;
@@ -29,7 +30,8 @@ namespace Presentation_Layer_Improved
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            Verify();
+            //Verify();
+            LoginUser();
         }
 
         private void Verify()
@@ -97,7 +99,7 @@ namespace Presentation_Layer_Improved
 
         private void LoginUser()
         {
-            
+            ScreenManager.LoadScreen(new WorkScreen());
         }
 
         private void txtUsername_KeyDown(object sender, KeyEventArgs e)

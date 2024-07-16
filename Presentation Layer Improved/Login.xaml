@@ -11,7 +11,7 @@
         <DockPanel  Width="480" Height="620">
             <Border BorderBrush="#00000000" BorderThickness="3" Background="#EEEEEE" CornerRadius="10">
                 <DockPanel Margin="16">
-                    <Image Source="/Resources/logo.png" Height="160" DockPanel.Dock="Top"></Image>
+                    <Image Source="/Resources/logo.png" Height="160" DockPanel.Dock="Top" Margin="0,32,0,0"></Image>
                     <Label Content="Factory Information System" DockPanel.Dock="Top" HorizontalAlignment="Center" FontFamily="Cascadia Mono SemiBold" FontSize="24" Foreground="#023047"></Label>
                     <DockPanel Height="4" Background="#023047" DockPanel.Dock="Top"></DockPanel>
                     <DockPanel DockPanel.Dock="Top" Margin="0,32,0,0">

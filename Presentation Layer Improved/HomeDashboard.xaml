@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="Presentation_Layer_Improved.HomeDashboard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Presentation_Layer_Improved"
+             mc:Ignorable="d" 
+             d:DesignHeight="1080" d:DesignWidth="1920">
+
+    <DockPanel Background="#EEE">
+        <DockPanel DockPanel.Dock="Top">
+            <DockPanel Style="{StaticResource ContainerDockPanel}" Height="220" Width="450" Margin="16,16,8,8" DockPanel.Dock="Left">
+                <Border Style="{StaticResource ContainerBorder}">
+                    <DockPanel Margin="16,8,16,16">
+                        <Label Content="Novi dokument" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
+                        <ComboBox DockPanel.Dock="Top" Background="Black"></ComboBox>
+                        <Button Content="Kreiraj" Height="32" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom"></Button>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+            <DockPanel Style="{StaticResource ContainerDockPanel}" Height="220" Width="450" Margin="8,16,8,8" DockPanel.Dock="Left">
+                <Border Style="{StaticResource ContainerBorder}">
+                    <DockPanel Margin="16,8,16,16">
+                        <Label Content="Označeno" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
+                        <DockPanel>
+                            <DockPanel Width="130" Height="130">
+                                
+                            </DockPanel>
+                        </DockPanel>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+            <DockPanel Style="{StaticResource ContainerDockPanel}" Margin="8,16,16,8" Height="220">
+                <Border Style="{StaticResource ContainerBorder}">
+                    <DockPanel Margin="16,8,16,16">
+                        <Label Content="Nedavno korišteno" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+        </DockPanel>
+        <DockPanel>
+            <DockPanel Style="{StaticResource ContainerDockPanel}" Margin="16,8,16,16">
+                <Border Style="{StaticResource ContainerBorder}">
+                    <DockPanel Margin="16,8,16,16">
+                        <Label Content="Pregled dokumenta" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+        </DockPanel>
+    </DockPanel>
+</UserControl>
