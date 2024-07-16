@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation Layer", "Factory Information System\Presentation Layer.csproj", "{70792A7F-1D8F-4E8B-B52A-AC5D5BA8899A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Presentation Layer", "Factory Information System\Presentation Layer.csproj", "{70792A7F-1D8F-4E8B-B52A-AC5D5BA8899A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business Layer", "Business Layer\Business Layer.csproj", "{6B8FA23A-4E21-4815-8364-2872446401D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business Layer", "Business Layer\Business Layer.csproj", "{6B8FA23A-4E21-4815-8364-2872446401D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation Layer Improved", "Presentation Layer Improved\Presentation Layer Improved.csproj", "{8578B4BC-0309-4AC6-97A5-8691DFACEA4D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6B8FA23A-4E21-4815-8364-2872446401D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B8FA23A-4E21-4815-8364-2872446401D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B8FA23A-4E21-4815-8364-2872446401D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8578B4BC-0309-4AC6-97A5-8691DFACEA4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8578B4BC-0309-4AC6-97A5-8691DFACEA4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8578B4BC-0309-4AC6-97A5-8691DFACEA4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8578B4BC-0309-4AC6-97A5-8691DFACEA4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
