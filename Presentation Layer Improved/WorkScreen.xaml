@@ -8,23 +8,23 @@
              d:DesignHeight="1080" d:DesignWidth="1920" Loaded="UserControl_Loaded">
     <DockPanel Background="#023047">
         <DockPanel x:Name="tabHeaderSpace" Height="48" DockPanel.Dock="Top">
-            <DockPanel Height="40" Width="48" Margin="20,0,0,0" VerticalAlignment="Bottom" DockPanel.Dock="Left">
-                <Border BorderBrush="#00000000" BorderThickness="0" Background="#EEE" CornerRadius="10,10,0,0">
+            <DockPanel Style="{StaticResource TabDockPanel}" DockPanel.Dock="Left">
+                <Border Name="tabHome" MouseLeftButtonUp="tabHome_MouseLeftButtonUp" Style="{StaticResource TabBorder}">
                     <DockPanel >
                         <Image Source="/Resources/home.png" Stretch="Fill" Height="36" Width="36"></Image>
                     </DockPanel>
                 </Border>
             </DockPanel>
-            <DockPanel Height="40" Width="48" Margin="20,0,0,0" VerticalAlignment="Bottom" DockPanel.Dock="Left">
-                <Border BorderBrush="#00000000" BorderThickness="0" Background="#ccc" CornerRadius="10,10,0,0">
+            <DockPanel Style="{StaticResource TabDockPanel}" DockPanel.Dock="Left">
+                <Border Name="tabWarehouse" MouseLeftButtonUp="tabWarehouse_MouseLeftButtonUp" Style="{StaticResource TabBorder}">
                     <DockPanel >
                         <Image Source="/Resources/warehouse.png" Stretch="Fill" Height="32" Width="32"></Image>
                     </DockPanel>
                 </Border>
             </DockPanel>
 
-            <DockPanel Height="40" Width="48" Margin="20,0,20,0" VerticalAlignment="Bottom" DockPanel.Dock="Right">
-                <Border BorderBrush="#00000000" BorderThickness="0" Background="#ccc" CornerRadius="10,10,0,0">
+            <DockPanel Style="{StaticResource TabDockPanel}" DockPanel.Dock="Right" Margin="20,0,20,0">
+                <Border Name="tabSettings" MouseLeftButtonUp="tabSettings_MouseLeftButtonUp" Style="{StaticResource TabBorder}">
                     <DockPanel >
                         <Image Source="/Resources/settings.png" Stretch="Fill" Height="32" Width="32"></Image>
                     </DockPanel>

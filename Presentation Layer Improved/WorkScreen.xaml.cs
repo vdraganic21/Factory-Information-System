@@ -21,6 +21,10 @@ namespace Presentation_Layer_Improved
     /// </summary>
     public partial class WorkScreen : UserControl
     {
+        private List<Border> tabList = new List<Border>();
+        private UserControl settingsContent = new Settings();
+        private UserControl homeContent = new HomeDashboard();
+        private UserControl warehouseContent = new Warehouse();
         public WorkScreen()
         {
             InitializeComponent();
@@ -29,7 +33,55 @@ namespace Presentation_Layer_Improved
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             WorkScreenContentManager.Initialize(WorkScreenContent);
-            WorkScreenContentManager.LoadScreen(new HomeDashboard());
+
+            tabList.Add(tabHome);
+            tabList.Add(tabWarehouse);
+            tabList.Add(tabSettings);
+
+            UnselectTabs();
+            OpenTab(tabHome, homeContent);
+        }
+
+        private void tabHome_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            OpenTab(tabHome, homeContent);
+        }
+
+        private void tabWarehouse_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            OpenTab(tabWarehouse, warehouseContent);
+        }
+
+        private void tabSettings_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            OpenTab(tabSettings, settingsContent);
+        }
+
+        private void OpenTab(Border tab, UserControl content)
+        {
+            UnselectTabs();
+            SelectTab(tab);
+
+            WorkScreenContentManager.LoadScreen(content);
+        }
+
+        private void SelectTab(Border tab)
+        {
+            BrushConverter converter = new BrushConverter();
+            Brush backgroundBrush = (Brush)converter.ConvertFromString("#eee");
+
+            tab.Background = backgroundBrush;
+        }
+
+        private void UnselectTabs()
+        {
+            BrushConverter converter = new BrushConverter();
+            Brush backgroundBrush = (Brush)converter.ConvertFromString("#ccc");
+
+            foreach (var tab in tabList)
+            {
+                tab.Background = backgroundBrush;
+            }
         }
     }
 }

@@ -96,5 +96,25 @@
             <Setter Property="TextWrapping" Value="Wrap"/>
             <Setter Property="TextAlignment" Value="Center"/>
         </Style>
+
+        <Style x:Key="TabDockPanel" TargetType="DockPanel">
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="48"/>
+            <Setter Property="Margin" Value="20,0,0,0"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Focusable" Value="True"/>
+        </Style>
+
+        <Style x:Key="TabBorder" TargetType="Border">
+            <Setter Property="BorderBrush" Value="#00000000"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="#EEE"/>
+            <Setter Property="CornerRadius" Value="10,10,0,0"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#DDD"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>
