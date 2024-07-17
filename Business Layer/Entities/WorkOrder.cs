@@ -27,6 +27,7 @@ namespace Business_Layer.Entities
         public string IzrKol { get; set; }
         public string VID { get; set; }
         public string KO { get; set; }
+        public string Napomena { get; set; }
 
         public List<ComponentListItem> ComponentListItems { get; set; }
 

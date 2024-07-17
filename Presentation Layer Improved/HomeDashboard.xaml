@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Presentation_Layer_Improved"
              mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="1920">
+             d:DesignHeight="1080" d:DesignWidth="1920" Loaded="UserControl_Loaded">
 
     <DockPanel Background="#EEE">
         <DockPanel DockPanel.Dock="Top">
@@ -52,47 +52,74 @@
             <DockPanel Style="{StaticResource ContainerDockPanel}" Margin="16,8,16,16">
                 <Border Style="{StaticResource ContainerBorder}">
                     <DockPanel Margin="16,8,16,16">
-                        <Label Content="Pregled dokumenta" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
+                        <Label Content="Pregled dokumenata" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
                         <DockPanel>
-                            <DockPanel DockPanel.Dock="Left">
-                                <Label Content="Filter" Style="{StaticResource TitleText}" DockPanel.Dock="Top"></Label>
-                                <DockPanel Margin="0,16,0,0">
-                                    <DockPanel>
-                                        <Label Content="Vrsta dokumenta" HorizontalAlignment="Right" DockPanel.Dock="Top"></Label>
-                                        <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
-                                        <Label Content="Šifra radnog naloga" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
-                                        <Label Content="Šifra narudžbe" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
-                                        <Label Content="Proizvod" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
-                                        <Label Content="Kupac" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
-                                        <Label Content="Primatelj" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
-                                        <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
-                                        <Label Content="Kreiran između" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
-                                        <Label Content="Početak termina između" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
-                                        <Label Content="Kraj termina između" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
-                                        <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
-                                        <Label Content="Sortiraj prema" HorizontalAlignment="Right" DockPanel.Dock="Top" Margin="0,12,0,0"></Label>
-
-                                        <DockPanel/>
-                                    </DockPanel>
-                                    <DockPanel>
-                                        <ComboBox Width="300" DockPanel.Dock="Top" HorizontalAlignment="Left" Margin="12,0,0,0"></ComboBox>
-                                        <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
-                                        <TextBox Width="180" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></TextBox>
-                                        <TextBox Width="180" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></TextBox>
-                                        <TextBox Width="180" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></TextBox>
-                                        <TextBox Width="180" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></TextBox>
-                                        <TextBox Width="180" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></TextBox>
-                                        <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
-                                        <TextBox Width="180" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></TextBox>
-                                        <TextBox Width="180" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></TextBox>
-                                        <TextBox Width="180" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></TextBox>
-                                        <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
-                                        <ComboBox Width="300" DockPanel.Dock="Top" Margin="12,12,0,0" HorizontalAlignment="Left"></ComboBox>
-                                        <Button Content="Primjeni filter" Height="32" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom" DockPanel.Dock="Bottom"></Button>
-
-                                        <DockPanel/>
-                                    </DockPanel>
+                            <DockPanel>
+                                <DockPanel DockPanel.Dock="Top">
+                                    <Label Content="Filter" DockPanel.Dock="Left" Style="{StaticResource TitleText}"></Label>
+                                    <Image Name="btnRefreshFilter" MouseLeftButtonDown="btnRefreshFilter_MouseLeftButtonDown" DockPanel.Dock="Right" HorizontalAlignment="Right" Cursor="Hand" Focusable="True" Height="24" Source="/Resources/refresh.png"></Image>
                                 </DockPanel>
+
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Vrsta dokumenta" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right" />
+                                    <ComboBox x:Name="cbDocumentType" Width="300" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                </DockPanel>
+
+                                <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
+
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Šifra radnog naloga" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                    <TextBox x:Name="txtWorkOrderId" Width="180" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                </DockPanel>
+
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Šifra narudžbe" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                    <TextBox x:Name="txtOrderId" Width="180" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                </DockPanel>
+
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Proizvod" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                    <TextBox x:Name="txtProduct" Width="180" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                </DockPanel>
+
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Kupac" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                    <TextBox x:Name="txtBuyer" Width="180" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                </DockPanel>
+
+                                <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
+
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Kreiran između" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                    <TextBox x:Name="txtRadniNalogDatumOd" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                    <Label Content="i" Margin="12,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                                    <TextBox x:Name="txtRadniNalogDatumDo" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                </DockPanel>
+
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Početak termina između" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                    <TextBox x:Name="txtPocetniTerminOd" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                    <Label Content="i" Margin="12,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                    <TextBox x:Name="txtPocetniTerminDo" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                </DockPanel>
+
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Kraj termina između" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                    <TextBox x:Name="txtKrajnjiTerminOd" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                    <Label Content="i" Margin="12,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                    <TextBox x:Name="txtKrajnjiTerminDo" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                </DockPanel>
+
+                                <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
+
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Sortiraj prema" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                    <ComboBox x:Name="cbSortOption" Width="300" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" IsEditable="False"/>
+                                </DockPanel>
+
+                                <Label Name="lblFilterErrorMessage" Content="" HorizontalAlignment="Left" Foreground="#E62A2A" Margin="16"/>
+
+                                <Button x:Name="btnFilter" Click="btnFilter_Click" Content="Primjeni filter" Height="32" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,12,0,0" />
                             </DockPanel>
                             <DockPanel>
                                 <DockPanel Width="2" Background="#E1E1E1" DockPanel.Dock="Left" Margin="32,0,32,0"></DockPanel>
@@ -100,6 +127,46 @@
                             <DockPanel>
                                 <Label Content="Rezultati" Style="{StaticResource TitleText}" DockPanel.Dock="Top"></Label>
 
+                                <DockPanel>
+                                    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                                        <ItemsControl ItemsSource="{Binding FilteredDocuments}">
+                                            <ItemsControl.ItemTemplate>
+                                                <DataTemplate>
+                                                    <DockPanel>
+                                                        <DockPanel DockPanel.Dock="Top">
+                                                            <Label Content="{Binding Naziv}" DockPanel.Dock="Top" Style="{StaticResource TitleText}" FontWeight="DemiBold"></Label>
+                                                            <DockPanel>
+                                                                <DockPanel DockPanel.Dock="Left">
+                                                                    <Label Content="{Binding RN}" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
+                                                                    <Label Content="{Binding Datum}" Style="{StaticResource SubtitleText}"></Label>
+                                                                </DockPanel>
+                                                                <DockPanel DockPanel.Dock="Left">
+                                                                    <DockPanel DockPanel.Dock="Top">
+                                                                        <Label Content="Narudžba:" Width="150" HorizontalContentAlignment="Right" Foreground="#aaa" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                        <Label Content="{Binding Narudzba}" Style="{StaticResource SubtitleText}"></Label>
+                                                                    </DockPanel>
+                                                                    <DockPanel>
+                                                                        <Label Content="Termin" Width="150" HorizontalContentAlignment="Right" Foreground="#aaa" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                        <Label Content="{Binding PocTermin}" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                        <Label Content="-" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                        <Label Content="{Binding KraTermin}" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                    </DockPanel>
+                                                                </DockPanel>
+                                                                <DockPanel DockPanel.Dock="Left">
+                                                                    <Label Content="Napomena:" Width="150" HorizontalContentAlignment="Right" Foreground="#aaa" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                    <TextBlock Text="{Binding Napomena}" DockPanel.Dock="Left" Style="{StaticResource DetailsText}" Margin="5,5,0,0"></TextBlock>
+                                                                </DockPanel>
+                                                                <DockPanel></DockPanel>
+                                                            </DockPanel>
+                                                        </DockPanel>
+                                                        <DockPanel></DockPanel>
+                                                        <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Bottom"></DockPanel>
+                                                    </DockPanel>
+                                                </DataTemplate>
+                                            </ItemsControl.ItemTemplate>
+                                        </ItemsControl>
+                                    </ScrollViewer>
+                                </DockPanel>
                             </DockPanel>
                         </DockPanel>
                     </DockPanel>

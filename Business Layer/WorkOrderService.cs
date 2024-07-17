@@ -44,6 +44,7 @@ namespace Business_Layer.Services
                 IzrKol = "80",
                 VID = "VID1",
                 KO = "KO1",
+                Napomena = "Napomena1 123 456",
                 ComponentListItems = new List<ComponentListItem>
                 {
                     new ComponentListItem { Alt = "Alt1", Poz = "Poz1", Ident = "Ident1", Opis = "Component A", Kolicina = "5", Mj = "kg", Batch = "Batch1", NormativnaOsnova = "Normativna1", Aktivno = "Da", Zavrseno = "Da", Vid = "Vid1", PrimKlas = "PrimKlas1", SekKlas = "SekKlas1", Napomena = "Napomena1", Izdano = "Ne" },
