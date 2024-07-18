@@ -20,6 +20,8 @@ namespace Business_Layer
                     name = "Item1",
                     id = "001",
                     minimalSupply = 0,
+                    valuePerUnit = 50,
+                    measuringUnit = "kom.",
                     statuses = new List<WarehouseStatus>
                     {
                         new WarehouseStatus("Warehouse A", 100, 5000, 20),
@@ -31,6 +33,8 @@ namespace Business_Layer
                     name = "Item2",
                     id = "002",
                     minimalSupply = 1,
+                    valuePerUnit = 50,
+                    measuringUnit = "kg",
                     statuses = new List<WarehouseStatus>
                     {
                         new WarehouseStatus("Warehouse A", 200, 10000, 50),
@@ -42,6 +46,8 @@ namespace Business_Layer
                     name = "Item3",
                     id = "003",
                     minimalSupply = 2,
+                    valuePerUnit = 50,
+                    measuringUnit = "kom.",
                     statuses = new List<WarehouseStatus>
                     {
                         new WarehouseStatus("Warehouse A", 20, 100, 5),

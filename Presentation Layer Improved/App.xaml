@@ -132,5 +132,21 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+
+        <Style x:Key="WarehouseColumnHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="#023047"/>
+        </Style>
+
+        <Style x:Key="WarehouseRowStyle" TargetType="DataGridRow">
+            <Setter Property="Background" Value="#ebebeb"/>
+            <Setter Property="BorderBrush" Value="#ccc"/>
+            <Setter Property="FontFamily" Value="Arial"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="#023047"/>
+        </Style>
     </Application.Resources>
 </Application>

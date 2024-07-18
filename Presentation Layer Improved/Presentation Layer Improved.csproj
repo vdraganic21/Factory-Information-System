@@ -11,6 +11,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\button_mail.png" />
+    <None Remove="Resources\button_print.png" />
+    <None Remove="Resources\button_save.png" />
     <None Remove="Resources\fav_icon_1.png" />
     <None Remove="Resources\home.png" />
     <None Remove="Resources\logo.png" />
@@ -28,6 +31,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\button_mail.png" />
+    <Resource Include="Resources\button_print.png" />
+    <Resource Include="Resources\button_save.png" />
     <Resource Include="Resources\fav_icon_1.png" />
     <Resource Include="Resources\home.png" />
     <Resource Include="Resources\logo.png" />

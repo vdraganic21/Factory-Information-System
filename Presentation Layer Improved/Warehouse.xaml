@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Presentation_Layer_Improved"
              mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="1920">
+             d:DesignHeight="1080" d:DesignWidth="1920" Loaded="UserControl_Loaded">
     <DockPanel Background="#EEE">
         <DockPanel>
             <DockPanel Style="{StaticResource ContainerDockPanel}" Margin="16,16,16,16" Width="1000" MinWidth="620">
@@ -13,12 +13,81 @@
                     <DockPanel Margin="16,8,16,16">
                         <Label Content="Stanje na skladištu" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
                         <DockPanel DockPanel.Dock="Top">
-                            <ComboBox Width="650" DockPanel.Dock="Left">
-                            </ComboBox>
-                            <Button Content="Pretraži" DockPanel.Dock="Left" HorizontalAlignment="Left" Height="32" Width="150" Margin="32,0,0,0"></Button>
+                            <ComboBox x:Name="cbSearch" KeyDown="cbSearch_KeyDown" Width="650" DockPanel.Dock="Left" MaxDropDownHeight="0"></ComboBox>
+                            <Button Name="btnSearch" Click="btnSearch_Click" Content="Pretraži" DockPanel.Dock="Left" HorizontalAlignment="Left" Height="32" Width="150" Margin="32,0,0,0"></Button>
                         </DockPanel>
-                        <DockPanel>
+                        <DockPanel DockPanel.Dock="Top" Margin="0,16,0,0">
+                            <Label Content="Sortiraj prema" DockPanel.Dock="Left" VerticalAlignment="Center"></Label>
+                            <ComboBox x:Name="cbSort" SelectionChanged="cbSort_SelectionChanged" Width="300" Margin="16,0,0,0" HorizontalAlignment="Left" DockPanel.Dock="Left" IsEditable="False"></ComboBox>
                         </DockPanel>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <ItemsControl ItemsSource="{Binding LoadedStorageItemStatuses}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <DockPanel Margin="0,0,0,12">
+                                            <DockPanel DockPanel.Dock="Top">
+                                                <Label Content="{Binding name}" DockPanel.Dock="Top" Style="{StaticResource TitleText}" FontWeight="DemiBold"></Label>
+                                                <DockPanel DockPanel.Dock="Top">
+                                                    <Label Content="{Binding id}" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
+                                                </DockPanel>
+                                                <DockPanel DockPanel.Dock="Top">
+                                                    <Label Content="Skladište" Width="130" DockPanel.Dock="Left" Foreground="#aaa"></Label>
+                                                    <Label Content="Zaliha" Width="130" DockPanel.Dock="Left" Foreground="#aaa"></Label>
+                                                    <Label Content="Vrijednost" Width="130" DockPanel.Dock="Left" Foreground="#aaa"></Label>
+                                                    <Label Content="Rezervirano" Width="130" DockPanel.Dock="Left" Foreground="#aaa"></Label>
+                                                    <Label Content="Preostalo" Width="130" DockPanel.Dock="Left" Foreground="#aaa"></Label>
+                                                    <DockPanel></DockPanel>
+                                                </DockPanel>
+                                                <DockPanel DockPanel.Dock="Top">
+                                                    <DataGrid DockPanel.Dock="Left" ItemsSource="{Binding statuses}" BorderBrush="Transparent" GridLinesVisibility="None" AutoGenerateColumns="False" HeadersVisibility="None" IsReadOnly="True" 
+                                                              ColumnHeaderStyle="{StaticResource WarehouseColumnHeaderStyle}" 
+                                                              RowStyle="{StaticResource WarehouseRowStyle}">
+                                                        <DataGrid.Columns>
+                                                            <DataGridTextColumn Header="Skladište" Binding="{Binding warehouseName}" Width="130" />
+                                                            <DataGridTextColumn Header="Zaliha" Binding="{Binding supply}" Width="130"/>
+                                                            <DataGridTextColumn Header="Vrijednost" Binding="{Binding value}" Width="130" />
+                                                            <DataGridTextColumn Header="Rezervirano" Binding="{Binding reserved}" Width="130" />
+                                                            <DataGridTextColumn Header="Preostalo" Binding="{Binding leftover}" Width="130" />
+                                                        </DataGrid.Columns>
+                                                    </DataGrid>
+                                                    <DockPanel></DockPanel>
+                                                </DockPanel>
+                                                <DockPanel DockPanel.Dock="Top">
+                                                    <Label Content="UKUPNO" Width="130" DockPanel.Dock="Left"></Label>
+                                                    <Label Content="{Binding TotalSupply}" FontWeight="Bold" Width="130" DockPanel.Dock="Left"></Label>
+                                                    <Label Content="{Binding TotalValue}" Width="130" DockPanel.Dock="Left"></Label>
+                                                    <Label Content="{Binding TotalReserved}" Width="130" DockPanel.Dock="Left"></Label>
+                                                    <Label Content="{Binding TotalLeftover}" Width="130" DockPanel.Dock="Left"></Label>
+                                                    <DockPanel></DockPanel>
+                                                </DockPanel>
+
+                                                <DockPanel Margin="0,12,0,12">
+                                                    <Label Content="Minimalna zaliha" Foreground="#aaa" Style="{StaticResource SubtitleText}"></Label>
+                                                    <Label Content="{Binding minimalSupply}" Style="{StaticResource SubtitleText}"></Label>
+                                                    <Label Content="{Binding measuringUnit}" Style="{StaticResource SubtitleText}"></Label>
+                                                    
+                                                    <Label Content="Vrijednost po jedinici" Margin="32,0,0,0" Foreground="#aaa" Style="{StaticResource SubtitleText}"></Label>
+                                                    <Label Content="{Binding valuePerUnit}" Style="{StaticResource SubtitleText}"></Label>
+                                                    <Label Content="€" Style="{StaticResource SubtitleText}"></Label>
+                                                    <Button Height="32" Width="32" DockPanel.Dock="Right" Margin="6,0,6,0">
+                                                        <Image Source="/Resources/button_save.png" Height="24" Width="24" HorizontalAlignment="Center"></Image>
+                                                    </Button>
+                                                    <Button Height="32" Width="32" DockPanel.Dock="Right" Margin="6,0,6,0">
+                                                        <Image Source="/Resources/button_mail.png" Height="24" Width="24" HorizontalAlignment="Center"></Image>
+                                                    </Button>
+                                                    <Button Height="32" Width="32" DockPanel.Dock="Right" Margin="6,0,6,0">
+                                                        <Image Source="/Resources/button_print.png" Height="24" Width="24" HorizontalAlignment="Center"></Image>
+                                                    </Button>
+                                                    <DockPanel></DockPanel>
+                                                </DockPanel>
+                                            </DockPanel>
+                                            <DockPanel></DockPanel>
+                                            <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Bottom"></DockPanel>
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </ScrollViewer>
                     </DockPanel>
                 </Border>
             </DockPanel>
