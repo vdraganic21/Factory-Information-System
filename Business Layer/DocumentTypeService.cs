@@ -13,6 +13,7 @@ namespace Business_Layer
         public DocumentTypeService()
         {
             documentTypes.Add("D57 - Radni nalog");
+            documentTypes.Add("A25 - Dostavnica");
         }
         public List<String> GetAll()
         {

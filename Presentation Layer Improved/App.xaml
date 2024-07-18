@@ -148,5 +148,14 @@
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="Foreground" Value="#023047"/>
         </Style>
+
+        <Style TargetType="DockPanel" x:Key="HoverableDockPanel">
+            <Setter Property="Background" Value="Transparent"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#EFEFEF"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

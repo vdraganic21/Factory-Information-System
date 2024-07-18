@@ -13,7 +13,7 @@ namespace Presentation_Layer_Improved
     {
         private List<Border> tabList = new List<Border>();
         private UserControl settingsContent = new Settings();
-        private UserControl homeContent = new HomeDashboard();
+        private UserControl homeContent;
         private UserControl warehouseContent = new Warehouse();
         private UserControl invoiceContent = new InvoiceForm();
         private UserControl workOrderDetailsContent = new WorkOrderDetails();
@@ -21,6 +21,7 @@ namespace Presentation_Layer_Improved
         public WorkScreen()
         {
             InitializeComponent();
+            homeContent = new HomeDashboard(this);
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -33,7 +34,8 @@ namespace Presentation_Layer_Improved
             tabList.Add(tabInvoice);
             tabList.Add(tabWorkOrderDetails);
 
-            tabInvoice.Visibility = Visibility.Visible;
+            tabInvoice.Visibility = Visibility.Collapsed;
+            tabWorkOrderDetails.Visibility = Visibility.Collapsed;
 
             UnselectTabs();
             OpenTab(tabHome, homeContent);
@@ -107,6 +109,17 @@ namespace Presentation_Layer_Improved
             UnselectTabs();
             SelectTab(tabHome);
             WorkScreenContentManager.LoadScreen(homeContent);
+        }
+
+        public void OpenInvoice()
+        {
+            tabInvoice.Visibility = Visibility.Visible;
+            OpenTab(tabInvoice, invoiceContent = new InvoiceForm());
+        }
+        public void OpenWorkOrderDetails()
+        {
+            tabWorkOrderDetails.Visibility = Visibility.Visible;
+            OpenTab(tabWorkOrderDetails, workOrderDetailsContent = new WorkOrderDetails());
         }
     }
 }

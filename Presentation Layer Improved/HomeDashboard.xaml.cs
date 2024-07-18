@@ -9,6 +9,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace Presentation_Layer_Improved
@@ -18,6 +19,7 @@ namespace Presentation_Layer_Improved
     /// </summary>
     public partial class HomeDashboard : UserControl, INotifyPropertyChanged
     {
+        WorkScreen parentScreen;
         private WorkOrderService service = new WorkOrderService();
 
         private List<WorkOrder> filteredDocuments;
@@ -31,22 +33,33 @@ namespace Presentation_Layer_Improved
             }
         }
 
-        public HomeDashboard()
+        private List<String> documentTypes = new DocumentTypeService().GetAll();
+
+        public HomeDashboard(WorkScreen parentScreen)
         {
             InitializeComponent();
             DataContext = this;
+            this.parentScreen = parentScreen;
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            LoadDocumentSearch();
+
             LoadFilterDefaults();
             FilterDocuments();
 
         }
 
+        private void LoadDocumentSearch()
+        {
+            cbDocumentSearch.ItemsSource = documentTypes;
+            cbDocumentSearch.SelectedIndex = 0;
+        }
+
         private void LoadFilterDefaults()
         {
-            cbDocumentType.ItemsSource = new DocumentTypeService().GetAll();
+            cbDocumentType.ItemsSource = documentTypes;
             cbDocumentType.SelectedIndex = 0;
 
             DateTime oneWeekBeforeToday = DateTime.Now.AddDays(-7);
@@ -251,6 +264,86 @@ namespace Presentation_Layer_Improved
         private void btnRefreshFilter_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             LoadFilterDefaults();
+        }
+
+        private void btnCreateDocument_Click(object sender, RoutedEventArgs e)
+        {
+            AutofillNewDocumentSearch();
+
+            VerifyNewDocumentChoice();
+
+            if (IsNewDocumentChoiceValid())
+            { 
+                if (cbDocumentSearch.Text == "A25 - Dostavnica") parentScreen.OpenInvoice();
+            }
+
+        }
+
+        private void cbDocumentSearch_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter || e.Key == Key.Tab)
+            {
+                btnCreateDocument.Focus();
+
+                AutofillNewDocumentSearch();
+
+                VerifyNewDocumentChoice();
+            }
+        }
+
+        private void VerifyNewDocumentChoice()
+        {
+
+            if (IsNewDocumentChoiceValid())
+            {
+                lblNewDocumentErrorMessage.Content = "";
+                return;
+            }
+
+            lblNewDocumentErrorMessage.Content = "Traženi dokument ne postoji!";
+        }
+
+        private bool IsNewDocumentChoiceValid()
+        {
+            var newDocument = cbDocumentSearch.Text;
+
+            if (newDocument == "") return false;
+
+            if (!documentTypes.Exists(d => d.Equals(newDocument))) return false;
+
+            return true;
+        }
+
+        private void cbDocumentSearch_FocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            AutofillNewDocumentSearch();
+            VerifyNewDocumentChoice();
+        }
+
+        private void cbDocumentSearch_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            AutofillNewDocumentSearch();
+            VerifyNewDocumentChoice();
+        }
+
+        private void AutofillNewDocumentSearch()
+        {
+            var searchedDocument = cbDocumentSearch.Text;
+            var possibleMatch = documentTypes.FirstOrDefault(d => d.IndexOf(searchedDocument, StringComparison.OrdinalIgnoreCase) >= 0);
+
+            if (possibleMatch != null)
+            {
+                cbDocumentSearch.Text = possibleMatch;
+            }
+        }
+
+        private void OpenInvoice(object sender, MouseButtonEventArgs e)
+        {
+            parentScreen.OpenInvoice();
+        }
+        private void OpenWorkOrderDetails(object sender, MouseButtonEventArgs e)
+        {
+            parentScreen.OpenWorkOrderDetails();
         }
     }
 }
