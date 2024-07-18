@@ -44,49 +44,49 @@
                 <Border Style="{StaticResource ContainerBorder}">
                     <DockPanel Margin="16,8,16,16">
                         <Label Content="Nedavno korišteno" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
-                        <ScrollViewer VerticalScrollBarVisibility="Visible">
+                        <ScrollViewer VerticalScrollBarVisibility="Visible" Padding="4,0,0,0">
                             <DockPanel>
                                 <DockPanel DockPanel.Dock="Top">
                                     <DockPanel DockPanel.Dock="Top">
                                         <Image Source="/Resources/fav_icon_1.png" Height="24" DockPanel.Dock="Left"></Image>
                                         <Label Content="DB7 - Radni nalog" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
                                     </DockPanel>
-                                    <DockPanel Height="2" Margin="4" Background="#E1E1E1"></DockPanel>
+                                    <DockPanel Height="2" Margin="0,4,0,4" Background="#E1E1E1"></DockPanel>
                                 </DockPanel>
                                 <DockPanel DockPanel.Dock="Top">
                                     <DockPanel DockPanel.Dock="Top">
                                         <Image Source="/Resources/fav_icon_1.png" Height="24" DockPanel.Dock="Left"></Image>
                                         <Label Content="DB7 - Radni nalog" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
                                     </DockPanel>
-                                    <DockPanel Height="2" Margin="4" Background="#E1E1E1"></DockPanel>
+                                    <DockPanel Height="2" Margin="0,4,0,4" Background="#E1E1E1"></DockPanel>
                                 </DockPanel>
                                 <DockPanel DockPanel.Dock="Top">
                                     <DockPanel DockPanel.Dock="Top">
                                         <Image Source="/Resources/fav_icon_1.png" Height="24" DockPanel.Dock="Left"></Image>
                                         <Label Content="DB7 - Radni nalog" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
                                     </DockPanel>
-                                    <DockPanel Height="2" Margin="4" Background="#E1E1E1"></DockPanel>
+                                    <DockPanel Height="2" Margin="0,4,0,4" Background="#E1E1E1"></DockPanel>
                                 </DockPanel>
                                 <DockPanel DockPanel.Dock="Top">
                                     <DockPanel DockPanel.Dock="Top">
                                         <Image Source="/Resources/fav_icon_1.png" Height="24" DockPanel.Dock="Left"></Image>
                                         <Label Content="DB7 - Radni nalog" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
                                     </DockPanel>
-                                    <DockPanel Height="2" Margin="4" Background="#E1E1E1"></DockPanel>
+                                    <DockPanel Height="2" Margin="0,4,0,4" Background="#E1E1E1"></DockPanel>
                                 </DockPanel>
                                 <DockPanel DockPanel.Dock="Top">
                                     <DockPanel DockPanel.Dock="Top">
                                         <Image Source="/Resources/fav_icon_1.png" Height="24" DockPanel.Dock="Left"></Image>
                                         <Label Content="DB7 - Radni nalog" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
                                     </DockPanel>
-                                    <DockPanel Height="2" Margin="4" Background="#E1E1E1"></DockPanel>
+                                    <DockPanel Height="2" Margin="0,4,0,4" Background="#E1E1E1"></DockPanel>
                                 </DockPanel>
                                 <DockPanel DockPanel.Dock="Top">
                                     <DockPanel DockPanel.Dock="Top">
                                         <Image Source="/Resources/fav_icon_1.png" Height="24" DockPanel.Dock="Left"></Image>
                                         <Label Content="DB7 - Radni nalog" HorizontalAlignment="Left" VerticalAlignment="Center"></Label>
                                     </DockPanel>
-                                    <DockPanel Height="2" Margin="4" Background="#E1E1E1"></DockPanel>
+                                    <DockPanel Height="2" Margin="0,4,0,4" Background="#E1E1E1"></DockPanel>
                                 </DockPanel>
                                 <DockPanel></DockPanel>
                             </DockPanel>

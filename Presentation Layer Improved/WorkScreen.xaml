@@ -23,6 +23,29 @@
                 </Border>
             </DockPanel>
 
+            <DockPanel Style="{StaticResource TabDockPanel}" Width="auto">
+                <Border Name="tabInvoice" Style="{StaticResource TabBorder}" Width="260">
+                    <DockPanel>
+                        <Image x:Name="btnCloseInvoice" MouseLeftButtonUp="btnCloseInvoice_MouseLeftButtonUp" Source="/Resources/close.png" Stretch="Fill" Height="24" Width="24" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="8,0,8,0"></Image>
+                        <DockPanel MouseLeftButtonUp="tabInvoice_MouseLeftButtonUp">
+                            <Image Source="/Resources/fav_icon_1.png" Stretch="Fill" Height="24" Width="24" HorizontalAlignment="Left" DockPanel.Dock="Left" Margin="8,0,8,0"></Image>
+                            <Label Content="A25 - Dostavnica" VerticalAlignment="Center"></Label>
+                        </DockPanel>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+            <DockPanel  Style="{StaticResource TabDockPanel}" Width="auto">
+                <Border Name="tabWorkOrderDetails" Style="{StaticResource TabBorder}" Width="260">
+                    <DockPanel>
+                        <Image x:Name="btnCloseWorkOrderDetails" MouseLeftButtonUp="btnCloseWorkOrderDetails_MouseLeftButtonUp" Source="/Resources/close.png" Stretch="Fill" Height="24" Width="24" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="8,0,8,0"></Image>
+                        <DockPanel  MouseLeftButtonUp="tabWorkOrderDetails_MouseLeftButtonUp">
+                            <Image Source="/Resources/fav_icon_1.png" Stretch="Fill" Height="24" Width="24" HorizontalAlignment="Left" DockPanel.Dock="Left" Margin="8,0,8,0"></Image>
+                            <Label Content="Detalji" VerticalAlignment="Center" HorizontalAlignment="Left" DockPanel.Dock="Left"></Label>
+                        </DockPanel>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+
             <DockPanel Style="{StaticResource TabDockPanel}" DockPanel.Dock="Right" Margin="20,0,20,0">
                 <Border Name="tabSettings" MouseLeftButtonUp="tabSettings_MouseLeftButtonUp" Style="{StaticResource TabBorder}">
                     <DockPanel >

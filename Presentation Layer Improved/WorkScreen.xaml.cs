@@ -2,29 +2,22 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Presentation_Layer_Improved
 {
-    /// <summary>
-    /// Interaction logic for WorkScreen.xaml
-    /// </summary>
     public partial class WorkScreen : UserControl
     {
         private List<Border> tabList = new List<Border>();
         private UserControl settingsContent = new Settings();
         private UserControl homeContent = new HomeDashboard();
         private UserControl warehouseContent = new Warehouse();
+        private UserControl invoiceContent = new InvoiceForm();
+        private UserControl workOrderDetailsContent = new WorkOrderDetails();
+
         public WorkScreen()
         {
             InitializeComponent();
@@ -37,9 +30,24 @@ namespace Presentation_Layer_Improved
             tabList.Add(tabHome);
             tabList.Add(tabWarehouse);
             tabList.Add(tabSettings);
+            tabList.Add(tabInvoice);
+            tabList.Add(tabWorkOrderDetails);
+
+            tabInvoice.Visibility = Visibility.Visible;
 
             UnselectTabs();
             OpenTab(tabHome, homeContent);
+        }
+        private void btnCloseInvoice_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            tabInvoice.Visibility = Visibility.Collapsed;
+            ShowHomeContent();
+        }
+
+        private void btnCloseWorkOrderDetails_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            tabWorkOrderDetails.Visibility = Visibility.Collapsed;
+            ShowHomeContent();
         }
 
         private void tabHome_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
@@ -55,6 +63,16 @@ namespace Presentation_Layer_Improved
         private void tabSettings_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             OpenTab(tabSettings, settingsContent);
+        }
+
+        private void tabInvoice_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            OpenTab(tabInvoice, invoiceContent);
+        }
+
+        private void tabWorkOrderDetails_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            OpenTab(tabWorkOrderDetails, workOrderDetailsContent);
         }
 
         private void OpenTab(Border tab, UserControl content)
@@ -82,6 +100,13 @@ namespace Presentation_Layer_Improved
             {
                 tab.Background = backgroundBrush;
             }
+        }
+
+        private void ShowHomeContent()
+        {
+            UnselectTabs();
+            SelectTab(tabHome);
+            WorkScreenContentManager.LoadScreen(homeContent);
         }
     }
 }
