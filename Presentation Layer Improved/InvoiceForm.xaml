@@ -12,7 +12,38 @@
                 <Border Style="{StaticResource ContainerBorder}">
                     <DockPanel Margin="16,8,16,16">
                         <Label Content="A25 - Dostavnica" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
-                        <DockPanel DockPanel.Dock="Top">
+                        <DockPanel x:Name="report" DockPanel.Dock="Top" Visibility="Collapsed">
+                            <DockPanel DockPanel.Dock="Top">
+                                <Label Content="Osnovno" DockPanel.Dock="Left" Style="{StaticResource TitleText}"></Label>
+                            </DockPanel>
+
+                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                <Label Content="Pošiljatelj" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right" Foreground="#aaa"/>
+                                <Label x:Name="lblSenderReport" Margin="12,0,0,0"></Label>
+                            </DockPanel>
+
+                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                <Label Content="Primatelj" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                <Label x:Name="lblReceiverReport" Margin="12,0,0,0"></Label>
+                            </DockPanel>
+
+                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                <Label Content="Datum izdavanja" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right" Foreground="#aaa"/>
+                                <Label x:Name="lblCreationDate" Margin="12,0,0,0"></Label>
+                            </DockPanel>
+
+                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                <Label Content="Valjanost" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right" Foreground="#aaa"/>
+                                <Label x:Name="lblExpirationDate" Margin="12,0,0,0"></Label>
+                            </DockPanel>
+
+                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                <Label Content="Napomena" HorizontalAlignment="Right" VerticalAlignment="Top" Width="200" HorizontalContentAlignment="Right" Foreground="#aaa"/>
+                                <TextBlock x:Name="lblAdditionalInfo" VerticalAlignment="Center" DockPanel.Dock="Left" Style="{StaticResource DetailsText}" Margin="12,0,0,0"></TextBlock>
+                            </DockPanel>
+                        </DockPanel>
+                        
+                        <DockPanel x:Name="formBasics" DockPanel.Dock="Top" >
                             <DockPanel DockPanel.Dock="Top">
                                 <Label Content="Osnovno" DockPanel.Dock="Left" Style="{StaticResource TitleText}"></Label>
                             </DockPanel>
@@ -40,7 +71,7 @@
                             <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
                                 <Label Content="Valjanost" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
                                 <TextBox x:Name="txtExpirationDays" Width="80" Margin="12,0,0,0" Text="3" HorizontalContentAlignment="Right"
-             HorizontalAlignment="Left" PreviewTextInput="ExpirationDays_PreviewTextInput" LostFocus="ExpirationDays_LostFocus" KeyDown="MoveToNextUIElement"/>
+HorizontalAlignment="Left" PreviewTextInput="ExpirationDays_PreviewTextInput" LostFocus="ExpirationDays_LostFocus" KeyDown="MoveToNextUIElement"/>
                                 <Label Content="dana od izdavanja, vrijedi do" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Left"/>
                                 <TextBox x:Name="txtExpirationDate" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="ExpirationDate_LostFocus" KeyDown="MoveToNextUIElement"/>
                                 <Label x:Name="lblExpirationError" Content="" Foreground="Red" Margin="12,0,0,0" HorizontalAlignment="Left"/>
@@ -48,30 +79,38 @@
 
                             <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
                                 <Label Content="Napomena" HorizontalAlignment="Right" VerticalAlignment="Top" Width="200" HorizontalContentAlignment="Right"/>
-                                <TextBox Width="420" Height="64" Margin="12,0,0,0" HorizontalAlignment="Left" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" KeyDown="MoveToNextUIElement"/>
+                                <TextBox x:Name="txtAdditionalInfo" Width="420" Height="64" Margin="12,0,0,0" HorizontalAlignment="Left" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" KeyDown="MoveToNextUIElement"/>
                             </DockPanel>
                         </DockPanel>
 
-                        <Button Content="Završi" Height="32" Width="150" DockPanel.Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom"></Button>
+                        <DockPanel DockPanel.Dock="Bottom">
+                            <Button x:Name="btnCreate" Click="btnCreate_Click" Content="Kreiraj" Height="32" Width="150" DockPanel.Dock="Right" HorizontalAlignment="Right" VerticalAlignment="Bottom"></Button>
+                            <Label x:Name="lblCreateErrorMessage" Content="" Foreground="Red" Margin="0,0,12,0" HorizontalAlignment="Right" DockPanel.Dock="Right"/>
+                            <DockPanel></DockPanel>
+                        </DockPanel>
 
                         <DockPanel Margin="0,16,0,16">
                             <DockPanel DockPanel.Dock="Top">
                                 <Label Content="Stavke dostavnice" DockPanel.Dock="Left" Style="{StaticResource TitleText}"></Label>
                             </DockPanel>
 
-                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
-                                <Label Content="Proizvod" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right" />
-                                <TextBox x:Name="txtProductId" Width="160" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="ProductId_LostFocus" KeyDown="MoveToNextUIElement"/>
-                                <TextBox x:Name="txtProductName" Width="300" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="ProductName_LostFocus" KeyDown="MoveToNextUIElement"/>
-                                <Button x:Name="btnAddProduct" Click="btnAddProduct_Click" Content="Dodaj" Margin="16,0,0,0" Height="32" Width="150" DockPanel.Dock="Left"  VerticalAlignment="Center"></Button>
+                            <DockPanel x:Name="formProducts" DockPanel.Dock="Top">
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Proizvod" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right" />
+                                    <TextBox x:Name="txtProductId" Width="160" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="ProductId_LostFocus" KeyDown="MoveToNextUIElement"/>
+                                    <TextBox x:Name="txtProductName" Width="300" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="ProductName_LostFocus" KeyDown="MoveToNextUIElement"/>
+                                    <Button x:Name="btnAddProduct" Click="btnAddProduct_Click" Content="Dodaj" Margin="16,0,0,0" Height="32" Width="150" DockPanel.Dock="Left"  VerticalAlignment="Center"></Button>
+                                </DockPanel>
+
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Količina" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                    <TextBox x:Name="txtAmount" Width="80" Margin="12,0,0,0" Text="1" HorizontalContentAlignment="Right"
+HorizontalAlignment="Left" PreviewTextInput="ExpirationDays_PreviewTextInput" LostFocus="txtAmount_LostFocus" KeyDown="MoveToNextUIElement"/>
+                                    <Label x:Name="lblAddProductError" Content="" Foreground="Red" Margin="12,0,0,0" HorizontalAlignment="Left"/>
+                                </DockPanel>
                             </DockPanel>
 
-                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
-                                <Label Content="Količina" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
-                                <TextBox x:Name="txtAmount" Width="80" Margin="12,0,0,0" Text="1" HorizontalContentAlignment="Right"
-HorizontalAlignment="Left" PreviewTextInput="ExpirationDays_PreviewTextInput" LostFocus="txtAmount_LostFocus" KeyDown="MoveToNextUIElement"/>
-                                <Label x:Name="lblAddProductError" Content="" Foreground="Red" Margin="12,0,0,0" HorizontalAlignment="Left"/>
-                            </DockPanel>
+                            
 
                             <ScrollViewer Margin="0,32,0,0" VerticalScrollBarVisibility="Auto" DockPanel.Dock="Top">
                                 <ItemsControl ItemsSource="{Binding SelectedProducts}">

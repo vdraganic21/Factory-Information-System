@@ -372,7 +372,7 @@ namespace Presentation_Layer_Improved
             }
             else
             {
-                lblAddProductError.Content = "Unesite ispravnu šifru primatelja!"; 
+                lblAddProductError.Content = "Unesite ispravnu šifru primatelja!";
                 txtProductId.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#E62A2A"));
             }
         }
@@ -414,7 +414,7 @@ namespace Presentation_Layer_Improved
         }
         private void btnRemoveProduct_Click(object sender, MouseButtonEventArgs e)
         {
-           var image = sender as Image;
+            var image = sender as Image;
 
             var product = image?.DataContext as Product;
 
@@ -423,6 +423,86 @@ namespace Presentation_Layer_Improved
                 SelectedProducts.Remove(product);
             }
         }
+        private bool ValidateForm()
+        {
 
+            if (string.IsNullOrEmpty(txtSenderId.Text) || string.IsNullOrEmpty(txtSenderName.Text))
+            {
+                lblCreateErrorMessage.Content = "Unesite ispravne podatke pošiljatelja.";
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(txtReceiverId.Text) || string.IsNullOrEmpty(txtReceiverName.Text))
+            {
+                lblCreateErrorMessage.Content = "Unesite ispravne podatke primatelja.";
+                return false;
+            }
+
+            if (!DateTime.TryParseExact(txtCreationDate.Text, "dd.MM.yyyy.", null, System.Globalization.DateTimeStyles.None, out _))
+            {
+                lblCreateErrorMessage.Content = "Unesite ispravan datum izdavanja.";
+                return false;
+            }
+
+            if (!DateTime.TryParseExact(txtExpirationDate.Text, "dd.MM.yyyy.", null, System.Globalization.DateTimeStyles.None, out _))
+            {
+                lblCreateErrorMessage.Content = "Unesite ispravan datum valjanosti.";
+                return false;
+            }
+
+            if (selectedProducts.Count == 0)
+            {
+                lblCreateErrorMessage.Content = "Dodajte barem jedan proizvod.";
+                return false;
+            }
+
+            lblCreateErrorMessage.Content = "";
+            return true;
+        }
+
+
+        private void btnCreate_Click(object sender, RoutedEventArgs e)
+        {
+            if (!ValidateForm()) return;
+
+            ShowReport();
+        }
+
+        private void ShowReport()
+        {
+            formBasics.Visibility = Visibility.Collapsed;
+            formProducts.Visibility = Visibility.Collapsed;
+            report.Visibility = Visibility.Visible;
+            btnCreate.Visibility = Visibility.Collapsed;
+
+            lblSenderReport.Content = txtSenderId.Text + "-" + txtSenderName.Text;
+            lblReceiverReport.Content = txtReceiverId.Text + "-" + txtReceiverName.Text;
+            lblCreationDate.Content = txtCreationDate.Text;
+            lblExpirationDate.Content = txtExpirationDate.Text;
+            lblAdditionalInfo.Text = txtAdditionalInfo.Text;
+            HideElementsByName(this, "btnRemoveProduct");
+
+        }
+
+        private void HideElementsByName(DependencyObject parent, string name)
+        {
+            if (parent == null)
+            {
+                return;
+            }
+
+            int childCount = VisualTreeHelper.GetChildrenCount(parent);
+            for (int i = 0; i < childCount; i++)
+            {
+                var child = VisualTreeHelper.GetChild(parent, i);
+
+                if (child is FrameworkElement element && element.Name == name)
+                {
+                    element.Visibility = Visibility.Collapsed;
+                }
+
+                HideElementsByName(child, name);
+            }
+        }
     }
 }
