@@ -41,7 +41,7 @@ namespace Presentation_Layer_Improved
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             service = new StorageItemStatusService();
-            loadedStorageItemStatuses = service.GetAll();
+            loadedStorageItemStatuses = new List<StorageItemStatus>();
 
             cbSort.ItemsSource = new List<string>
             {
