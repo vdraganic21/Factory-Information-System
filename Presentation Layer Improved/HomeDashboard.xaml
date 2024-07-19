@@ -40,7 +40,7 @@
                         <Label Content="Nedavno korišteno" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
                         <ScrollViewer VerticalScrollBarVisibility="Visible" Padding="4,0,0,0">
                             <DockPanel>
-                                <DockPanel DockPanel.Dock="Top" MouseLeftButtonUp="OpenInvoice" Margin="0,0,4,0">
+                                <DockPanel DockPanel.Dock="Top" MouseLeftButtonUp="OpenInvoice" Margin="0,0,0,0">
                                     <DockPanel DockPanel.Dock="Top" Style="{StaticResource HoverableDockPanel}">
                                         <Image Source="/Resources/fav_icon_1.png" Height="24" DockPanel.Dock="Left"></Image>
                                         <Label Content="DB7 - Radni nalog" HorizontalContentAlignment="Left" VerticalAlignment="Center"></Label>

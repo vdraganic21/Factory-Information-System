@@ -16,6 +16,7 @@
     <None Remove="Resources\button_save.png" />
     <None Remove="Resources\close.png" />
     <None Remove="Resources\fav_icon_1.png" />
+    <None Remove="Resources\graph_complete_68.png" />
     <None Remove="Resources\home.png" />
     <None Remove="Resources\logo.png" />
     <None Remove="Resources\refresh.png" />
@@ -37,6 +38,7 @@
     <Resource Include="Resources\button_save.png" />
     <Resource Include="Resources\close.png" />
     <Resource Include="Resources\fav_icon_1.png" />
+    <Resource Include="Resources\graph_complete_68.png" />
     <Resource Include="Resources\home.png" />
     <Resource Include="Resources\logo.png" />
     <Resource Include="Resources\refresh.png" />

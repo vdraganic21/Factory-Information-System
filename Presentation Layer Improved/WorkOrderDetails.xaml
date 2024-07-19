@@ -5,8 +5,340 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Presentation_Layer_Improved"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+             d:DesignHeight="1080" d:DesignWidth="1920">
+    <DockPanel Background="#EEE">
+        <DockPanel DockPanel.Dock="Left">
+            <DockPanel Style="{StaticResource ContainerDockPanel}" Width="795" Margin="16,16,8,8" DockPanel.Dock="Top">
+                <Border Style="{StaticResource ContainerBorder}">
+                    <DockPanel Margin="16,8,16,16">
+                        <Label Content="A25 - Dostavnica" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
+                        <Label Content="23EBZ PRSTEN DISKA N1,5 553JS3+N" Style="{StaticResource TitleText}" DockPanel.Dock="Top"></Label>
+                        <DockPanel DockPanel.Dock="Top">
+                            <DockPanel DockPanel.Dock="Left">
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Šifra" HorizontalAlignment="Right" VerticalAlignment="Center" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa"/>
+                                    <Label Content="123-4567-23" Margin="12,0,0,0"></Label>
+                                </DockPanel>
+
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Narudžba" HorizontalAlignment="Right" VerticalAlignment="Center" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                    <Label Content="42-123123-25" Margin="12,0,0,0"></Label>
+                                </DockPanel>
+
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Datum izdavanja" HorizontalAlignment="Right" VerticalAlignment="Center" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                    <Label Content="05.07.2024." Margin="12,0,0,0"></Label>
+                                </DockPanel>
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Termin" HorizontalAlignment="Right" VerticalAlignment="Center" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                    <Label Content="05.07.2024. - 06.07.2024." Margin="12,0,0,0"></Label>
+                                </DockPanel>
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Napomena" HorizontalAlignment="Right" VerticalAlignment="Center" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                    <TextBlock Text="123 345 676 asdas adsas" VerticalAlignment="Center" DockPanel.Dock="Left" Style="{StaticResource DetailsText}" Margin="12,0,0,0"></TextBlock>
+                                </DockPanel>
+                                <DockPanel></DockPanel>
+                            </DockPanel>
+                            <DockPanel Margin="12,0,0,0">
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Šifra proizvoda" HorizontalAlignment="Right" VerticalAlignment="Center" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa"/>
+                                    <Label Content="504-256-1234" Margin="12,0,0,0"></Label>
+                                </DockPanel>
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Naručitelj" HorizontalAlignment="Right" VerticalAlignment="Center" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa"/>
+                                    <Label Content="504-256-1234" Margin="12,0,0,0"></Label>
+                                </DockPanel>
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Prioritet" HorizontalAlignment="Right" VerticalAlignment="Center" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa"/>
+                                    <Label Content="Normalan (5)" Margin="12,0,0,0"></Label>
+                                </DockPanel>
+                                <DockPanel></DockPanel>
+                            </DockPanel>
+                        </DockPanel>
+                        <DockPanel>
+                            <Button Height="32" Width="32" DockPanel.Dock="Right" Margin="6,0,0,0">
+                                <Image Source="/Resources/button_save.png" Height="24" Width="24" HorizontalAlignment="Center"></Image>
+                            </Button>
+                            <Button Height="32" Width="32" DockPanel.Dock="Right" Margin="6,0,6,0">
+                                <Image Source="/Resources/button_mail.png" Height="24" Width="24" HorizontalAlignment="Center"></Image>
+                            </Button>
+                            <Button Height="32" Width="32" DockPanel.Dock="Right" Margin="6,0,6,0">
+                                <Image Source="/Resources/button_print.png" Height="24" Width="24" HorizontalAlignment="Center"></Image>
+                            </Button>
+                            <DockPanel></DockPanel>
+                        </DockPanel>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+            <DockPanel Style="{StaticResource ContainerDockPanel}" Width="795" Margin="16,8,8,16">
+                <Border Style="{StaticResource ContainerBorder}">
+                    <DockPanel Margin="16,8,16,16">
+                        <Label Content="Trenutni status" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
+                        <Label Content="Napredak" Style="{StaticResource TitleText}" DockPanel.Dock="Top"></Label>
+                        <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top">
+                            <DockPanel DockPanel.Dock="Top" Margin="8,0,0,0">
+                                <DockPanel Width="8" Background="#003049" DockPanel.Dock="Left"></DockPanel>
+                                <Label Content="Tokarenje - proces dovršen: 07.05.2024 13:58" Margin="8,0,0,0"></Label>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Top" Margin="8,8,0,0">
+                                <DockPanel Width="8" Background="#003049" DockPanel.Dock="Left"></DockPanel>
+                                <Label Content="Bušenje - u tijeku - dovršeno 3 / 5 - proces započet : 07.05.2024 14:06" Margin="8,0,0,0" Foreground="#01A7C2"></Label>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Top" Margin="8,8,0,0">
+                                <DockPanel Width="8" Background="#003049" DockPanel.Dock="Left"></DockPanel>
+                                <Label Content="Dubljenje - u tijeku - dovršeno 0 / 5 - proces započet : 07.05.2024 16:54" Margin="8,0,0,0" Foreground="#01A7C2"></Label>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Top" Margin="8,8,0,0">
+                                <DockPanel Width="8" Background="#003049" DockPanel.Dock="Left"></DockPanel>
+                                <Label Content="Montaža - proces nije započet" Margin="8,0,0,0" Foreground="#AAAAAA"></Label>
+                            </DockPanel>
+                            <DockPanel DockPanel.Dock="Top" Margin="8,8,0,0">
+                                <DockPanel Width="8" Background="#003049" DockPanel.Dock="Left"></DockPanel>
+                                <Label Content="Ispitivanje - proces nije započet" Margin="8,0,0,0" Foreground="#AAAAAA"></Label>
+                            </DockPanel>
+
+                            <DockPanel></DockPanel>
+                        </DockPanel>
+
+                        <DockPanel Height="2" DockPanel.Dock="Top" Margin="0,12,0,12" Background="#e1e1e1"></DockPanel>
+                        
+                        <DockPanel DockPanel.Dock="Top">
+                            <DockPanel>
+                                <Image Source="/Resources/graph_complete_68.png" Height="150" Width="150" Margin="16"></Image>
+                            </DockPanel>
+                            <DockPanel HorizontalAlignment="Center">
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Kašnjenje" HorizontalAlignment="Right" VerticalAlignment="Center" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                    <Label Content="-20min 30s" Margin="12,0,0,0" Foreground="#43AA8B"></Label>
+                                </DockPanel>
+
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                    <Label Content="Izrađeno" HorizontalAlignment="Right" VerticalAlignment="Center" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                    <Label Content="0 / 5" Margin="12,0,0,0"></Label>
+                                </DockPanel>
+                                <DockPanel Margin="0,12,0,0" DockPanel.Dock="Bottom" LastChildFill="False">
+                                    <Label Content="Očekvian završetak" HorizontalAlignment="Right" VerticalAlignment="Center" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                    <Label Content="08.05.2024 12:15:00" Margin="12,0,0,0"></Label>
+                                </DockPanel>
+                                <DockPanel> </DockPanel>
+                            </DockPanel>
+                        </DockPanel>
+                        <DockPanel></DockPanel>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+        </DockPanel>
+        <DockPanel>
+            <DockPanel Style="{StaticResource ContainerDockPanel}" Margin="8,16,16,16">
+                <Border Style="{StaticResource ContainerBorder}">
+                    <DockPanel Margin="16,8,16,16">
+                        <DockPanel>
+                            <DockPanel DockPanel.Dock="Top">
+                                <Label Content="Sastavnica" Style="{StaticResource MainText}" DockPanel.Dock="Left"></Label>
+
+                                <ComboBox Width="300" DockPanel.Dock="Right"></ComboBox>
+
+                                <DockPanel></DockPanel>
+                            </DockPanel>
+                            <DockPanel>
+                                <ScrollViewer>
+                                    <DockPanel>
+                                        <DockPanel>
+                                            <DockPanel DockPanel.Dock="Top" >
+                                                <DockPanel DockPanel.Dock="Top">
+                                                    <DockPanel>
+                                                        <Label Content="Ime" DockPanel.Dock="Top" Style="{StaticResource TitleText}" FontWeight="DemiBold"></Label>
+                                                        <DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <Label Content="Sifra" Width="180" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
+                                                                <Label Content="Aktivno" Width="180" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
+                                                            </DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <DockPanel DockPanel.Dock="Top">
+                                                                    <Label Content="Količina:" Width="150" HorizontalContentAlignment="Right" Foreground="#aaa" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                    <Label Content="1 kom" Style="{StaticResource SubtitleText}"></Label>
+                                                                </DockPanel>
+                                                            </DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                                                                    <Label Content="Napomena" HorizontalAlignment="Right" VerticalAlignment="Top" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                                                    <TextBlock Text="123 345 676 asdas adsas" VerticalAlignment="Top" Style="{StaticResource DetailsText}" Margin="12,0,0,0"></TextBlock>
+                                                                </DockPanel>
+                                                            </DockPanel>
+                                                        </DockPanel>
+                                                        <DockPanel>
+                                                        </DockPanel>
+                                                    </DockPanel>
+                                                    <DockPanel>
+                                                        <Image Source="/Resources/graph_complete_68.png" Height="100" Width="100" Margin="16" HorizontalAlignment="Right"></Image>
+                                                    </DockPanel>
+                                                </DockPanel>
+                                                <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top"></DockPanel>
+                                            </DockPanel>
+                                            <DockPanel DockPanel.Dock="Top" >
+                                                <DockPanel DockPanel.Dock="Top">
+                                                    <DockPanel>
+                                                        <Label Content="Ime" DockPanel.Dock="Top" Style="{StaticResource TitleText}" FontWeight="DemiBold"></Label>
+                                                        <DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <Label Content="Sifra" Width="180" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
+                                                                <Label Content="Aktivno" Width="180" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
+                                                            </DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <DockPanel DockPanel.Dock="Top">
+                                                                    <Label Content="Količina:" Width="150" HorizontalContentAlignment="Right" Foreground="#aaa" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                    <Label Content="1 kom" Style="{StaticResource SubtitleText}"></Label>
+                                                                </DockPanel>
+                                                            </DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                                                                    <Label Content="Napomena" HorizontalAlignment="Right" VerticalAlignment="Top" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                                                    <TextBlock Text="123 345 676 asdas adsas" VerticalAlignment="Top" Style="{StaticResource DetailsText}" Margin="12,0,0,0"></TextBlock>
+                                                                </DockPanel>
+                                                            </DockPanel>
+                                                        </DockPanel>
+                                                        <DockPanel>
+                                                        </DockPanel>
+                                                    </DockPanel>
+                                                    <DockPanel>
+                                                        <Image Source="/Resources/graph_complete_68.png" Height="100" Width="100" Margin="16" HorizontalAlignment="Right"></Image>
+                                                    </DockPanel>
+                                                </DockPanel>
+                                                <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top"></DockPanel>
+                                            </DockPanel>
+                                            <DockPanel DockPanel.Dock="Top" >
+                                                <DockPanel DockPanel.Dock="Top">
+                                                    <DockPanel>
+                                                        <Label Content="Ime" DockPanel.Dock="Top" Style="{StaticResource TitleText}" FontWeight="DemiBold"></Label>
+                                                        <DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <Label Content="Sifra" Width="180" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
+                                                                <Label Content="Aktivno" Width="180" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
+                                                            </DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <DockPanel DockPanel.Dock="Top">
+                                                                    <Label Content="Količina:" Width="150" HorizontalContentAlignment="Right" Foreground="#aaa" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                    <Label Content="1 kom" Style="{StaticResource SubtitleText}"></Label>
+                                                                </DockPanel>
+                                                            </DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                                                                    <Label Content="Napomena" HorizontalAlignment="Right" VerticalAlignment="Top" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                                                    <TextBlock Text="123 345 676 asdas adsas" VerticalAlignment="Top" Style="{StaticResource DetailsText}" Margin="12,0,0,0"></TextBlock>
+                                                                </DockPanel>
+                                                            </DockPanel>
+                                                        </DockPanel>
+                                                        <DockPanel>
+                                                        </DockPanel>
+                                                    </DockPanel>
+                                                    <DockPanel>
+                                                        <Image Source="/Resources/graph_complete_68.png" Height="100" Width="100" Margin="16" HorizontalAlignment="Right"></Image>
+                                                    </DockPanel>
+                                                </DockPanel>
+                                                <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top"></DockPanel>
+                                            </DockPanel>
+                                            <DockPanel DockPanel.Dock="Top" >
+                                                <DockPanel DockPanel.Dock="Top">
+                                                    <DockPanel>
+                                                        <Label Content="Ime" DockPanel.Dock="Top" Style="{StaticResource TitleText}" FontWeight="DemiBold"></Label>
+                                                        <DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <Label Content="Sifra" Width="180" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
+                                                                <Label Content="Aktivno" Width="180" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
+                                                            </DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <DockPanel DockPanel.Dock="Top">
+                                                                    <Label Content="Količina:" Width="150" HorizontalContentAlignment="Right" Foreground="#aaa" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                    <Label Content="1 kom" Style="{StaticResource SubtitleText}"></Label>
+                                                                </DockPanel>
+                                                            </DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                                                                    <Label Content="Napomena" HorizontalAlignment="Right" VerticalAlignment="Top" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                                                    <TextBlock Text="123 345 676 asdas adsas" VerticalAlignment="Top" Style="{StaticResource DetailsText}" Margin="12,0,0,0"></TextBlock>
+                                                                </DockPanel>
+                                                            </DockPanel>
+                                                        </DockPanel>
+                                                        <DockPanel>
+                                                        </DockPanel>
+                                                    </DockPanel>
+                                                    <DockPanel>
+                                                        <Image Source="/Resources/graph_complete_68.png" Height="100" Width="100" Margin="16" HorizontalAlignment="Right"></Image>
+                                                    </DockPanel>
+                                                </DockPanel>
+                                                <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top"></DockPanel>
+                                            </DockPanel>
+                                            <DockPanel DockPanel.Dock="Top" >
+                                                <DockPanel DockPanel.Dock="Top">
+                                                    <DockPanel>
+                                                        <Label Content="Ime" DockPanel.Dock="Top" Style="{StaticResource TitleText}" FontWeight="DemiBold"></Label>
+                                                        <DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <Label Content="Sifra" Width="180" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
+                                                                <Label Content="Aktivno" Width="180" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
+                                                            </DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <DockPanel DockPanel.Dock="Top">
+                                                                    <Label Content="Količina:" Width="150" HorizontalContentAlignment="Right" Foreground="#aaa" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                    <Label Content="1 kom" Style="{StaticResource SubtitleText}"></Label>
+                                                                </DockPanel>
+                                                            </DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                                                                    <Label Content="Napomena" HorizontalAlignment="Right" VerticalAlignment="Top" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                                                    <TextBlock Text="123 345 676 asdas adsas" VerticalAlignment="Top" Style="{StaticResource DetailsText}" Margin="12,0,0,0"></TextBlock>
+                                                                </DockPanel>
+                                                            </DockPanel>
+                                                        </DockPanel>
+                                                        <DockPanel>
+                                                        </DockPanel>
+                                                    </DockPanel>
+                                                    <DockPanel>
+                                                        <Image Source="/Resources/graph_complete_68.png" Height="100" Width="100" Margin="16" HorizontalAlignment="Right"></Image>
+                                                    </DockPanel>
+                                                </DockPanel>
+                                                <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top"></DockPanel>
+                                            </DockPanel>
+                                            <DockPanel DockPanel.Dock="Top" >
+                                                <DockPanel DockPanel.Dock="Top">
+                                                    <DockPanel>
+                                                        <Label Content="Ime" DockPanel.Dock="Top" Style="{StaticResource TitleText}" FontWeight="DemiBold"></Label>
+                                                        <DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <Label Content="Sifra" Width="180" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
+                                                                <Label Content="Aktivno" Width="180" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
+                                                            </DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <DockPanel DockPanel.Dock="Top">
+                                                                    <Label Content="Količina:" Width="150" HorizontalContentAlignment="Right" Foreground="#aaa" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                    <Label Content="1 kom" Style="{StaticResource SubtitleText}"></Label>
+                                                                </DockPanel>
+                                                            </DockPanel>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <DockPanel DockPanel.Dock="Top" LastChildFill="False">
+                                                                    <Label Content="Napomena" HorizontalAlignment="Right" VerticalAlignment="Top" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                                                    <TextBlock VerticalAlignment="Top" Style="{StaticResource DetailsText}" Margin="12,0,0,0"/>
+                                                                </DockPanel>
+                                                            </DockPanel>
+                                                        </DockPanel>
+                                                        <DockPanel>
+                                                        </DockPanel>
+                                                    </DockPanel>
+                                                    <DockPanel>
+                                                        <Image Source="/Resources/graph_complete_68.png" Height="100" Width="100" Margin="16" HorizontalAlignment="Right"></Image>
+                                                    </DockPanel>
+                                                </DockPanel>
+                                                <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top"></DockPanel>
+                                            </DockPanel>
+                                            <DockPanel></DockPanel>
+                                        </DockPanel>
+                                    </DockPanel>
+                                </ScrollViewer>
+                            </DockPanel>
+                        </DockPanel>
+                    </DockPanel>
+                </Border>
+            </DockPanel>
+        </DockPanel>
+    </DockPanel>
 </UserControl>
