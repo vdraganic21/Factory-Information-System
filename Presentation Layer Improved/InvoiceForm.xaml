@@ -5,14 +5,104 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Presentation_Layer_Improved"
              mc:Ignorable="d" 
-             d:DesignHeight="1080" d:DesignWidth="1920">
+             d:DesignHeight="1080" d:DesignWidth="1920" Loaded="UserControl_Loaded">
     <DockPanel Background="#EEE">
         <DockPanel>
             <DockPanel Style="{StaticResource ContainerDockPanel}" Margin="16,16,16,16" Width="1000" MinWidth="620">
                 <Border Style="{StaticResource ContainerBorder}">
                     <DockPanel Margin="16,8,16,16">
                         <Label Content="A25 - Dostavnica" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
-                        
+                        <DockPanel DockPanel.Dock="Top">
+                            <DockPanel DockPanel.Dock="Top">
+                                <Label Content="Osnovno" DockPanel.Dock="Left" Style="{StaticResource TitleText}"></Label>
+                            </DockPanel>
+
+                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                <Label Content="Pošiljatelj" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right" />
+                                <TextBox x:Name="txtSenderId" Width="160" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="SenderId_LostFocus" KeyDown="MoveToNextUIElement"/>
+                                <TextBox x:Name="txtSenderName" Width="300" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="SenderName_LostFocus" KeyDown="MoveToNextUIElement"/>
+                                <Label x:Name="lblSenderError" Content="" Foreground="Red" Margin="12,0,0,0" HorizontalAlignment="Left"/>
+                            </DockPanel>
+
+                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                <Label Content="Primatelj" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right" />
+                                <TextBox x:Name="txtReceiverId" Width="160" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="ReceiverId_LostFocus" KeyDown="MoveToNextUIElement"/>
+                                <TextBox x:Name="txtReceiverName" Width="300" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="ReceiverName_LostFocus" KeyDown="MoveToNextUIElement"/>
+                                <Label x:Name="lblReceiverError" Content="" Foreground="Red" Margin="12,0,0,0" HorizontalAlignment="Left"/>
+                            </DockPanel>
+
+                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                <Label Content="Datum izdavanja" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                <TextBox x:Name="txtCreationDate" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="CreationDate_LostFocus" KeyDown="MoveToNextUIElement"/>
+                                <Label x:Name="lblCreationDateError" Content="" Foreground="Red" Margin="12,0,0,0" HorizontalAlignment="Left"/>
+                            </DockPanel>
+
+                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                <Label Content="Valjanost" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                <TextBox x:Name="txtExpirationDays" Width="80" Margin="12,0,0,0" Text="3" HorizontalContentAlignment="Right"
+             HorizontalAlignment="Left" PreviewTextInput="ExpirationDays_PreviewTextInput" LostFocus="ExpirationDays_LostFocus" KeyDown="MoveToNextUIElement"/>
+                                <Label Content="dana od izdavanja, vrijedi do" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Left"/>
+                                <TextBox x:Name="txtExpirationDate" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="ExpirationDate_LostFocus" KeyDown="MoveToNextUIElement"/>
+                                <Label x:Name="lblExpirationError" Content="" Foreground="Red" Margin="12,0,0,0" HorizontalAlignment="Left"/>
+                            </DockPanel>
+
+                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                <Label Content="Napomena" HorizontalAlignment="Right" VerticalAlignment="Top" Width="200" HorizontalContentAlignment="Right"/>
+                                <TextBox Width="420" Height="64" Margin="12,0,0,0" HorizontalAlignment="Left" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" KeyDown="MoveToNextUIElement"/>
+                            </DockPanel>
+                        </DockPanel>
+
+                        <Button Content="Završi" Height="32" Width="150" DockPanel.Dock="Bottom" HorizontalAlignment="Right" VerticalAlignment="Bottom"></Button>
+
+                        <DockPanel Margin="0,16,0,16">
+                            <DockPanel DockPanel.Dock="Top">
+                                <Label Content="Stavke dostavnice" DockPanel.Dock="Left" Style="{StaticResource TitleText}"></Label>
+                            </DockPanel>
+
+                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                <Label Content="Proizvod" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right" />
+                                <TextBox x:Name="txtProductId" Width="160" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="ProductId_LostFocus" KeyDown="MoveToNextUIElement"/>
+                                <TextBox x:Name="txtProductName" Width="300" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="ProductName_LostFocus" KeyDown="MoveToNextUIElement"/>
+                                <Button x:Name="btnAddProduct" Click="btnAddProduct_Click" Content="Dodaj" Margin="16,0,0,0" Height="32" Width="150" DockPanel.Dock="Left"  VerticalAlignment="Center"></Button>
+                            </DockPanel>
+
+                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                <Label Content="Količina" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                <TextBox x:Name="txtAmount" Width="80" Margin="12,0,0,0" Text="1" HorizontalContentAlignment="Right"
+HorizontalAlignment="Left" PreviewTextInput="ExpirationDays_PreviewTextInput" LostFocus="txtAmount_LostFocus" KeyDown="MoveToNextUIElement"/>
+                                <Label x:Name="lblAddProductError" Content="" Foreground="Red" Margin="12,0,0,0" HorizontalAlignment="Left"/>
+                            </DockPanel>
+
+                            <ScrollViewer Margin="0,32,0,0" VerticalScrollBarVisibility="Auto" DockPanel.Dock="Top">
+                                <ItemsControl ItemsSource="{Binding SelectedProducts}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <DockPanel>
+                                                <DockPanel DockPanel.Dock="Top" >
+                                                    <Label Content="{Binding Ime}" DockPanel.Dock="Top" Style="{StaticResource TitleText}" FontWeight="DemiBold"></Label>
+                                                    <DockPanel>
+                                                        <DockPanel DockPanel.Dock="Left">
+                                                            <Label Content="{Binding Id}" Width="180" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
+                                                        </DockPanel>
+                                                        <DockPanel DockPanel.Dock="Left">
+                                                            <DockPanel DockPanel.Dock="Top">
+                                                                <Label Content="Količina:" Width="150" HorizontalContentAlignment="Right" Foreground="#aaa" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                <Label Content="{Binding Kolicina}" Style="{StaticResource SubtitleText}"></Label>
+                                                            </DockPanel>
+                                                        </DockPanel>
+                                                        <Image x:Name="btnRemoveProduct" Source="/Resources/close.png" Stretch="Fill" Height="24" Width="24" HorizontalAlignment="Right" Margin="8,0,8,0" Cursor="Hand" MouseLeftButtonDown="btnRemoveProduct_Click" />
+                                                    </DockPanel>
+                                                </DockPanel>
+                                                <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,16,0,16"></DockPanel>
+                                                <DockPanel></DockPanel>
+                                            </DockPanel>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+
+                            </ScrollViewer>
+                            
+                        </DockPanel>
                     </DockPanel>
                 </Border>
             </DockPanel>
