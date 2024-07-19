@@ -24,5 +24,13 @@ namespace Presentation_Layer_Improved
         {
             InitializeComponent();
         }
+
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            var source = new List<String>();
+            source.Add("dovršenosti");
+            cbSort.ItemsSource = source;
+            cbSort.SelectedIndex = 0;
+        }
     }
 }
