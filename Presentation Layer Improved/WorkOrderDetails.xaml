@@ -11,7 +11,7 @@
             <DockPanel Style="{StaticResource ContainerDockPanel}" Width="795" Margin="16,16,8,8" DockPanel.Dock="Top">
                 <Border Style="{StaticResource ContainerBorder}">
                     <DockPanel Margin="16,8,16,16">
-                        <Label Content="A25 - Dostavnica" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
+                        <Label Content="057 - Radni nalog" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
                         <Label Content="23EBZ PRSTEN DISKA N1,5 553JS3+N" Style="{StaticResource TitleText}" DockPanel.Dock="Top"></Label>
                         <DockPanel DockPanel.Dock="Top">
                             <DockPanel DockPanel.Dock="Left">

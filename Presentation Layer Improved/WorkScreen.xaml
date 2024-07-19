@@ -29,7 +29,7 @@
                         <Image x:Name="btnCloseInvoice" MouseLeftButtonUp="btnCloseInvoice_MouseLeftButtonUp" Source="/Resources/close.png" Stretch="Fill" Height="24" Width="24" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="8,0,8,0"></Image>
                         <DockPanel MouseLeftButtonUp="tabInvoice_MouseLeftButtonUp">
                             <Image Source="/Resources/fav_icon_1.png" Stretch="Fill" Height="24" Width="24" HorizontalAlignment="Left" DockPanel.Dock="Left" Margin="8,0,8,0"></Image>
-                            <Label Content="A25 - Dostavnica" VerticalAlignment="Center"></Label>
+                            <Label Content="D57 - Dostavnica" VerticalAlignment="Center"></Label>
                         </DockPanel>
                     </DockPanel>
                 </Border>
@@ -40,7 +40,7 @@
                         <Image x:Name="btnCloseWorkOrderDetails" MouseLeftButtonUp="btnCloseWorkOrderDetails_MouseLeftButtonUp" Source="/Resources/close.png" Stretch="Fill" Height="24" Width="24" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="8,0,8,0"></Image>
                         <DockPanel  MouseLeftButtonUp="tabWorkOrderDetails_MouseLeftButtonUp">
                             <Image Source="/Resources/fav_icon_1.png" Stretch="Fill" Height="24" Width="24" HorizontalAlignment="Left" DockPanel.Dock="Left" Margin="8,0,8,0"></Image>
-                            <Label Content="Detalji" VerticalAlignment="Center" HorizontalContentAlignment="Left"></Label>
+                            <Label Content="Pregled radnog naloga" VerticalAlignment="Center" HorizontalContentAlignment="Left"></Label>
                         </DockPanel>
                     </DockPanel>
                 </Border>

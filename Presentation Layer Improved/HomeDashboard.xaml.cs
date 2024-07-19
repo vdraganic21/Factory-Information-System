@@ -103,7 +103,7 @@ namespace Presentation_Layer_Improved
         {
             var filteredDocuments = service.GetAll();
 
-            if (cbDocumentType.Text != "D57 - Radni nalog") filteredDocuments = new List<WorkOrder>();
+            if (cbDocumentType.Text != "057 - Radni nalog") filteredDocuments = new List<WorkOrder>();
 
             filteredDocuments = filteredDocuments
                 .Where(wo => wo.RN.Contains(txtWorkOrderId.Text, StringComparison.OrdinalIgnoreCase))
@@ -269,12 +269,13 @@ namespace Presentation_Layer_Improved
         private void btnCreateDocument_Click(object sender, RoutedEventArgs e)
         {
             AutofillNewDocumentSearch();
+            AutofillNewDocumentType();
 
             VerifyNewDocumentChoice();
 
             if (IsNewDocumentChoiceValid())
             { 
-                if (cbDocumentSearch.Text == "A25 - Dostavnica") parentScreen.OpenInvoice();
+                if (cbDocumentSearch.Text == "D57 - Dostavnica") parentScreen.OpenInvoice();
             }
 
         }
@@ -288,6 +289,16 @@ namespace Presentation_Layer_Improved
                 AutofillNewDocumentSearch();
 
                 VerifyNewDocumentChoice();
+            }
+        }
+
+        private void cbDocumentType_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter || e.Key == Key.Tab)
+            {
+                AutofillNewDocumentType();
+
+                txtWorkOrderId.Focus();
             }
         }
 
@@ -329,11 +340,22 @@ namespace Presentation_Layer_Improved
         private void AutofillNewDocumentSearch()
         {
             var searchedDocument = cbDocumentSearch.Text;
-            var possibleMatch = documentTypes.FirstOrDefault(d => d.IndexOf(searchedDocument, StringComparison.OrdinalIgnoreCase) >= 0);
+            var possibleMatch = documentTypes.FirstOrDefault(d => d.Contains(searchedDocument));
 
             if (possibleMatch != null)
             {
                 cbDocumentSearch.Text = possibleMatch;
+            }
+        }
+
+        private void AutofillNewDocumentType()
+        {
+            var searchedDocument = cbDocumentType.Text;
+            var possibleMatch = documentTypes.FirstOrDefault(d => d.Contains(searchedDocument));
+
+            if (possibleMatch != null)
+            {
+                cbDocumentType.Text = possibleMatch;
             }
         }
 

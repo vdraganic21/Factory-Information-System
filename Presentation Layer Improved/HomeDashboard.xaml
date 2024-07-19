@@ -70,7 +70,7 @@
 
                                 <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
                                     <Label Content="Vrsta dokumenta" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right" />
-                                    <ComboBox x:Name="cbDocumentType" Width="300" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                    <ComboBox x:Name="cbDocumentType" KeyDown="cbDocumentType_KeyDown" Width="300" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
                                 </DockPanel>
 
                                 <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
