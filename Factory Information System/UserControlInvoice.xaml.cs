@@ -24,8 +24,9 @@ namespace Factory_Information_System
     /// </summary>
     public partial class UserControlInvoice : UserControl
     {
-        ProductService service;
-        ObservableCollection<Product> stavke = new ObservableCollection<Product>();
+        private List<OrganizationSubject> subjects = new OrganizationSubjectService().GetAll();
+        private ProductService service;
+        private ObservableCollection<Product> stavke = new ObservableCollection<Product>();
         public UserControlInvoice()
         {
             InitializeComponent();
@@ -66,17 +67,10 @@ namespace Factory_Information_System
         {
             try 
             {
-                if (txtPosiljateljSifra.Text == "255") txtPosiljateljNaziv.Text = "Odjel Zavarene konstrukcije";
-                if (txtPosiljateljNaziv.Text == "Odjel Zavarene konstrukcije") txtPosiljateljSifra.Text = "255";
-
-                if (txtPrimateljSifra.Text == "4201-52") txtPrimateljNaziv.Text = "Metal Transport d.o.o.";
-                if (txtPrimateljNaziv.Text == "Metal Transport d.o.o.") txtPrimateljSifra.Text = "4201-52";
-
-                if (txtPosiljateljSifra.Text != "" && txtPosiljateljSifra.Text != "255") throw new Exception();
-                if (txtPosiljateljNaziv.Text != "" && txtPosiljateljNaziv.Text != "Odjel Zavarene konstrukcije") throw new Exception();
-
-                if (txtPrimateljSifra.Text != "" && txtPrimateljSifra.Text != "4201-52") throw new Exception();
-                if (txtPrimateljNaziv.Text != "" && txtPrimateljNaziv.Text != "Metal Transport d.o.o.") throw new Exception();
+                ValidateSenderName();
+                ValidateSenderId();
+                ValidateReceiverName();
+                ValidateReceiverId();
 
                 DateTime parsedDate;
 
@@ -88,6 +82,62 @@ namespace Factory_Information_System
                 MessageBox.Show("Pogrešan unos!", "Greška", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             
+        }
+
+        private void ValidateSenderId()
+        {
+            var senderId = txtPosiljateljSifra.Text;
+
+            if (senderId == "") return;
+
+            OrganizationSubject subject = subjects.FirstOrDefault(x => x.Id.Contains(senderId));
+
+            if (subject == null) throw new Exception();
+
+            txtPosiljateljNaziv.Text = subject.Name;
+            txtPosiljateljSifra.Text = subject.Id;
+        }
+
+        private void ValidateReceiverName()
+        {
+            var receiverName = txtPrimateljNaziv.Text;
+
+            if (receiverName == "") return;
+
+            OrganizationSubject subject = subjects.FirstOrDefault(x => x.Name.Contains(receiverName));
+
+            if (subject == null) throw new Exception();
+
+            txtPrimateljSifra.Text = subject.Id;
+            txtPrimateljNaziv.Text = subject.Name;
+        }
+        private void ValidateReceiverId()
+        {
+            var receiverId = txtPrimateljSifra.Text;
+
+            if (receiverId == "") return;
+
+            OrganizationSubject subject = subjects.FirstOrDefault(x => x.Id.Contains(receiverId));
+
+            if (subject == null) throw new Exception();
+
+            txtPrimateljNaziv.Text = subject.Name;
+            txtPrimateljSifra.Text = subject.Id;
+        }
+
+        private void ValidateSenderName()
+        {
+            var senderName = txtPosiljateljNaziv.Text;
+
+            if (senderName == "") return;
+
+            OrganizationSubject subject = subjects.FirstOrDefault(x => x.Name.Contains(senderName));
+
+            if (subject == null) throw new Exception();
+
+            txtPosiljateljSifra.Text = subject.Id;
+            txtPosiljateljNaziv.Text = subject.Name;
+
         }
 
         private void btnUkloni_Click(object sender, RoutedEventArgs e)
@@ -135,11 +185,11 @@ namespace Factory_Information_System
 
         private void PrintOption_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Greška");
+            MessageBox.Show("Greška!");
         }
         private void PrintOptionCorrect_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Printam");
+            MessageBox.Show("Uspješno!");
         }
     }
 }

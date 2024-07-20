@@ -14,57 +14,82 @@
             </Menu.Resources>
 
             <MenuItem Header="Postavke" VerticalContentAlignment="Center" Foreground="White">
-                <MenuItem Header="Settings Group 1">
-                    <MenuItem Header="Settings Doc 1" Click="DocumentMenuItem_Click"/>
-                    <MenuItem Header="Settings Doc 2" Click="DocumentMenuItem_Click"/>
-                </MenuItem>
-                <MenuItem Header="Settings Group 2">
-                    <MenuItem Header="Settings Doc 3" Click="DocumentMenuItem_Click"/>
-                    <MenuItem Header="Settings Doc 4" Click="DocumentMenuItem_Click"/>
-                </MenuItem>
+                <MenuItem Header="Subjekti" Click="DocumentMenuItem_Click"/>
+                <MenuItem Header="Identi" Click="DocumentMenuItem_Click"/>
+                <MenuItem Header="Proizvodnja" Click="DocumentMenuItem_Click"/>
+                <MenuItem Header="Računovodtsvo" Click="DocumentMenuItem_Click"/>
+                <MenuItem Header="Carina" Click="DocumentMenuItem_Click"/>
+                <MenuItem Header="Dokumentacija" Click="DocumentMenuItem_Click"/>
+                <MenuItem Header="Izlaz iz programa" Click="Logout_Click"/>
             </MenuItem>
 
             <MenuItem Header="Narudžbe" Foreground="White">
-                <MenuItem Header="Forme">
-                    <MenuItem Header="Dostavnica" Click="Dostavnica_Click"/>
-                    <MenuItem Header="Order Doc 2" Click="DocumentMenuItem_Click"/>
-                </MenuItem>
-                <MenuItem Header="Orders Group 2">
-                    <MenuItem Header="Order Doc 3" Click="DocumentMenuItem_Click"/>
-                    <MenuItem Header="Order Doc 4" Click="DocumentMenuItem_Click"/>
-                </MenuItem>
+                    <MenuItem Header="D57 - Dostavnica" Click="Dostavnica_Click"/>
+                    <MenuItem Header="P5M - Narudžba kupca" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="L2R - Interna narudžba" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="E3M - Web narudžba" Click="DocumentMenuItem_Click"/>
             </MenuItem>
 
             <MenuItem Header="Roba" Foreground="White">
-                <MenuItem Header="Skladište">
-                    <MenuItem Header="Pregled zaliha" Click="PregledZaliha_Click"/>
-                    <MenuItem Header="Goods Doc 2" Click="DocumentMenuItem_Click"/>
-                </MenuItem>
-                <MenuItem Header="Goods Group 2">
-                    <MenuItem Header="Goods Doc 3" Click="DocumentMenuItem_Click"/>
-                    <MenuItem Header="Goods Doc 4" Click="DocumentMenuItem_Click"/>
-                </MenuItem>
+                    <MenuItem Header="J2H - Viškovi u inventuri" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="P9C - Viškovi u inventuri pogona ljevaonica" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="W2B - Primka skladišta gotovih proizvoda" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="T9P - Primka skladišta obojenih metala" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="U1K - Primka skladišta poluproizvoda" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="L8Q - Primka skladišta sirovina" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="Y7C - Primka skladišta uzoraka" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="R1M - Primka tuđe robe" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="P08 - Pregled zaliha skladišta" Click="PregledZaliha_Click"/>
+                    <MenuItem Header="C6L - Trebovanje" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="W8X - Trebovanje dijelova i sklopova" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="B3P - Trebovanje po radnom nalogu" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="E7P - Aktivni dinamički plan" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="A4X - Arhivski plan" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="A1K - Trebovanje robe po reklamaciji" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="M7D - Trebovanje robe za popravak" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="Z4T - Trebovanje tuđe robe po radnom nalogu" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="L5N - Trebovanje za održavanje" Click="DocumentMenuItem_Click"/>
             </MenuItem>
 
             <MenuItem Header="Proizvodnja" Foreground="White">
-                <MenuItem Header="Planiranje rada">
-                    <MenuItem Header="Pregled radnih naloga" Click="MenuItem_Click"/>
-                    <MenuItem Header="Production Doc 2" Click="DocumentMenuItem_Click"/>
-                </MenuItem>
-                <MenuItem Header="Production Group 2">
-                    <MenuItem Header="Production Doc 3" Click="DocumentMenuItem_Click"/>
-                    <MenuItem Header="Production Doc 4" Click="DocumentMenuItem_Click"/>
-                </MenuItem>
+                    <MenuItem Header="D4G - Plan proizvodnje" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="S9N - Plan proizvodnje armatura" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="M2T - Plan proizvodnje fazona" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="J8H - Plan proizvodnje izrada jezgri" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="C5L - Plan proizvodnje odljevka" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="F7Q - Plan proizvodnje osalo" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="K1Z - Plan proizvodnje poluproizvoda" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="R3C - Predatnica strojne obrade" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="P57 - Pregled radnih naloga" Click="RadniNalogClick_Click"/>
+                    <MenuItem Header="057 - Radni nalog" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="Q7F - Nalog za proizvodnju" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="N8Q - Nalog za izradu predkalkulacije" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="V1B - Nalog za otpremu" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="H6J - Nalog za otpremu na doradu" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="F2J - Reklamacija kupca" Click="DocumentMenuItem_Click"/>
             </MenuItem>
 
             <MenuItem Header="Novac" Foreground="White">
-                <MenuItem Header="Money Group 1">
-                    <MenuItem Header="Money Doc 1" Click="DocumentMenuItem_Click"/>
-                    <MenuItem Header="Money Doc 2" Click="DocumentMenuItem_Click"/>
+                <MenuItem Header="Plaćanja">
+                    <MenuItem Header="Faktura" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="Izvod" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="Račun" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="Potvrda uplate" Click="DocumentMenuItem_Click"/>
                 </MenuItem>
-                <MenuItem Header="Money Group 2">
-                    <MenuItem Header="Money Doc 3" Click="DocumentMenuItem_Click"/>
-                    <MenuItem Header="Money Doc 4" Click="DocumentMenuItem_Click"/>
+                <MenuItem Header="Povrati">
+                    <MenuItem Header="Povrat robe" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="Povrat novca" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="Korektivna faktura" Click="DocumentMenuItem_Click"/>
+                </MenuItem>
+                <MenuItem Header="Budžet">
+                    <MenuItem Header="Mjesečni budžet" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="Godišnji budžet" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="Revizija budžeta" Click="DocumentMenuItem_Click"/>
+                </MenuItem>
+                <MenuItem Header="Izvještaji">
+                    <MenuItem Header="Financijski izvještaj" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="Izvještaj o stanju" Click="DocumentMenuItem_Click"/>
+                    <MenuItem Header="Izvještaj o prometu" Click="DocumentMenuItem_Click"/>
                 </MenuItem>
             </MenuItem>
         </Menu>

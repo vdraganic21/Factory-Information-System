@@ -50,7 +50,7 @@ namespace Business_Layer.Services
                     new ComponentListItem { Alt = "0", Poz = "187", Ident = "13-C76-000978", Opis = "B7-32 5200 Brtvenica gR3", Kolicina = "5", Mj = "kom", Batch = "1", NormativnaOsnova = "0", Aktivno = "Da", Zavrseno = "Ne", Vid = "340", PrimKlas = "1A", SekKlas = "3D", Napomena = "", Izdano = "0%" },
                     new ComponentListItem { Alt = "2", Poz = "189", Ident = "15-C78-000980", Opis = "B7-34 5400 Brtvenica gR5", Kolicina = "15", Mj = "kom", Batch = "3", NormativnaOsnova = "2", Aktivno = "Da", Zavrseno = "Ne", Vid = "342", PrimKlas = "1C", SekKlas = "5D", Napomena = "", Izdano = "0%" },
                     new ComponentListItem { Alt = "5", Poz = "192", Ident = "18-C81-000983", Opis = "B7-37 5700 Brtvenica gR8", Kolicina = "30", Mj = "kom", Batch = "6", NormativnaOsnova = "5", Aktivno = "Da", Zavrseno = "Ne", Vid = "345", PrimKlas = "1F", SekKlas = "8D", Napomena = "", Izdano = "0%" },
-                    new ComponentListItem { Alt = "4", Poz = "191", Ident = "17-C80-000982", Opis = "B7-36 5600 Brtvenica gR7", Kolicina = "25", Mj = "kom", Batch = "5", NormativnaOsnova = "4", Aktivno = "Da", Zavrseno = "Ne", Vid = "344", PrimKlas = "1E", SekKlas = "7D", Napomena = "", Izdano = "0%" },
+                    new ComponentListItem { Alt = "4", Poz = "191", Ident = "17-C80-000982", Opis = "B7-36 5600 Brtvenica gR7", Kolicina = "25", Mj = "kom", Batch = "5", NormativnaOsnova = "4", Aktivno = "Ne", Zavrseno = "Da", Vid = "344", PrimKlas = "1E", SekKlas = "7D", Napomena = "", Izdano = "100%" },
                 }
             };
             workOrders.Add(workOrder1);

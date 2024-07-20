@@ -129,16 +129,16 @@ namespace Factory_Information_System
                     filteredWorkOrders = filteredWorkOrders.Where(wo => wo.Datum.Date <= radniNalogDatumDo.Value.Date).ToList();
 
                 if (pocetniTerminOd != null)
-                    filteredWorkOrders = filteredWorkOrders.Where(wo => wo.Datum.Date >= pocetniTerminOd.Value.Date).ToList();
+                    filteredWorkOrders = filteredWorkOrders.Where(wo => wo.PocTermin.Date >= pocetniTerminOd.Value.Date).ToList();
 
                 if (pocetniTerminDo != null)
-                    filteredWorkOrders = filteredWorkOrders.Where(wo => wo.Datum.Date <= pocetniTerminDo.Value.Date).ToList();
+                    filteredWorkOrders = filteredWorkOrders.Where(wo => wo.PocTermin.Date <= pocetniTerminDo.Value.Date).ToList();
 
                 if (krajnjiTerminOd != null)
-                    filteredWorkOrders = filteredWorkOrders.Where(wo => wo.Datum.Date >= krajnjiTerminOd.Value.Date).ToList();
+                    filteredWorkOrders = filteredWorkOrders.Where(wo => wo.KraTermin.Date >= krajnjiTerminOd.Value.Date).ToList();
 
                 if (krajnjiTerminDo != null)
-                    filteredWorkOrders = filteredWorkOrders.Where(wo => wo.Datum.Date <= krajnjiTerminDo.Value.Date).ToList();
+                    filteredWorkOrders = filteredWorkOrders.Where(wo => wo.KraTermin.Date <= krajnjiTerminDo.Value.Date).ToList();
 
 
                 dgvRadniNalozi.ItemsSource = filteredWorkOrders;

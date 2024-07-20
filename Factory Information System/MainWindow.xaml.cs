@@ -26,12 +26,7 @@ namespace Factory_Information_System
 
         private void DocumentMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            MenuItem menuItem = sender as MenuItem;
-            if (menuItem != null)
-            {
-                string documentName = menuItem.Header.ToString();
-                MessageBox.Show($"Selected document: {documentName}", "Document Selection");
-            }
+            MessageBox.Show("Zabranjen pristup!", "Greška", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void PregledZaliha_Click(object sender, RoutedEventArgs e)
@@ -43,7 +38,7 @@ namespace Factory_Information_System
             MainTabControl.SelectedItem = newTab;
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void RadniNalogClick_Click(object sender, RoutedEventArgs e)
         {
             TabItem newTab = new TabItem();
             newTab.Header = "Pregled radnih naloga";
@@ -55,10 +50,14 @@ namespace Factory_Information_System
         private void Dostavnica_Click(object sender, RoutedEventArgs e)
         {
             TabItem newTab = new TabItem();
-            newTab.Header = "A57 - Dostavnica";
+            newTab.Header = "D57 - Dostavnica";
             newTab.Content = new UserControlInvoice();
             MainTabControl.Items.Add(newTab);
             MainTabControl.SelectedItem = newTab;
+        }
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }

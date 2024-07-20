@@ -21,7 +21,7 @@
     </UserControl.Resources>
     <DockPanel Background="White">
         <DockPanel DockPanel.Dock="Top" Background="LightGray">
-            <Label Content="A57 - Dostavnica" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Label Content="D57 - Dostavnica" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             <Label Content="x" Foreground="Red" HorizontalAlignment="Right" Cursor="Hand" VerticalAlignment="Top" Margin="0" MouseLeftButtonUp="CloseButton_Click"/>
         </DockPanel>
         <DockPanel DockPanel.Dock="Top" Margin="0,4,0,0" Background="LightGray">
@@ -152,6 +152,11 @@
                 </DockPanel>
             </DockPanel>
 
+            <DockPanel Margin="12,0,0,0">
+                <Label Height="24" Padding="4" HorizontalAlignment="Left" Content="Napomena" HorizontalContentAlignment="Left" Margin="0,2,0,0" DockPanel.Dock="Top"></Label>
+                <RichTextBox Height="50" Margin="0,2,0,0" DockPanel.Dock="Top" Width="240" VerticalAlignment="Top" VerticalContentAlignment="Center" KeyDown="TextBox_PreviewKeyDown"></RichTextBox>
+            </DockPanel>
+
             <DockPanel>
                 <Button x:Name="btnPrint" Click="btnDropdown_Click" Width="30" Height="30" Background="#00D3D3D3" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="8,32,8,8" BorderBrush="#00707070">
                     <StackPanel>
@@ -159,10 +164,16 @@
                     </StackPanel>
                     <Button.ContextMenu>
                         <ContextMenu x:Name="contextMenu">
-                            <MenuItem Header="Option 1" Click="PrintOption_Click"/>
-                            <MenuItem Header="Option 2" Click="PrintOption_Click"/>
-                            <MenuItem Header="Option 3" Click="PrintOption_Click"/>
-                            <MenuItem Header="Correct" Click="PrintOptionCorrect_Click"/>
+                            <MenuItem Header="906 - Ispis narudžbenice" Click="PrintOption_Click"/>
+                            <MenuItem Header="907 - Ispis narudžbenice - inozemstvo" Click="PrintOption_Click"/>
+                            <MenuItem Header="D89 - Nalog za nabavu za doradu sa težinom" Click="PrintOption_Click"/>
+                            <MenuItem Header="D90 - Nalog za nabavu" Click="PrintOption_Click"/>
+                            <MenuItem Header="D57 - Dostavnica" Click="PrintOptionCorrect_Click"/>
+                            <MenuItem Header="AC1 - Nalog za nabavu bez navođenja nositelja na kraju" Click="PrintOption_Click"/>
+                            <MenuItem Header="AK4 - Upit" Click="PrintOption_Click"/>
+                            <MenuItem Header="APN - Order - križevci" Click="PrintOption_Click"/>
+                            <MenuItem Header="707 - Sumarno - Order - Križevci" Click="PrintOption_Click"/>
+                            
                         </ContextMenu>
                     </Button.ContextMenu>
                 </Button>
