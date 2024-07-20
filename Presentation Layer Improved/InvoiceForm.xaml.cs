@@ -475,12 +475,15 @@ namespace Presentation_Layer_Improved
             report.Visibility = Visibility.Visible;
             btnCreate.Visibility = Visibility.Collapsed;
 
-            lblSenderReport.Content = txtSenderId.Text + "-" + txtSenderName.Text;
-            lblReceiverReport.Content = txtReceiverId.Text + "-" + txtReceiverName.Text;
+            lblSenderReport.Content = txtSenderId.Text + " - " + txtSenderName.Text;
+            lblReceiverReport.Content = txtReceiverId.Text + " - " + txtReceiverName.Text;
             lblCreationDate.Content = txtCreationDate.Text;
             lblExpirationDate.Content = txtExpirationDate.Text;
             lblAdditionalInfo.Text = txtAdditionalInfo.Text;
             HideElementsByName(this, "btnRemoveProduct");
+
+            lblCreateErrorMessage.Content = "Dokument uspješno kreiran!";
+            lblCreateErrorMessage.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#023047"));
 
         }
 

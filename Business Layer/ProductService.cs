@@ -17,7 +17,7 @@ namespace Business_Layer
             {
                 new Product("D8A9B4", "P42T9Q", "Čelična cijev 50mm x 2m", 50.0f, 100.0f, "m", RandomDate()),
                 new Product("D4C8E7", "P53J2R", "Aluminijska ploča 1000x2000x5", 20.0f, 30.0f, "kg", RandomDate()),
-                new Product("A7F6D3", "P74L1T", "Koperni kabel 1.5mm", 100.0f, 150.0f, "kg", RandomDate()),
+                new Product("A7F6D3", "P74L1T", "Bakreni kabel 1.5mm", 100.0f, 150.0f, "kg", RandomDate()),
                 new Product("B5E9C2", "P85N3W", "Mesingasti ventil DN25", 15.0f, 25.0f, "kom", RandomDate()),
                 new Product("C4A1B6", "P92M8X", "Nehrđajući čelik šipka 20mm x 3m", 10.0f, 50.0f, "m", RandomDate()),
                 new Product("E7B2F9", "P33K5Y", "Karbon čelična ploča 2000x1000x10", 30.0f, 60.0f, "kg", RandomDate()),

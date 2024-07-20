@@ -31,7 +31,6 @@ namespace Presentation_Layer_Improved
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             Verify();
-            LoginUser();
         }
 
         private void Verify()

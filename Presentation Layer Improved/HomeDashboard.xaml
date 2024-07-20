@@ -193,28 +193,36 @@
                                                     <DockPanel>
                                                         <DockPanel DockPanel.Dock="Top" Style="{StaticResource HoverableDockPanel}" MouseLeftButtonUp="OpenWorkOrderDetails">
                                                             <Label Content="{Binding Naziv}" DockPanel.Dock="Top" Style="{StaticResource TitleText}" FontWeight="DemiBold"></Label>
+                                                            <DockPanel DockPanel.Dock="Left">
+                                                                <DockPanel>
+                                                                    <DockPanel DockPanel.Dock="Left">
+                                                                        <Label Content="{Binding RN}" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
+                                                                        <Label Content="{Binding Datum}" Style="{StaticResource SubtitleText}"></Label>
+                                                                    </DockPanel>
+                                                                    <DockPanel DockPanel.Dock="Left">
+                                                                        <DockPanel DockPanel.Dock="Top">
+                                                                            <Label Content="Narudžba:" Width="150" HorizontalContentAlignment="Right" Foreground="#aaa" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                            <Label Content="{Binding Narudzba}" Style="{StaticResource SubtitleText}"></Label>
+                                                                        </DockPanel>
+                                                                        <DockPanel>
+                                                                            <Label Content="Termin" Width="150" HorizontalContentAlignment="Right" Foreground="#aaa" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                            <Label Content="{Binding PocTermin}" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                            <Label Content="-" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                            <Label Content="{Binding KraTermin}" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                        </DockPanel>
+                                                                    </DockPanel>
+                                                                    <DockPanel DockPanel.Dock="Left">
+                                                                        <Label Content="Napomena:" Width="150" HorizontalContentAlignment="Right" Foreground="#aaa" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
+                                                                        <TextBlock Text="{Binding Napomena}" DockPanel.Dock="Left" Style="{StaticResource DetailsText}" Width="250" TextAlignment="Left" Margin="5,5,0,0"></TextBlock>
+                                                                    </DockPanel>
+                                                                    <DockPanel></DockPanel>
+                                                                </DockPanel>
+                                                            </DockPanel>
+                                                            
                                                             <DockPanel>
-                                                                <DockPanel DockPanel.Dock="Left">
-                                                                    <Label Content="{Binding RN}" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
-                                                                    <Label Content="{Binding Datum}" Style="{StaticResource SubtitleText}"></Label>
+                                                                <DockPanel>
+                                                                    <Image Source="/Resources/graph_complete_68.png" Height="90" Width="90" Margin="16" HorizontalAlignment="Right" VerticalAlignment="Center"></Image>
                                                                 </DockPanel>
-                                                                <DockPanel DockPanel.Dock="Left">
-                                                                    <DockPanel DockPanel.Dock="Top">
-                                                                        <Label Content="Narudžba:" Width="150" HorizontalContentAlignment="Right" Foreground="#aaa" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
-                                                                        <Label Content="{Binding Narudzba}" Style="{StaticResource SubtitleText}"></Label>
-                                                                    </DockPanel>
-                                                                    <DockPanel>
-                                                                        <Label Content="Termin" Width="150" HorizontalContentAlignment="Right" Foreground="#aaa" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
-                                                                        <Label Content="{Binding PocTermin}" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
-                                                                        <Label Content="-" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
-                                                                        <Label Content="{Binding KraTermin}" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
-                                                                    </DockPanel>
-                                                                </DockPanel>
-                                                                <DockPanel DockPanel.Dock="Left">
-                                                                    <Label Content="Napomena:" Width="150" HorizontalContentAlignment="Right" Foreground="#aaa" DockPanel.Dock="Left" Style="{StaticResource SubtitleText}"></Label>
-                                                                    <TextBlock Text="{Binding Napomena}" DockPanel.Dock="Left" Style="{StaticResource DetailsText}" Margin="5,5,0,0"></TextBlock>
-                                                                </DockPanel>
-                                                                <DockPanel></DockPanel>
                                                             </DockPanel>
                                                         </DockPanel>
                                                         <DockPanel></DockPanel>
