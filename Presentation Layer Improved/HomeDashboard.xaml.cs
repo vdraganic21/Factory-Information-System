@@ -46,7 +46,6 @@ namespace Presentation_Layer_Improved
         {
             LoadDocumentSearch();
 
-            LoadFilterDefaults();
             FilterDocuments();
 
         }
@@ -84,7 +83,6 @@ namespace Presentation_Layer_Improved
 
             ShowErrorMessage("");
 
-            FilterIsValid();
         }
 
         private void btnFilter_Click(object sender, RoutedEventArgs e)
@@ -264,6 +262,7 @@ namespace Presentation_Layer_Improved
         private void btnRefreshFilter_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             LoadFilterDefaults();
+            FilterIsValid();
         }
 
         private void btnCreateDocument_Click(object sender, RoutedEventArgs e)
@@ -307,11 +306,11 @@ namespace Presentation_Layer_Improved
 
             if (IsNewDocumentChoiceValid())
             {
-                lblNewDocumentErrorMessage.Content = "";
+                lblNewDocumentErrorMessage.Text = "";
                 return;
             }
 
-            lblNewDocumentErrorMessage.Content = "Traženi dokument ne postoji!";
+            lblNewDocumentErrorMessage.Text = "Traženi dokument ne postoji!";
         }
 
         private bool IsNewDocumentChoiceValid()
@@ -366,6 +365,11 @@ namespace Presentation_Layer_Improved
         private void OpenWorkOrderDetails(object sender, MouseButtonEventArgs e)
         {
             parentScreen.OpenWorkOrderDetails();
+        }
+
+        private void UserControl_Initialized(object sender, EventArgs e)
+        {
+            LoadFilterDefaults();
         }
     }
 }

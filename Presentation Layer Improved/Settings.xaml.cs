@@ -24,5 +24,11 @@ namespace Presentation_Layer_Improved
         {
             InitializeComponent();
         }
+
+        private void SliderFontSize_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            double multiplier = e.NewValue;
+            FontSizeManager.SetFontSize(multiplier);
+        }
     }
 }

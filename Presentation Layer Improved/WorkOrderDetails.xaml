@@ -104,20 +104,20 @@
                         
                         <DockPanel DockPanel.Dock="Top">
                             <DockPanel>
-                                <Image Source="/Resources/graph_complete_68.png" Height="150" Width="150" Margin="16"></Image>
+                                <Image Source="/Resources/graph_complete_68.png" Height="120" Width="120" VerticalAlignment="Center" HorizontalAlignment="Center"></Image>
                             </DockPanel>
                             <DockPanel HorizontalAlignment="Center">
                                 <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
-                                    <Label Content="Kašnjenje" HorizontalAlignment="Right" VerticalAlignment="Center" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                    <Label Content="Kašnjenje" HorizontalAlignment="Right" VerticalAlignment="Center" Width="190" HorizontalContentAlignment="Right" Foreground="#aaa" />
                                     <Label Content="-20min 30s" Margin="12,0,0,0" Foreground="#43AA8B"></Label>
                                 </DockPanel>
 
                                 <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
-                                    <Label Content="Izrađeno" HorizontalAlignment="Right" VerticalAlignment="Center" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                    <Label Content="Izrađeno" HorizontalAlignment="Right" VerticalAlignment="Center" Width="190" HorizontalContentAlignment="Right" Foreground="#aaa" />
                                     <Label Content="0 / 5" Margin="12,0,0,0"></Label>
                                 </DockPanel>
                                 <DockPanel Margin="0,12,0,0" DockPanel.Dock="Bottom" LastChildFill="False">
-                                    <Label Content="Očekvian završetak" HorizontalAlignment="Right" VerticalAlignment="Center" Width="170" HorizontalContentAlignment="Right" Foreground="#aaa" />
+                                    <Label Content="Očekvian završetak" HorizontalAlignment="Right" VerticalAlignment="Center" Width="190" HorizontalContentAlignment="Right" Foreground="#aaa" />
                                     <Label Content="08.05.2024 12:15:00" Margin="12,0,0,0"></Label>
                                 </DockPanel>
                                 <DockPanel> </DockPanel>
@@ -149,7 +149,7 @@
                                             <DockPanel DockPanel.Dock="Top" >
                                                 <DockPanel DockPanel.Dock="Top">
                                                     <DockPanel>
-                                                        <Label Content="2Z KK 6200 POKLOPAC BRTVENICE SE35SJ2+N (L-55-12-2234-01)o220/o135x20" DockPanel.Dock="Top" Style="{StaticResource TitleText}" FontWeight="DemiBold"></Label>
+                                                        <Label Content="2Z KK 6200 POKLOPAC BRTVENICE SE35SJ2+N" DockPanel.Dock="Top" Style="{StaticResource TitleText}" FontWeight="DemiBold"></Label>
                                                         <DockPanel>
                                                             <DockPanel DockPanel.Dock="Left">
                                                                 <Label Content="42-G61-000448" Width="180" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
@@ -211,7 +211,7 @@
                                             <DockPanel DockPanel.Dock="Top" >
                                                 <DockPanel DockPanel.Dock="Top">
                                                     <DockPanel>
-                                                        <Label Content="2Z KK 6200 POKLOPAC BRTVENICE SE35SJ2+N (L-55-12-2234-01)o220/o135x20" DockPanel.Dock="Top" Style="{StaticResource TitleText}" FontWeight="DemiBold"></Label>
+                                                        <Label Content="2Z KK 6200 POKLOPAC BRTVENICE SE35SJ2+N" DockPanel.Dock="Top" Style="{StaticResource TitleText}" FontWeight="DemiBold"></Label>
                                                         <DockPanel>
                                                             <DockPanel DockPanel.Dock="Left">
                                                                 <Label Content="25-R62-000452" Width="180" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>
@@ -304,7 +304,7 @@
                                             <DockPanel DockPanel.Dock="Top" >
                                                 <DockPanel DockPanel.Dock="Top" Background="#f1f1f1">
                                                     <DockPanel>
-                                                        <Label Content="2Z KK 6200 POKLOPAC BRTVENICE SE35SJ2+N (L-55-12-2234-01)o220/o135x20" DockPanel.Dock="Top" Style="{StaticResource TitleText}" FontWeight="DemiBold"></Label>
+                                                        <Label Content="2Z KK 6200 POKLOPAC BRTVENICE SE35SJ2+N" DockPanel.Dock="Top" Style="{StaticResource TitleText}" FontWeight="DemiBold"></Label>
                                                         <DockPanel>
                                                             <DockPanel DockPanel.Dock="Left">
                                                                 <Label Content="25-R62-000452" Width="180" DockPanel.Dock="Top" Style="{StaticResource SubtitleText}"></Label>

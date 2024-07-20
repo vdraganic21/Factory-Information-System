@@ -15,7 +15,11 @@
                         <DockPanel DockPanel.Dock="Top">
                             <Label Content="Veličina teksta" DockPanel.Dock="Top" Style="{StaticResource TitleText}"></Label>
                             <DockPanel>
-                                <Label Content="Podesite veličinu fontova u programu"></Label>
+                                <Label Content="Podesite veličinu fontova u programu" VerticalAlignment="Center"></Label>
+                                <Label Content="aA" FontSize="24" VerticalAlignment="Center" DockPanel.Dock="Right"></Label>
+                                <Slider x:Name="sliderFontSize" Minimum="1.0" Maximum="1.20" TickFrequency="0.01" IsSnapToTickEnabled="True" ValueChanged="SliderFontSize_ValueChanged" Width="250" VerticalAlignment="Center" DockPanel.Dock="Right"></Slider>
+                                <Label Content="aA" FontSize="16" VerticalAlignment="Center" DockPanel.Dock="Right"></Label>
+                                <DockPanel></DockPanel>
                             </DockPanel>
                         </DockPanel>
                         <Button Content="Odjavi se" Height="32" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom"></Button>

@@ -1,13 +1,21 @@
 ﻿<Application x:Class="Presentation_Layer_Improved.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Presentation_Layer_Improved"
+             xmlns:local="clr-namespace:Presentation_Layer_Improved" xmlns:sys="clr-namespace:System;assembly=netstandard"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <sys:Double x:Key="sizeDisplayText">60</sys:Double>
+        <sys:Double x:Key="sizeMainText">32</sys:Double>
+        <sys:Double x:Key="sizeTitleText">24</sys:Double>
+        <sys:Double x:Key="sizeSubtitle">18</sys:Double>
+        <sys:Double x:Key="sizeBodyText">16</sys:Double>
+        <sys:Double x:Key="sizeDetailText">14</sys:Double>
+        <sys:Double x:Key="sizeSmallestText">12</sys:Double>
+        
         <Style TargetType="Button">
             <Setter Property="Background" Value="#01A7C2"/>
             <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="{DynamicResource sizeBodyText}"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="BorderBrush" Value="#00000000"/>
             <Setter Property="FontFamily" Value="Arial"/>
@@ -30,14 +38,14 @@
 
         <Style TargetType="Label">
             <Setter Property="FontFamily" Value="Arial"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="{DynamicResource sizeBodyText}"/>
             <Setter Property="Foreground" Value="#023047"/>
             <Setter Property="Height" Value="auto"/>
         </Style>
 
         <Style TargetType="TextBox">
             <Setter Property="FontFamily" Value="Arial"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="{DynamicResource sizeBodyText}"/>
             <Setter Property="Foreground" Value="#023047"/>
             <Setter Property="Padding" Value="8"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -46,7 +54,7 @@
         
         <Style TargetType="ComboBox">
             <Setter Property="FontFamily" Value="Arial"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="{DynamicResource sizeBodyText}"/>
             <Setter Property="Foreground" Value="#023047"/>
             <Setter Property="Padding" Value="8"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -56,7 +64,7 @@
 
         <Style TargetType="PasswordBox">
             <Setter Property="FontFamily" Value="Arial"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="{DynamicResource sizeBodyText}"/>
             <Setter Property="Foreground" Value="#023047"/>
             <Setter Property="Padding" Value="8"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -75,28 +83,28 @@
         </Style>
 
         <Style x:Key="MainText" TargetType="Label">
-            <Setter Property="FontSize" Value="32"/>
+            <Setter Property="FontSize" Value="{DynamicResource sizeMainText}"/>
             <Setter Property="FontWeight" Value="Bold"/>
             <Setter Property="Foreground" Value="#023047"/>
             <Setter Property="Margin" Value="0"/>
         </Style>
 
         <Style x:Key="TitleText" TargetType="Label">
-            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="FontSize" Value="{DynamicResource sizeTitleText}"/>
             <Setter Property="FontWeight" Value="Regular"/>
             <Setter Property="Foreground" Value="#023047"/>
             <Setter Property="Margin" Value="0"/>
         </Style>
 
         <Style x:Key="SubtitleText" TargetType="Label">
-            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontSize" Value="{DynamicResource sizeSubtitle}"/>
             <Setter Property="FontWeight" Value="Regular"/>
             <Setter Property="Foreground" Value="#023047"/>
             <Setter Property="Margin" Value="0"/>
         </Style>
 
         <Style x:Key="FavoriteText" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontSize" Value="{DynamicResource sizeDetailText}"/>
             <Setter Property="FontWeight" Value="Regular"/>
             <Setter Property="Foreground" Value="#023047"/>
             <Setter Property="Margin" Value="0"/>
@@ -105,7 +113,7 @@
         </Style>
 
         <Style x:Key="DetailsText" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontSize" Value="{DynamicResource sizeSubtitle}"/>
             <Setter Property="FontWeight" Value="Regular"/>
             <Setter Property="Foreground" Value="#023047"/>
             <Setter Property="Margin" Value="0"/>
@@ -137,7 +145,7 @@
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderBrush" Value="Transparent"/>
             <Setter Property="FontFamily" Value="Arial"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="{DynamicResource sizeBodyText}"/>
             <Setter Property="Foreground" Value="#023047"/>
         </Style>
 
@@ -145,7 +153,7 @@
             <Setter Property="Background" Value="#ebebeb"/>
             <Setter Property="BorderBrush" Value="#ccc"/>
             <Setter Property="FontFamily" Value="Arial"/>
-            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontSize" Value="{DynamicResource sizeBodyText}"/>
             <Setter Property="Foreground" Value="#023047"/>
         </Style>
 
