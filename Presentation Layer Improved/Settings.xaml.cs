@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Presentation_Layer_Improved.Managers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,11 @@ namespace Presentation_Layer_Improved
         {
             double multiplier = e.NewValue;
             FontSizeManager.SetFontSize(multiplier);
+        }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            LogoutManager.Logout();
         }
     }
 }

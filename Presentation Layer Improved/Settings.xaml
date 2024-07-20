@@ -22,7 +22,7 @@
                                 <DockPanel></DockPanel>
                             </DockPanel>
                         </DockPanel>
-                        <Button Content="Odjavi se" Height="32" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom"></Button>
+                        <Button x:Name="btnLogout" Click="btnLogout_Click" Content="Odjavi se" Height="32" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom" Style="{StaticResource DangerButton}"></Button>
                     </DockPanel>
                 </Border>
             </DockPanel>
