@@ -16,6 +16,8 @@
     <None Remove="Resources\button_save.png" />
     <None Remove="Resources\close.png" />
     <None Remove="Resources\fav_icon_1.png" />
+    <None Remove="Resources\fav_icon_2.png" />
+    <None Remove="Resources\fav_icon_3.png" />
     <None Remove="Resources\graph_complete_100.png" />
     <None Remove="Resources\graph_complete_51.png" />
     <None Remove="Resources\graph_complete_68.png" />
@@ -41,6 +43,8 @@
     <Resource Include="Resources\button_save.png" />
     <Resource Include="Resources\close.png" />
     <Resource Include="Resources\fav_icon_1.png" />
+    <Resource Include="Resources\fav_icon_2.png" />
+    <Resource Include="Resources\fav_icon_3.png" />
     <Resource Include="Resources\graph_complete_100.png" />
     <Resource Include="Resources\graph_complete_51.png" />
     <Resource Include="Resources\graph_complete_68.png" />

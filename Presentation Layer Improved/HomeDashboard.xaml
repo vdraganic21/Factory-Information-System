@@ -21,16 +21,32 @@
                     </DockPanel>
                 </Border>
             </DockPanel>
-            <DockPanel Style="{StaticResource ContainerDockPanel}" Height="220" Width="600" Margin="8,16,8,8" DockPanel.Dock="Left">
+            <DockPanel Style="{StaticResource ContainerDockPanel}" Height="220" Margin="8,16,8,8" DockPanel.Dock="Left">
                 <Border Style="{StaticResource ContainerBorder}">
-                    <DockPanel Margin="16,8,16,16">
+                    <DockPanel Margin="16,0,16,0">
                         <Label Content="Označeno" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
-                        <DockPanel Margin="0,8,0,0">
+                        <DockPanel>
                             <DockPanel Width="150" Height="130" DockPanel.Dock="Left" Margin="16,0,16,0" MouseLeftButtonUp="OpenInvoice" Style="{StaticResource HoverableDockPanel}">
-                                <Image DockPanel.Dock="Top" Source="/Resources/fav_icon_1.png" Margin="0,8,0,0" Width="80"></Image>
-                                <TextBlock DockPanel.Dock="Top" MaxHeight="40" Text="357 - Narudžbenica" Style="{StaticResource FavoriteText}"/>
+                                <Image DockPanel.Dock="Top" Source="/Resources/fav_icon_1.png" Width="80"></Image>
+                                <TextBlock DockPanel.Dock="Top" Margin="0,4,0,0" MaxHeight="60" Text="C6L - Trebovanje" Style="{StaticResource FavoriteText}"/>
                             </DockPanel>
-                            
+                            <DockPanel Width="150" Height="130" DockPanel.Dock="Left" Margin="16,0,16,0" MouseLeftButtonUp="OpenInvoice" Style="{StaticResource HoverableDockPanel}">
+                                <Image DockPanel.Dock="Top" Source="/Resources/fav_icon_1.png" Width="80"></Image>
+                                <TextBlock DockPanel.Dock="Top" Margin="0,4,0,0" MaxHeight="60" Text="R1M - Primka tuđe robe" Style="{StaticResource FavoriteText}"/>
+                            </DockPanel>
+                            <DockPanel Width="150" Height="130" DockPanel.Dock="Left" Margin="16,0,16,0" MouseLeftButtonUp="OpenInvoice" Style="{StaticResource HoverableDockPanel}">
+                                <Image DockPanel.Dock="Top" Source="/Resources/fav_icon_2.png" Width="80"></Image>
+                                <TextBlock DockPanel.Dock="Top" Margin="0,4,0,0" MaxHeight="60" Text="R3C - Predatnica strojne obrade" Style="{StaticResource FavoriteText}"/>
+                            </DockPanel>
+                            <DockPanel Width="150" Height="130" DockPanel.Dock="Left" Margin="16,0,16,0" MouseLeftButtonUp="OpenInvoice" Style="{StaticResource HoverableDockPanel}">
+                                <Image DockPanel.Dock="Top" Source="/Resources/fav_icon_1.png" Width="80"></Image>
+                                <TextBlock DockPanel.Dock="Top" Margin="0,4,0,0" MaxHeight="60" Text="D57 - Dostavnica" Style="{StaticResource FavoriteText}"/>
+                            </DockPanel>
+                            <DockPanel Width="150" Height="130" DockPanel.Dock="Left" Margin="16,0,16,0" MouseLeftButtonUp="OpenInvoice" Style="{StaticResource HoverableDockPanel}">
+                                <Image DockPanel.Dock="Top" Source="/Resources/fav_icon_3.png" Width="80"></Image>
+                                <TextBlock DockPanel.Dock="Top" Margin="0,4,0,0" MaxHeight="60" Text="L2R - Interna narudžba" Style="{StaticResource FavoriteText}"/>
+                            </DockPanel>
+
                             <DockPanel></DockPanel>
                         </DockPanel>
                     </DockPanel>
@@ -41,15 +57,43 @@
                     <DockPanel Margin="16,8,16,16">
                         <Label Content="Nedavno korišteno" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
                         <ScrollViewer VerticalScrollBarVisibility="Visible" Padding="4,0,0,0">
-                            <DockPanel>
+                            <DockPanel Margin="0,0,8,0">
                                 <DockPanel DockPanel.Dock="Top" MouseLeftButtonUp="OpenInvoice" Margin="0,0,0,0">
                                     <DockPanel DockPanel.Dock="Top" Style="{StaticResource HoverableDockPanel}">
                                         <Image Source="/Resources/fav_icon_1.png" Height="24" DockPanel.Dock="Left"></Image>
-                                        <Label Content="DB7 - Radni nalog" HorizontalContentAlignment="Left" VerticalAlignment="Center"></Label>
+                                        <Label Content="C6L - Trebovanje" HorizontalContentAlignment="Left" VerticalAlignment="Center"></Label>
                                     </DockPanel>
                                     <DockPanel Height="2" Margin="0,4,0,4" Background="#E1E1E1"></DockPanel>
                                 </DockPanel>
-                                
+                                <DockPanel DockPanel.Dock="Top" MouseLeftButtonUp="OpenInvoice" Margin="0,0,0,0">
+                                    <DockPanel DockPanel.Dock="Top" Style="{StaticResource HoverableDockPanel}">
+                                        <Image Source="/Resources/fav_icon_1.png" Height="24" DockPanel.Dock="Left"></Image>
+                                        <Label Content="R1M - Primka tuđe robe" HorizontalContentAlignment="Left" VerticalAlignment="Center"></Label>
+                                    </DockPanel>
+                                    <DockPanel Height="2" Margin="0,4,0,4" Background="#E1E1E1"></DockPanel>
+                                </DockPanel>
+                                <DockPanel DockPanel.Dock="Top" MouseLeftButtonUp="OpenInvoice" Margin="0,0,0,0">
+                                    <DockPanel DockPanel.Dock="Top" Style="{StaticResource HoverableDockPanel}">
+                                        <Image Source="/Resources/fav_icon_2.png" Height="24" DockPanel.Dock="Left"></Image>
+                                        <Label Content="R3C - Predatnica strojne obrade" HorizontalContentAlignment="Left" VerticalAlignment="Center"></Label>
+                                    </DockPanel>
+                                    <DockPanel Height="2" Margin="0,4,0,4" Background="#E1E1E1"></DockPanel>
+                                </DockPanel>
+                                <DockPanel DockPanel.Dock="Top" MouseLeftButtonUp="OpenInvoice" Margin="0,0,0,0">
+                                    <DockPanel DockPanel.Dock="Top" Style="{StaticResource HoverableDockPanel}">
+                                        <Image Source="/Resources/fav_icon_1.png" Height="24" DockPanel.Dock="Left"></Image>
+                                        <Label Content="D57 - Dostavnica" HorizontalContentAlignment="Left" VerticalAlignment="Center"></Label>
+                                    </DockPanel>
+                                    <DockPanel Height="2" Margin="0,4,0,4" Background="#E1E1E1"></DockPanel>
+                                </DockPanel>
+                                <DockPanel DockPanel.Dock="Top" MouseLeftButtonUp="OpenInvoice" Margin="0,0,0,0">
+                                    <DockPanel DockPanel.Dock="Top" Style="{StaticResource HoverableDockPanel}">
+                                        <Image Source="/Resources/fav_icon_3.png" Height="24" DockPanel.Dock="Left"></Image>
+                                        <Label Content="L2R - Interna narudžba" HorizontalContentAlignment="Left" VerticalAlignment="Center"></Label>
+                                    </DockPanel>
+                                    <DockPanel Height="2" Margin="0,4,0,4" Background="#E1E1E1"></DockPanel>
+                                </DockPanel>
+
                                 <DockPanel></DockPanel>
                             </DockPanel>
                             
