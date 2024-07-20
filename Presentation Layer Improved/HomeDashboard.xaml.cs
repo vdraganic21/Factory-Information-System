@@ -131,16 +131,16 @@ namespace Presentation_Layer_Improved
                 filteredDocuments = filteredDocuments.Where(wo => wo.Datum.Date <= radniNalogDatumDo.Value.Date).ToList();
 
             if (pocetniTerminOd != null)
-                filteredDocuments = filteredDocuments.Where(wo => wo.Datum.Date >= pocetniTerminOd.Value.Date).ToList();
+                filteredDocuments = filteredDocuments.Where(wo => wo.PocTermin.Date >= pocetniTerminOd.Value.Date).ToList();
 
             if (pocetniTerminDo != null)
-                filteredDocuments = filteredDocuments.Where(wo => wo.Datum.Date <= pocetniTerminDo.Value.Date).ToList();
+                filteredDocuments = filteredDocuments.Where(wo => wo.PocTermin.Date <= pocetniTerminDo.Value.Date).ToList();
 
             if (krajnjiTerminOd != null)
-                filteredDocuments = filteredDocuments.Where(wo => wo.Datum.Date >= krajnjiTerminOd.Value.Date).ToList();
+                filteredDocuments = filteredDocuments.Where(wo => wo.KraTermin.Date >= krajnjiTerminOd.Value.Date).ToList();
 
             if (krajnjiTerminDo != null)
-                filteredDocuments = filteredDocuments.Where(wo => wo.Datum.Date <= krajnjiTerminDo.Value.Date).ToList();
+                filteredDocuments = filteredDocuments.Where(wo => wo.KraTermin.Date <= krajnjiTerminDo.Value.Date).ToList();
 
             filteredDocuments = ApplySort(filteredDocuments);
 
