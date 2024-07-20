@@ -20,6 +20,7 @@
                 <MenuItem Header="Računovodtsvo" Click="DocumentMenuItem_Click"/>
                 <MenuItem Header="Carina" Click="DocumentMenuItem_Click"/>
                 <MenuItem Header="Dokumentacija" Click="DocumentMenuItem_Click"/>
+                <MenuItem Header="Dokumenti" Click="DocumentMenuItem_Click"/>
                 <MenuItem Header="Izlaz iz programa" Click="Logout_Click"/>
             </MenuItem>
 
