@@ -55,7 +55,7 @@
                                 <DockPanel></DockPanel>
                             </DockPanel>
                         </DockPanel>
-                        <DockPanel>
+                        <DockPanel DockPanel.Dock="Right">
                             <Button Height="32" Width="32" DockPanel.Dock="Right" Margin="6,0,0,0">
                                 <Image Source="/Resources/button_save.png" Height="24" Width="24" HorizontalAlignment="Center"></Image>
                             </Button>
@@ -67,6 +67,7 @@
                             </Button>
                             <DockPanel></DockPanel>
                         </DockPanel>
+                        <DockPanel></DockPanel>
                     </DockPanel>
                 </Border>
             </DockPanel>

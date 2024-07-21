@@ -59,7 +59,9 @@ namespace Presentation_Layer_Improved
         private void LoadFilterDefaults()
         {
             cbDocumentType.ItemsSource = documentTypes;
-            cbDocumentType.SelectedIndex = 0;
+            cbDocumentType.Text = "";
+
+            filterOptions.Visibility = Visibility.Collapsed;
 
             DateTime oneWeekBeforeToday = DateTime.Now.AddDays(-7);
             txtRadniNalogDatumOd.Text = oneWeekBeforeToday.ToString("dd.MM.yyyy.");
@@ -166,6 +168,13 @@ namespace Presentation_Layer_Improved
 
         private bool FilterIsValid()
         {
+            if (cbDocumentType.Text != "057 - Radni nalog")
+            {
+                filterOptions.Visibility = Visibility.Collapsed;
+                return false;
+            }
+            filterOptions.Visibility = Visibility.Visible;
+
             var dateTextBoxes = new List<TextBox>()
             {
                 txtRadniNalogDatumOd,

@@ -26,15 +26,15 @@
                     <DockPanel Margin="16,0,16,0">
                         <Label Content="Označeno" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
                         <DockPanel>
-                            <DockPanel Width="150" Height="130" DockPanel.Dock="Left" Margin="16,0,16,0" MouseLeftButtonUp="OpenInvoice" Style="{StaticResource HoverableDockPanel}">
+                            <DockPanel Width="150" Height="130" DockPanel.Dock="Left" Margin="16,0,16,0" Style="{StaticResource HoverableDockPanel}">
                                 <Image DockPanel.Dock="Top" Source="/Resources/fav_icon_1.png" Width="80"></Image>
                                 <TextBlock DockPanel.Dock="Top" Margin="0,4,0,0" MaxHeight="60" Text="C6L - Trebovanje" Style="{StaticResource FavoriteText}"/>
                             </DockPanel>
-                            <DockPanel Width="150" Height="130" DockPanel.Dock="Left" Margin="16,0,16,0" MouseLeftButtonUp="OpenInvoice" Style="{StaticResource HoverableDockPanel}">
+                            <DockPanel Width="150" Height="130" DockPanel.Dock="Left" Margin="16,0,16,0" Style="{StaticResource HoverableDockPanel}">
                                 <Image DockPanel.Dock="Top" Source="/Resources/fav_icon_1.png" Width="80"></Image>
                                 <TextBlock DockPanel.Dock="Top" Margin="0,4,0,0" MaxHeight="60" Text="R1M - Primka tuđe robe" Style="{StaticResource FavoriteText}"/>
                             </DockPanel>
-                            <DockPanel Width="150" Height="130" DockPanel.Dock="Left" Margin="16,0,16,0" MouseLeftButtonUp="OpenInvoice" Style="{StaticResource HoverableDockPanel}">
+                            <DockPanel Width="150" Height="130" DockPanel.Dock="Left" Margin="16,0,16,0" Style="{StaticResource HoverableDockPanel}">
                                 <Image DockPanel.Dock="Top" Source="/Resources/fav_icon_2.png" Width="80"></Image>
                                 <TextBlock DockPanel.Dock="Top" Margin="0,4,0,0" MaxHeight="60" Text="R3C - Predatnica strojne obrade" Style="{StaticResource FavoriteText}"/>
                             </DockPanel>
@@ -42,7 +42,7 @@
                                 <Image DockPanel.Dock="Top" Source="/Resources/fav_icon_1.png" Width="80"></Image>
                                 <TextBlock DockPanel.Dock="Top" Margin="0,4,0,0" MaxHeight="60" Text="D57 - Dostavnica" Style="{StaticResource FavoriteText}"/>
                             </DockPanel>
-                            <DockPanel Width="150" Height="130" DockPanel.Dock="Left" Margin="16,0,16,0" MouseLeftButtonUp="OpenInvoice" Style="{StaticResource HoverableDockPanel}">
+                            <DockPanel Width="150" Height="130" DockPanel.Dock="Left" Margin="16,0,16,0" Style="{StaticResource HoverableDockPanel}">
                                 <Image DockPanel.Dock="Top" Source="/Resources/fav_icon_3.png" Width="80"></Image>
                                 <TextBlock DockPanel.Dock="Top" Margin="0,4,0,0" MaxHeight="60" Text="L2R - Interna narudžba" Style="{StaticResource FavoriteText}"/>
                             </DockPanel>
@@ -80,7 +80,7 @@
                                     <DockPanel Height="2" Margin="0,4,0,4" Background="#E1E1E1"></DockPanel>
                                 </DockPanel>
                                 <DockPanel DockPanel.Dock="Top" MouseLeftButtonUp="OpenInvoice" Margin="0,0,0,0">
-                                    <DockPanel DockPanel.Dock="Top" Style="{StaticResource HoverableDockPanel}">
+                                    <DockPanel DockPanel.Dock="Top" Style="{StaticResource HoverableDockPanel}"  MouseLeftButtonUp="OpenInvoice">
                                         <Image Source="/Resources/fav_icon_1.png" Height="24" DockPanel.Dock="Left"></Image>
                                         <Label Content="D57 - Dostavnica" HorizontalContentAlignment="Left" VerticalAlignment="Center"></Label>
                                     </DockPanel>
@@ -118,64 +118,67 @@
 
                                         <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
                                             <Label Content="Vrsta dokumenta" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right" />
-                                            <ComboBox x:Name="cbDocumentType" KeyDown="cbDocumentType_KeyDown" Width="300" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                            <ComboBox x:Name="cbDocumentType" KeyDown="cbDocumentType_KeyDown" Width="300" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" SelectionChanged="InputElement_LostFocus" />
                                         </DockPanel>
 
                                         <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
 
-                                        <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
-                                            <Label Content="Šifra radnog naloga" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
-                                            <TextBox x:Name="txtWorkOrderId" Width="180" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                        <DockPanel x:Name="filterOptions" Visibility="Collapsed" DockPanel.Dock="Top">
+                                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                                <Label Content="Šifra radnog naloga" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                                <TextBox x:Name="txtWorkOrderId" Width="180" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                            </DockPanel>
+
+                                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                                <Label Content="Šifra narudžbe" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                                <TextBox x:Name="txtOrderId" Width="180" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                            </DockPanel>
+
+                                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                                <Label Content="Proizvod" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                                <TextBox x:Name="txtProduct" Width="180" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                            </DockPanel>
+
+                                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                                <Label Content="Kupac" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                                <TextBox x:Name="txtBuyer" Width="180" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                            </DockPanel>
+
+                                            <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
+
+                                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                                <Label Content="Kreiran između" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                                <TextBox x:Name="txtRadniNalogDatumOd" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                                <Label Content="i" Margin="12,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
+                                                <TextBox x:Name="txtRadniNalogDatumDo" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                            </DockPanel>
+
+                                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                                <Label Content="Početak termina između" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                                <TextBox x:Name="txtPocetniTerminOd" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                                <Label Content="i" Margin="12,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                                <TextBox x:Name="txtPocetniTerminDo" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                            </DockPanel>
+
+                                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                                <Label Content="Kraj termina između" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                                <TextBox x:Name="txtKrajnjiTerminOd" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                                <Label Content="i" Margin="12,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                                <TextBox x:Name="txtKrajnjiTerminDo" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
+                                            </DockPanel>
+
+                                            <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
+
+                                            <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
+                                                <Label Content="Sortiraj prema" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
+                                                <ComboBox x:Name="cbSortOption" Width="300" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" IsEditable="False"/>
+                                            </DockPanel>
+
+                                            <Label Name="lblFilterErrorMessage" Content="" HorizontalAlignment="Left" Foreground="#E62A2A" Margin="16"/>
+
+                                            <Button x:Name="btnFilter" Click="btnFilter_Click" Content="Primjeni filter" Height="32" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,12,0,0" />
                                         </DockPanel>
-
-                                        <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
-                                            <Label Content="Šifra narudžbe" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
-                                            <TextBox x:Name="txtOrderId" Width="180" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
-                                        </DockPanel>
-
-                                        <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
-                                            <Label Content="Proizvod" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
-                                            <TextBox x:Name="txtProduct" Width="180" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
-                                        </DockPanel>
-
-                                        <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
-                                            <Label Content="Kupac" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
-                                            <TextBox x:Name="txtBuyer" Width="180" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
-                                        </DockPanel>
-
-                                        <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
-
-                                        <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
-                                            <Label Content="Kreiran između" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
-                                            <TextBox x:Name="txtRadniNalogDatumOd" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
-                                            <Label Content="i" Margin="12,0,0,0" VerticalAlignment="Center" HorizontalContentAlignment="Center"/>
-                                            <TextBox x:Name="txtRadniNalogDatumDo" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
-                                        </DockPanel>
-
-                                        <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
-                                            <Label Content="Početak termina između" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
-                                            <TextBox x:Name="txtPocetniTerminOd" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
-                                            <Label Content="i" Margin="12,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                                            <TextBox x:Name="txtPocetniTerminDo" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
-                                        </DockPanel>
-
-                                        <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
-                                            <Label Content="Kraj termina između" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
-                                            <TextBox x:Name="txtKrajnjiTerminOd" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
-                                            <Label Content="i" Margin="12,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                                            <TextBox x:Name="txtKrajnjiTerminDo" Width="120" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" />
-                                        </DockPanel>
-
-                                        <DockPanel Height="2" Background="#E1E1E1" DockPanel.Dock="Top" Margin="0,12,0,0"></DockPanel>
-
-                                        <DockPanel Margin="0,12,0,0" DockPanel.Dock="Top" LastChildFill="False">
-                                            <Label Content="Sortiraj prema" HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" HorizontalContentAlignment="Right"/>
-                                            <ComboBox x:Name="cbSortOption" Width="300" Margin="12,0,0,0" HorizontalAlignment="Left" LostFocus="InputElement_LostFocus" IsEditable="False"/>
-                                        </DockPanel>
-
-                                        <Label Name="lblFilterErrorMessage" Content="" HorizontalAlignment="Left" Foreground="#E62A2A" Margin="16"/>
-
-                                        <Button x:Name="btnFilter" Click="btnFilter_Click" Content="Primjeni filter" Height="32" Width="150" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,12,0,0" />
+                                        
                                     </DockPanel>
                                 </ScrollViewer>
                             </DockPanel>

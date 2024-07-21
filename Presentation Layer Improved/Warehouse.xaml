@@ -12,6 +12,7 @@
                 <Border Style="{StaticResource ContainerBorder}">
                     <DockPanel Margin="16,8,16,16">
                         <Label Content="Stanje na skladištu" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
+                        <Label Content="Šifra ili naziv proizvoda" DockPanel.Dock="Top" Margin="0,12,0,0" VerticalAlignment="Center"></Label>
                         <DockPanel DockPanel.Dock="Top">
                             <ComboBox x:Name="cbSearch" KeyDown="cbSearch_KeyDown" Width="650" DockPanel.Dock="Left" MaxDropDownHeight="0"></ComboBox>
                             <Button Name="btnSearch" Click="btnSearch_Click" Content="Pretraži" DockPanel.Dock="Left" HorizontalAlignment="Left" Height="32" Width="150" Margin="32,0,0,0"></Button>
