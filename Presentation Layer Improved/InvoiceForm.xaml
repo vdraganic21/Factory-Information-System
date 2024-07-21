@@ -12,7 +12,7 @@
                 <Border Style="{StaticResource ContainerBorder}">
                     <DockPanel Margin="16,8,16,16">
                         <Label Content="A25 - Dostavnica" Style="{StaticResource MainText}" DockPanel.Dock="Top"></Label>
-                        <DockPanel x:Name="report" DockPanel.Dock="Top" Visibility="Visible">
+                        <DockPanel x:Name="report" DockPanel.Dock="Top" Visibility="Collapsed">
                             <DockPanel DockPanel.Dock="Top">
                                 <Label Content="Osnovno" DockPanel.Dock="Left" Style="{StaticResource TitleText}"></Label>
                             </DockPanel>
